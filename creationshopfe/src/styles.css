@@ -1,6 +1,9 @@
 *{
     box-sizing: content-box;
 }
+html {
+scroll-behavior: smooth;
+}
 
 .nav-bg {   
     background-color: black;
@@ -16,6 +19,26 @@
     list-style: none;
 }
 
-.top-links{
-    height: 110px;
+@keyframes smoothScroll {
+    from {
+    top: -100%;
+    }
+
+    to {
+        top: 0;
+    }
 }
+
+.sticky_element {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    animation: smoothScroll .3s none;
+    border-bottom: 1px solid transparent !important;
+    -webkit-box-shadow: 0 20px 20px -20px rgb(0 0 0 / 25%);
+    -moz-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 20px 20px -20px rgb(0 0 0 / 25%);
+}
+
+
