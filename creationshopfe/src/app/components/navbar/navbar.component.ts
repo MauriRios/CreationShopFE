@@ -12,8 +12,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     const headerStick = document.querySelector(".sticky-top");
 
-  window.onscroll = function () {
-    
+    window.onscroll = function () {
+
     if (window.scrollY > 80) {
       headerStick?.classList.add("sticky_element");
     } else {
@@ -22,4 +22,11 @@ export class NavbarComponent implements OnInit {
   };
   }
 
-}
+
+  sticky() {
+  
+    
+  }
+  }
+
+
