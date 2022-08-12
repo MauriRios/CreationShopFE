@@ -23,10 +23,6 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  sticky() {
-  
-    
-  }
-  }
+}
 
 
