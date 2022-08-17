@@ -211,17 +211,3 @@ a {
     transform: scaleX(1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
 }
-
-
-/* FOOTER
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-footer {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 1rem;
-}
-
-.page-footer span {
-    color: var(--red);
-}
