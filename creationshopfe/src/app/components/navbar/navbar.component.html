@@ -1,5 +1,6 @@
 
-  <div class="container d-flex aling-item-end">
+  <div class="container-fluid">
+    <span>
       <ul class="d-flex text-color-list p-0 mb-0">
         <li>
           <a href="" class="text-secondary mx-3">¿Cómo Llegar?</a>
@@ -12,63 +13,46 @@
         <a href="https://api.whatsapp.com/send?phone=+5491160520721" target="_blank" class="text-secondary mx-3"><img src="">1160520721</a>
         </li>
       </ul>
+    </span>
     </div>
 
   <!-- https://api.whatsapp.com/send?phone=+5491160520721 -->
 
-<!-- <nav class="navbar sticky-top nav-bg navbar-expand-lg">
-    <div class="container-fluid ">
-      <a class="navbar-brand" href="#"><img class="logo " src="../../../assets/img/ebrioslogo.png" alt="Logo"></a>
-      <button type="button" class="btn position-relative">
-        <i class="fa-solid fa-cart-shopping text-secondary"></i>
-        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-          <span class="visually-hidden">New alerts</span>
-        </span>
-      </button>
+  <nav class="navbar sticky-top nav-bg">
+    <div class="container-fluid d-flex">
+      <span class="d-flex justify-content-start "><a class="navbar-brand"><img class="logo " src="../../../assets/img/ebrioslogo.png" alt="Logo"></a></span>
+      <span>
+        <form class="form ">
+          <label for="search" class="p-0">
+              <input class="input" type="text" required="" placeholder="Buscar" id="search">
+              <div class="fancy-bg"></div>
+              <div class="search">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-4wgw6l r-f727ji r-bnwqim r-1plcrui r-lrvibr">
+                      <g>
+                          <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+                      </g>
+                  </svg>
+              </div>
+              <button class="close-btn" type="reset">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+              </button>
+          </label>
+          </form>
+        <button type="button" class="btn position-relative">
+          <i class="fa-solid fa-cart-shopping text-secondary"></i>
+          <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+            <span class="visually-hidden">New alerts</span>
+          </span>
+        </button>
         <a class="btn " data-bs-toggle="offcanvas"
         href="#offcanvasExample"
         role="button" 
         aria-controls="offcanvasExample">
         <i class="fa-solid fa-user-gear text-secondary"></i>
       </a>
-      
-    </div>
-  </nav> -->
-
-  <nav class="navbar sticky-top nav-bg">
-    <div class="container-fluid">
-      <a class="navbar-brand"><img class="logo " src="../../../assets/img/ebrioslogo.png" alt="Logo"></a>
-      
-      <form class="form">
-        <label for="search" class="p-0">
-            <input class="input" type="text" required="" placeholder="Buscar" id="search">
-            <div class="fancy-bg"></div>
-            <div class="search">
-                <svg viewBox="0 0 24 24" aria-hidden="true" class="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-4wgw6l r-f727ji r-bnwqim r-1plcrui r-lrvibr">
-                    <g>
-                        <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-                    </g>
-                </svg>
-            </div>
-            <button class="close-btn" type="reset">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-            </button>
-        </label>
-        </form>
-      <button type="button" class="btn position-relative">
-        <i class="fa-solid fa-cart-shopping text-secondary"></i>
-        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-          <span class="visually-hidden">New alerts</span>
-        </span>
-      </button>
-      <a class="btn " data-bs-toggle="offcanvas"
-      href="#offcanvasExample"
-      role="button" 
-      aria-controls="offcanvasExample">
-      <i class="fa-solid fa-user-gear text-secondary"></i>
-    </a>
+      </span>
     </div>
   </nav>
   
@@ -78,16 +62,12 @@
     </div>
     <div class="offcanvas-body">
       <div class="dropdown mt-3">
-        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton"> -->
-      <ul class="text-color-list">
+      <ul class="text-color-list text-underline">
       <li class="nav-item m-3 ">
-        <a class="nav-link" href="#">CERVEZAS</a>
+        <a class="nav-link" href="#0">CERVEZAS</a>
       </li>
       <li class="nav-item m-3 dropdown">
-        <a class="nav-link" href="#">VINOS Y ESPUMANTES</a>
+        <a class="nav-link" href="#0">VINOS Y ESPUMANTES</a>
       </li>
       <li class="nav-item m-3">
         <a class="nav-link" href="#">DESTILADOS</a>
@@ -113,32 +93,30 @@
   </div>
 
     <div class="container-fluid bg-dark justify-content-center aling-item-center d-lg-flex d-none d-lg-block">
-      <ul class="text-color-list d-flex p-0 m-0">
-        <li class="nav-item m-1 ">
+      <ul class="text-color-list d-flex p-0 m-1">
+        <li class="nav-item mx-3 ">
           <a class="nav-link" href="#">CERVEZAS</a>
         </li>
-        <li class="nav-item m-1 dropdown">
+        <li class="nav-item  mx-3">
           <a class="nav-link" href="#">VINOS Y ESPUMANTES</a>
         </li>
-        <li class="nav-item m-1">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#">DESTILADOS</a>
         </li>
-        <li class="nav-item m-1">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#">WHISKY</a>
         </li>
-        <li class="nav-item m-1">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#">PARA REGALAR</a>
         </li>
-        <li class="nav-item m-1">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#">COMBOS</a>
         </li>
-        <li class="nav-item m-1">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#">APERITIVOS</a>
         </li>
-        <li class="nav-item m-1">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#">BEBIDAS SIN ALCOHOL</a>
         </li>
       </ul>
     </div>
-
-  

@@ -1,49 +1,23 @@
-/* From uiverse.io by @JoseIsra */
-.card {
-    width: 21rem;
-    cursor: pointer;
-  }
-  
-  .content {
-    text-align: center;
-    position: relative;
-    transition: all 2.25s;
-    background-color: rgb(127, 204, 240);
-    padding: 5em;
-    transform-style: preserve-3d;
-  }
-  
-  .card:hover .content {
-    transform: rotateY(0.5turn);
-  }
-  
-  .front,
-  .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding: 2em;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
-  
-  .title {
-    transform: translateZ(5rem);
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    transform: translateZ(2rem);
-  }
-  
-  .back {
-    transform: rotateY(0.5turn);
-    background-color: #009bff;
-  }
-  
-  .description {
-    transform: translateZ(3rem);
-  }
-  
+
+.card{
+height: 200px;
+width: 100%;
+margin-bottom: 10px;
+align-items: center;
+border-radius: 4px;
+
+background-repeat: no-repeat;
+background-size:cover;
+background-image: url("https://drinkshop.com.ar/img/06.jpg");
+
+box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+
+transition: all 0.4s ease;
+padding: 14px 80px 18px 36px;
+cursor: pointer;
+}
+
+.card:hover{
+transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}

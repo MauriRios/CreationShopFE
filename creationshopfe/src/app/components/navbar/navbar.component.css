@@ -13,6 +13,42 @@
     list-style: none;
 }
 
+.text-underline a {
+    position: relative;
+}
+
+.text-underline a::before {
+    content: ’’;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #b47dcd, #e878a2, #eb85ab);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+.text-underline a:hover::before {
+    transform: scaleX(1);
+}
+
+.text-underline[data-animation="to-left"] a::before {
+    transform-origin: right;
+}
+
+.text-underline[data-animation="center"] a::before {
+    transform-origin: center;
+}
+
+span{
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+
+}
+
 @keyframes smoothScroll {
     from {
     top: -100%;
@@ -40,6 +76,8 @@ div form button {
     left: 320px;
 }
 
+
+/* Search Button NavBar */
 /* From uiverse.io by @satyamchaudharydev */
 /* this is a recreation of twitter search in css */
 .form {
@@ -51,9 +89,9 @@ div form button {
     --width-of-input: 200px;
     --inline-padding-of-input: 1.2em;
     --gap: 0.9rem;
-  }
+}
   /* form style */
-  .form {
+.form {
     font-size: 0.9rem;
     display: flex;
     gap: 0.5rem;
@@ -61,9 +99,9 @@ div form button {
     width: var(--width-of-input);
     position: relative;
     isolation: isolate;
-  }
+}
   /* a fancy bg for showing background and border when focus. */
-  .fancy-bg {
+.fancy-bg {
     position: absolute;
     width: 100%;
     inset: 0;
@@ -73,32 +111,32 @@ div form button {
     z-index: -1;
     pointer-events: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  }
+}
   /* label styling */
-  label {
+label {
     width: 100%;
     padding: 0.8em;
     height: 40px;
     padding-inline: var(--inline-padding-of-input);
     display: flex;
     align-items: center;
-  }
-  
-  .search,.close-btn {
+}
+
+.search,.close-btn {
     position: absolute;
-  }
+}
   /* styling search-icon */
-  .search {
+.search {
     fill: var(--text-color);
     left: var(--inline-padding-of-input);
-  }
+}
   /* svg -- size */
-  svg {
+svg {
     width: 17px;
     display: block;
-  }
+}
   /* styling of close button */
-  .close-btn {
+.close-btn {
     border: none;
     right: var(--inline-padding-of-input);
     box-sizing: border-box;
@@ -113,34 +151,36 @@ div form button {
     background: var(--active-color);
     opacity: 0;
     visibility: hidden;
-  }
+}
   /* styling of input */
-  .input {
+.input {
     color: var(--input-text-color);
     width: 100%;
-    margin-inline: min(52em,calc(var(--inline-padding-of-input) + var(--gap)));
+    margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
     background: none;
     border: none;
-  }
-  
-  .input:focus {
+}
+
+.input:focus {
     outline: none;
-  }
-  
-  .input::placeholder {
+}
+
+.input::placeholder {
     color: var(--text-color)
-  }
+}
   /* input background change in focus */
-  .input:focus ~ .fancy-bg {
+.input:focus ~ .fancy-bg {
     border: 1px solid var(--active-color);
     background: var(--focus-input-bg-color);
-  }
+}
   /* search icon color change in focus */
-  .input:focus ~ .search {
+.input:focus ~ .search {
     fill: var(--active-color);
-  }
+}
   /* showing close button when typing */
-  .input:valid ~ .close-btn {
+.input:valid ~ .close-btn {
     opacity: 1;
     visibility: visible;
-  }
+}
+
+

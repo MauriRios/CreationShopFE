@@ -1,8 +1,11 @@
-*{
-    box-sizing: content-box;
-}
+
 html {
-scroll-behavior: smooth;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
 
 
