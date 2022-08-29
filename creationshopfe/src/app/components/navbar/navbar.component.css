@@ -149,6 +149,8 @@ svg {
     visibility: visible;
 }
 
+
+/* Underline menus hover */
 :root {
     --body-bg-color: #1a1c1d;
     --text-color: #aaaebc;
