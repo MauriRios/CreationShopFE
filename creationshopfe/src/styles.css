@@ -2,9 +2,14 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
   *, *:before, *:after {
     box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 
