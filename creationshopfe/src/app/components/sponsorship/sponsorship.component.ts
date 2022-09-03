@@ -8,7 +8,6 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./sponsorship.component.css']
 })
 export class SponsorshipComponent implements OnInit {
-
   
   dynamicSlides = [
     {

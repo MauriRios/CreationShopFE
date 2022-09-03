@@ -1,0 +1,21 @@
+.slide-item{
+    margin: 2em;
+}
+
+
+h3 {
+    text-align: center;
+}
+
+b {
+    display: flex;
+    justify-content: center;
+}
+
+.offers .owl-next, .offers .owl-prev {
+    background-color: aqua !important;
+    color: black !important;
+    height: 60px !important;
+    width: 60px !important;
+    border-radius: 50% !important;
+}
