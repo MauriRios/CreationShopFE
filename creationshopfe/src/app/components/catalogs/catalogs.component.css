@@ -1,25 +1,57 @@
-.col-sm-12, .col-md-6, .col-lg-3 {
+.col-sm-12,
+.col-md-6,
+.col-lg-3 {
   padding: 4px;
 }
 
 .container-flex {
-    margin: 4px;
-    padding: 4px;
+  margin: 4px;
+  padding: 4px;
 }
 
-.card{
+.card {
   padding: 0;
-height: 200px;
-width: 100%;
-margin-bottom: 8px;
-align-items: center;
-border-radius: 4px;
+  height: 200px;
+  width: 100%;
+  align-items: center;
+  opacity: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+}
 
-box-shadow: 0 6px 10px rgba(0,0,0,.2), 0 0 6px rgba(0,0,0,.05);
+/* .opacity-mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+} */
+.card:hover > a {
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+  opacity: 1;
+  transition: opacity 1.2s ease 0s;
+}
 
-transition: all 0.4s ease;
-cursor: pointer;
-overflow: hidden;
+.card:hover > img {
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+.card > a {
+  opacity: 0;
+}
+
+@keyframes myAnim {
+  0% {
+    transform: translateY(700px);
+  }
+
+  100% {
+  
+    transform: translateY(-15px);
+  }
 }
 
 .col-img {
@@ -27,10 +59,10 @@ overflow: hidden;
   width: 100%;
 }
 
-p, a {
+p,
+a {
   position: absolute;
   color: white;
-
 }
 
 p {
@@ -42,8 +74,5 @@ a {
   top: 150px;
 }
 
-.card > img:hover {
-transform: scale(1.05);
-transition: 0.5s;
 
-}
+

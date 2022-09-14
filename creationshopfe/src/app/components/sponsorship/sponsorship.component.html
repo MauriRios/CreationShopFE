@@ -1,10 +1,12 @@
-<div class="row carousel-settings carousel-container">
-    <owl-carousel-o [options]="customOptions">
-      <ng-container *ngFor="let slide of dynamicSlides">
-        <ng-template carouselSlide [id]:number="slide.id">
-        <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
-        </ng-template>
-    </ng-container>
-    </owl-carousel-o>
-
-</div>
+<section class="container-style sponsorship">
+  <div class="row carousel-settings carousel-container">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let slide of dynamicSlides">
+          <ng-template carouselSlide [id]:number="slide.id">
+          <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+          </ng-template>
+      </ng-container>
+      </owl-carousel-o>
+  
+  </div>
+</section>
