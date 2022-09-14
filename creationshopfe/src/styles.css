@@ -3,6 +3,7 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    
 }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -10,6 +11,10 @@ html {
 
 body {
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a  {
+  font-family: 'Roboto', sans-serif;
 }
 
 
