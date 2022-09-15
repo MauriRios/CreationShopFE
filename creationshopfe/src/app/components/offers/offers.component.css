@@ -9,6 +9,11 @@ b {
 }
 .slide-item{
     margin: 2em;
+    
+}
+
+.img-settings:hover {
+    box-shadow: 0px 50px rgba(0,0,0,0.5);
 }
 
 .offers .owl-next, .offers .owl-prev {
