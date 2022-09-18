@@ -1,7 +1,7 @@
 
   <div class="container-fluid">
     <span>
-      <ul class="d-flex text-color-list p-0 mb-0">
+      <ul class="menu-btns d-flex text-color-list p-0 mb-0">
         <li>
           <a href="" class="text-secondary mx-3">¿Cómo Llegar?</a>
         </li>
@@ -16,14 +16,15 @@
     </span>
     </div>
 
+
   <!-- https://api.whatsapp.com/send?phone=+5491160520721 -->
 
   <nav class="navbar sticky-top nav-bg">
-    <div class="container-fluid d-flex">
-      <span class="d-flex justify-content-start "><a class="navbar-brand"><img class="logo " src="../../../assets/img/ebrioslogo.png" alt="Logo"></a></span>
+    <div class="container-fluid">
+      <span class=""><a href=""><img class="logo" src="../../../assets/img/ebrioslogo.png" alt="Logo"></a></span>
       <span>
         <form class="form ">
-          <label for="search" class="p-0">
+          <label for="search" class="p-2">
               <input class="input" type="text" required="" placeholder="Buscar" id="search">
               <div class="fancy-bg"></div>
               <div class="search">
@@ -40,83 +41,100 @@
               </button>
           </label>
           </form>
-        <button type="button" class="btn position-relative">
+        <button type="button"
+        style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .3rem; --bs-btn-font-size: .95rem;"
+        class="btn position-relative">
           <i class="fa-solid fa-cart-shopping text-secondary"></i>
-          <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+          <span class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle alert-icon">
             <span class="visually-hidden">New alerts</span>
           </span>
         </button>
-        <a class="btn " data-bs-toggle="offcanvas"
-        href="#offcanvasExample"
-        role="button" 
-        aria-controls="offcanvasExample">
-        <i class="fa-solid fa-user-gear text-secondary"></i>
-      </a>
+        <a class="btn"
+        type="button" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvasScrolling" 
+        aria-controls="offcanvasScrolling">
+
+          <i class="fa-solid fa-user-gear text-secondary"></i></a>
       </span>
     </div>
-  </nav>
+  </nav> 
+
+  <!-- Boton de menu lateral-->
   
-  <div class="offcanvas offcanvas-start nav-bg" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header img-fluid justify-content-center aling-item-center d-flex">
-      <a class="navbar-brand " href="#"><img class="logo " src="../../../assets/img/ebrioslogo.png" alt="Logo"></a>
+  <div class="offcanvas offcanvas-start nav-bg" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header img-fluid d-flex">
+      <span>
+
+        <img class="logoCanvas " src="../../../assets/img/ebrioslogo.png" alt="Logo">
+      </span>
+      <span>
+        <a type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-xmark text-secondary"></i></a>
+
+      </span>
     </div>
-    <div class="offcanvas-body">
+    <hr width=100%  class="text-secondary" size="5">
+    <div class="offcanvas-body text-underline">
       <div class="dropdown mt-3">
       <ul class="text-color-list text-underline">
-      <li class="nav-item m-3 ">
-        <a class="nav-link" href="#0">CERVEZAS</a>
+      <li class="m-3 ">
+        <a class="menu-btns" href="#">CERVEZAS</a>
       </li>
-      <li class="nav-item m-3 dropdown">
-        <a class="nav-link" href="#0">VINOS Y ESPUMANTES</a>
+      <li class="m-3 dropdown">
+        <a class="menu-btns" href="#">VINOS Y ESPUMANTES</a>
       </li>
-      <li class="nav-item m-3">
-        <a class="nav-link" href="#">DESTILADOS</a>
+      <li class="m-3">
+        <a class="menu-btns" href="#">DESTILADOS</a>
       </li>
-      <li class="nav-item m-3">
-        <a class="nav-link" href="#">WHISKY</a>
+      <li class="m-3">
+        <a class="menu-btns" href="#">WHISKY</a>
       </li>
-      <li class="nav-item m-3">
-        <a class="nav-link" href="#">PARA REGALAR</a>
+      <li class="m-3">
+        <a class="menu-btns" href="#">PARA REGALAR</a>
       </li>
-      <li class="nav-item m-3">
-        <a class="nav-link" href="#">COMBOS</a>
+      <li class="m-3">
+        <a class="menu-btns" href="#">COMBOS</a>
       </li>
-      <li class="nav-item m-3">
-        <a class="nav-link" href="#">APERITIVOS</a>
+      <li class="m-3">
+        <a class="menu-btns" href="#">APERITIVOS</a>
       </li>
-      <li class="nav-item m-3">
-        <a class="nav-link" href="#">BEBIDAS SIN ALCOHOL</a>
+      <li class="m-3">
+        <a class="menu-btns" href="#">BEBIDAS SIN ALCOHOL</a>
       </li>
         </ul>
+        <hr width=100%  class="text-secondary" size="5">
+
       </div>
     </div>
   </div>
 
+  <!-- Menu estatico-->
     <div class="container-fluid bg-dark justify-content-center aling-item-center d-lg-flex d-none d-lg-block">
-      <ul class=" d-flex p-0 m-1 menu">
-        <li class="mx-3 ">
-          <a href="#">CERVEZAS</a>
+      <ul class=" d-flex p-0 m-1 menu menu-btns">
+        <li class="mx-3">
+          <a class="menu-btns" href="#">CERVEZAS</a>
         </li>
         <li class="mx-3">
-          <a href="#">VINOS Y ESPUMANTES</a>
+          <a class="menu-btns" href="#">VINOS Y ESPUMANTES</a>
         </li>
         <li class="mx-3">
-          <a href="#">DESTILADOS</a>
+          <a class="menu-btns" href="#">DESTILADOS</a>
         </li>
         <li class="mx-3">
-          <a href="#">WHISKY</a>
+          <a class="menu-btns" href="#">WHISKY</a>
         </li>
         <li class=" mx-3">
-          <a href="#">PARA REGALAR</a>
+          <a class="menu-btns" href="#">PARA REGALAR</a>
         </li>
         <li class="mx-3">
-          <a href="#">COMBOS</a>
+          <a class="menu-btns" href="#">COMBOS</a>
         </li>
         <li class="mx-3">
-          <a  href="#">APERITIVOS</a>
+          <a class="menu-btns"  href="#">APERITIVOS</a>
         </li>
         <li class="mx-3">
-          <a href="#">BEBIDAS SIN ALCOHOL</a>
+          <a class="menu-btns" href="#">BEBIDAS SIN ALCOHOL</a>
         </li>
       </ul>
     </div>

@@ -7,6 +7,14 @@
     height: 2em;
     width: 4em;
 }
+.logoCanvas{
+    height: 2em;
+    width: 4em;
+}
+
+.alert-icon{
+    padding: 0.35rem;
+}
 
 span{
     justify-content: center !important;
@@ -37,10 +45,10 @@ span{
     box-shadow: 0 20px 20px -20px rgb(0 0 0 / 25%);
 }
 
-div form button {
+/* div form button {
     position: relative;
     left: 320px;
-}
+} */
 
 
 /* Search Button NavBar */
@@ -157,11 +165,12 @@ svg {
     --red: #e74c3c;
 }
 
-ul {
+.menu-btns > ul, li {
     list-style: none;
 }
 
-a {
+a{
+    list-style: none;
     color: white;
     text-decoration: none;
 }
@@ -194,7 +203,7 @@ a {
     transform: scaleX(1);
 }
 
-/* ANIMATIONS
+/* ANIMATIONS 
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .menu[data-animation="to-left"] a::before {
     transform-origin: right;
@@ -212,4 +221,22 @@ a {
     transform-origin: left;
     transform: scaleX(1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+}
+
+@media (max-width: 415px) {
+    nav{
+        padding-top: 4em;
+    }
+    .logo{
+        position: absolute;
+        left: 10em;
+        bottom: 4em;
+
+    }
+}
+
+@media (max-width: 375px) {
+    .logo{
+        left: 7em;
+    }
 }
