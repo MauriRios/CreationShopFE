@@ -10,7 +10,7 @@
         </li>
 
         <li>
-        <a href="https://api.whatsapp.com/send?phone=+5491160520721" target="_blank" class="text-secondary mx-3"><img src="">1160520721</a>
+        <a href="https://api.whatsapp.com/send?phone=+5491164740303" target="_blank" class="text-secondary mx-3"><img src="">1164740303</a>
         </li>
       </ul>
     </span>
@@ -103,7 +103,25 @@
         <a class="menu-btns" href="#">BEBIDAS SIN ALCOHOL</a>
       </li>
         </ul>
-        <hr width=100%  class="text-secondary" size="5">
+      </div>
+    </div>
+    <div class="offcanvas-footer">
+      <hr width=100% class="text-secondary" size="5">
+      <div class="canvasButtons ">
+        <ul class="text-underline">
+          <li *ngIf="isLogged">
+            <a href=""><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
+          <li *ngIf="!isLogged">
+            <a href=""><i class="fa-solid fa-user-slash"></i> Desconectar</a>
+          </li>
+          <li *ngIf="isAdmin" >
+            <a href=""><i class="fa-solid fa-hammer"></i> Editar Contenido</a>
+          </li>
+          <li *ngIf="isAdmin">
+            <a href=""><i class="fa-solid fa-truck-fast"></i> Ventas</a>
+          </li>
+        </ul>
+        
 
       </div>
     </div>
