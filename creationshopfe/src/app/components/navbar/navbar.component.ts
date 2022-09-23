@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +11,13 @@ export class NavbarComponent implements OnInit {
   isLogged = true
   isAdmin = true
 
-  constructor() { }
+  constructor( private router: Router,) { }
 
   ngOnInit(): void {
+    this.navBarSticky()
+  }
+
+  navBarSticky(){
     const headerStick = document.querySelector(".sticky-top");
 
     window.onscroll = function () {
@@ -24,7 +29,6 @@ export class NavbarComponent implements OnInit {
     }
   };
   }
-
 
 }
 
