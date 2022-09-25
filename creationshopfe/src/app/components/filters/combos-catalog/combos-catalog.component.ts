@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Products } from 'src/app/models/products.model';
 
 @Component({
   selector: 'app-combos-catalog',
@@ -7,11 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CombosCatalogComponent implements OnInit {
 
-
+  products : Products[] = [];
+  
   constructor() { }
-
+  
   ngOnInit(): void {
-
+    
   }
+
 
 }
