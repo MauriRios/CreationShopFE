@@ -27,4 +27,5 @@ this.price = price;
 this.stock = stock;
 this.quantity = quantity;
 }
+
 }
