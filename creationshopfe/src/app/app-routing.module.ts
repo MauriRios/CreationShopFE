@@ -21,7 +21,7 @@ const routes: Routes=[
   {path: 'vinos',component: VinosCatalogComponent},
   {path: 'sinalcohol',component: SinAlcoholCatalogComponent },
   {path: 'regalos',component: RegalosCatalogComponent},
-  {path: 'whikys',component: WhiskysCatalogComponent },
+  {path: 'whiskys',component: WhiskysCatalogComponent },
   {path: 'cervezas',component: CervezasCatalogComponent},
   {path: 'aperitivos',component: AperitivosCatalogComponent },
   {path: 'destilados',component: DestiladosCatalogComponent },

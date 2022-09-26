@@ -1,1 +1,91 @@
-<p>destilados-catalog works!</p>
+<app-navbar></app-navbar>
+
+<div class="container main-container my-3">
+    <div class="row my-5 title-container">
+        <h1>DESTILADOS</h1>
+        
+    </div>
+    <div class="btn-filter">
+        <button class="btn btn-dark
+        d-lg-none " 
+        type="button" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvasResponsive" 
+        aria-controls="offcanvasResponsive">Filtro <i class="fa-solid fa-filter"></i></button>
+    </div>
+    <hr>
+    <div class="row ">
+    <div class="col-lg-2">
+            <div class=" d-none d-lg-block">
+                <a class="btn btn-dark"
+                href="#collapseFilter"
+                data-bs-toggle="collapse">
+                Filtrar por Marca <i class="fa-solid fa-filter"></i></a>
+                <div class="collapse" id="collapseFilter">
+                    <hr>
+                    <ul *ngFor="let product of products">
+                        <li>
+                            <a href="">{{product.marca}}</a>                        
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="offcanvas offcanvas-lg offcanvas-start offcanvas-container" 
+                tabindex="-1" id="offcanvasResponsive" 
+                aria-labelledby="offcanvasResponsiveLabel">
+                    <div class="offcanvas-header">
+                        <span>
+
+                            <img class="logoCanvas " src="../../../assets/img/ebrioslogo.png" alt="Logo">
+                        </span>
+                        <span>
+                        <a type="button" class="btn"
+                        data-bs-dismiss="offcanvas"
+                        data-bs-target="#offcanvasResponsive" 
+                        aria-label="Close">
+                        <i class="fa-solid fa-xmark text-secondary"></i></a>
+                    </span>
+                </div>
+                <div class="offcanvas-body m-3">
+                    <hr width=100%  class="text-secondary" size="5">
+                    <h3 class="filter-btns">Filtrar por Marca <i class="fa-solid fa-filter filter-btns"></i></h3>
+                        <ul *ngFor="let product of products">
+                            <li class="m-3 ">
+                                <a class="filter-btns">{{product.marca}}</a>
+                            </li>
+                        </ul>
+                </div>
+        </div>
+    </div>
+
+        <div class="col-lg-10" >
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3" *ngFor="let product of products">
+                    <div class="card-img text-center">
+                        <figure>
+                                <img class="img-fluid" src="{{product.img}}" alt="image">
+                        </figure>
+                            <h3>{{product.marca}} {{product.name}}</h3>
+                        <div class="price-box">
+                            <span class="new-price"><b>$ {{product.price}}</b></span>
+                        </div>
+                            <div class="btn-buy d-flex justify-content-center" >
+                                <form action="">
+                                    <div class='input-group input-group-sm my-2' style='width:100px'>
+                                        <button class='btn btn-outline-dark cantMin' type='button'>-</button>
+                                        <input class='form-control text-center cantValor' data-stock='' readonly type='text' pattern='[0-9]+'  name='cantidad' value='1' size='6' maxlength='2' />
+                                        <button class='btn btn-outline-dark cantMas' type='button'>+</button>
+                                    </div>
+                                        <button name='send' type='submit' class='btn btn-outline-dark'>AGREGAR</button>
+                                </form>
+                            </div>
+        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
