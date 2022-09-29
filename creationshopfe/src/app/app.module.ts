@@ -23,6 +23,8 @@ import { CombosCatalogComponent } from './components/filters/combos-catalog/comb
 import { DestiladosCatalogComponent } from './components/filters/destilados-catalog/destilados-catalog.component';
 import { AperitivosCatalogComponent } from './components/filters/aperitivos-catalog/aperitivos-catalog.component';
 import { SinAlcoholCatalogComponent } from './components/filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
+import { FilterPipe } from './components/filters/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,14 +46,17 @@ import { SinAlcoholCatalogComponent } from './components/filters/sin-alcohol-cat
     CombosCatalogComponent,
     DestiladosCatalogComponent,
     AperitivosCatalogComponent,
-    SinAlcoholCatalogComponent
+    SinAlcoholCatalogComponent,
+    FilterPipe,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     routing,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

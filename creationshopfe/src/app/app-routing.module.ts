@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './components/cart/cart.component';
 import { AperitivosCatalogComponent } from './components/filters/aperitivos-catalog/aperitivos-catalog.component';
 import { CervezasCatalogComponent } from './components/filters/cervezas-catalog/cervezas-catalog.component';
 import { CombosCatalogComponent } from './components/filters/combos-catalog/combos-catalog.component';
@@ -25,6 +26,7 @@ const routes: Routes=[
   {path: 'cervezas',component: CervezasCatalogComponent},
   {path: 'aperitivos',component: AperitivosCatalogComponent },
   {path: 'destilados',component: DestiladosCatalogComponent },
+  {path: 'carrito',component: CartComponent },
   // {path: 'login', component: LoginComponent},
   // {path: 'registro', component: RegistroComponent}
 

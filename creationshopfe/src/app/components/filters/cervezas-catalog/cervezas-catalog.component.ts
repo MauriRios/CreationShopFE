@@ -6,13 +6,14 @@ import { Products } from 'src/app/models/products.model';
   templateUrl: './cervezas-catalog.component.html',
   styleUrls: ['./cervezas-catalog.component.css']
 })
-export class CervezasCatalogComponent implements OnInit {
+export class CervezasCatalogComponent implements OnInit{
 
-  products : Products[] = [
+  filter = '';
+  products = [
     {
       id: 1,
       name: "asddd",
-      marca: "fsasdasdad",
+      marca: "quilmes",
       img: "assets/img/slide.jpg",
       category: "combos",
       price: 220,
@@ -22,7 +23,7 @@ export class CervezasCatalogComponent implements OnInit {
     {
       id: 2,
       name: "addd",
-      marca: "fsasdad",
+      marca: "brahma",
       img: "assets/img/slide.jpg",
       category: "combos",
       price: 220,
@@ -32,7 +33,7 @@ export class CervezasCatalogComponent implements OnInit {
     {
       id: 3,
       name: "asdd",
-      marca: "fasdsad",
+      marca: "artois",
       img: "assets/img/slide.jpg",
       category: "combos",
       price: 220,
@@ -42,7 +43,17 @@ export class CervezasCatalogComponent implements OnInit {
     {
       id: 4,
       name: "asd",
-      marca: "fsad",
+      marca: "colas",
+      img: "assets/img/slide.jpg",
+      category: "combos",
+      price: 220,
+      stock: 20,
+      quantity: 0,
+    },
+    {
+      id: 5,
+      name: "asd",
+      marca: "chauy",
       img: "assets/img/slide.jpg",
       category: "combos",
       price: 220,
@@ -56,11 +67,15 @@ export class CervezasCatalogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
-  filterAsddd(){
-    this.products.filter((item => item.marca == 'fsad'),
+  filterMarca(products : any){
+    this.products.filter((products => products.marca == products.marca ),
     );
-    console.log(this.products)
+    return products.marca
   }
+
+  refreshMarcas(){
+    this.products
+  }
+
 
 }

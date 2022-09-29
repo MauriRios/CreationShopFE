@@ -1,3 +1,5 @@
+import { Marca } from "./marcas";
+
 export class Products {
     id: Number;
     name: String;
@@ -29,3 +31,4 @@ this.quantity = quantity;
 }
 
 }
+

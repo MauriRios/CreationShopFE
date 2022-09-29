@@ -8,7 +8,7 @@ import { Products } from 'src/app/models/products.model';
 })
 export class SinAlcoholCatalogComponent implements OnInit {
 
-  products : Products[] = [
+  products = [
     {
       id: 1,
       name: "asddd",

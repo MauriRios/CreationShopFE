@@ -8,7 +8,7 @@ import { Products } from 'src/app/models/products.model';
 })
 export class DestiladosCatalogComponent implements OnInit {
   
-  products : Products[] = [
+  products = [
     {
       id: 1,
       name: "asddd",
@@ -48,7 +48,17 @@ export class DestiladosCatalogComponent implements OnInit {
       price: 220,
       stock: 20,
       quantity: 0,
-    }
+    },
+    {
+      id: 5,
+      name: "asddd",
+      marca: "fsasdasdad",
+      img: "assets/img/slide.jpg",
+      category: "combos",
+      price: 220,
+      stock: 20,
+      quantity: 0,
+    },
   ];
   
   constructor() { }
