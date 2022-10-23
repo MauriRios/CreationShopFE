@@ -38,12 +38,15 @@ h3{
     color: #444;
     font-weight: 500;
 }
+
 span{
+    width: 10px;
     font-size: 0.8rem;
     margin: 3px 0 0 0;
     color: #444;
     font-weight: 500;
 }
+
 .btn-buy{
     text-decoration: none;
     text-align: center;
@@ -51,3 +54,13 @@ span{
 .offcanvas-container{
     background-color: black;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { 
+    appearance:textfield;
+    -moz-appearance:textfield; }

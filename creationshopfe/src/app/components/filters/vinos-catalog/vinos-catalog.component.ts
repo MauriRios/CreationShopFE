@@ -8,7 +8,7 @@ import { Products } from 'src/app/models/products.model';
 })
 export class VinosCatalogComponent implements OnInit {
 
-
+  filter = '';
   products : Products[] = [
     {
       id: 1,
@@ -62,15 +62,15 @@ export class VinosCatalogComponent implements OnInit {
     },
   ];
   
-  marcasSet = new Set(this.products.map(product => product.marca))
-
-  marcasArray = Array.from(this.marcasSet)
-
-  // unique = this.products.filter((marcasArray, id, products) => products.indexOf(marcasArray) === id);
-
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  filterMarca(products : any){
+    this.products.filter((products => products.marca == products.marca ),
+    );
+    return products.marca
   }
 
 }

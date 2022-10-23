@@ -25,6 +25,7 @@ import { AperitivosCatalogComponent } from './components/filters/aperitivos-cata
 import { SinAlcoholCatalogComponent } from './components/filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
 import { FilterPipe } from './components/filters/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     AperitivosCatalogComponent,
     SinAlcoholCatalogComponent,
     FilterPipe,
+    HomeComponent,
     
   ],
   imports: [

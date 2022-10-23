@@ -1,9 +1,28 @@
-<app-navbar></app-navbar>
-<app-slider></app-slider>
-<app-catalogs></app-catalogs>
-<app-offers></app-offers>
-<app-hots></app-hots>
-<app-sponsorship></app-sponsorship>
-<!--
-<app-contact></app-contact>
-<app-footer></app-footer> -->
+<div class="container-fluid">
+    <div class="container-fluid">
+    <span>
+    <ul class="menu-btns d-flex text-color-list p-0 mb-0">
+        <li>
+        <a href="" class="text-secondary mx-3">¿Cómo Llegar?</a>
+        </li>
+        <li>
+        <a href="" class="text-secondary mx-3">Contacto</a>
+        </li>
+
+        <li>
+        <a href="https://api.whatsapp.com/send?phone=+5491164740303" 
+        target="_blank" 
+        class="text-secondary mx-3 "><img src="">1164740303</a>
+        </li>
+    </ul>
+    </span>
+</div>
+
+    <app-navbar></app-navbar>
+
+    <router-outlet></router-outlet>
+
+    <div class="row">
+        <app-footer></app-footer>
+    </div>
+</div>

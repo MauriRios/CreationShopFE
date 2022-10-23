@@ -73,9 +73,5 @@ export class CervezasCatalogComponent implements OnInit{
     return products.marca
   }
 
-  refreshMarcas(){
-    this.products
-  }
-
 
 }

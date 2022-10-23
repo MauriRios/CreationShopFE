@@ -9,7 +9,7 @@ import { RegalosCatalogComponent } from './components/filters/regalos-catalog/re
 import { SinAlcoholCatalogComponent } from './components/filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
 import { VinosCatalogComponent } from './components/filters/vinos-catalog/vinos-catalog.component';
 import { WhiskysCatalogComponent } from './components/filters/whiskys-catalog/whiskys-catalog.component';
-import { MainPageComponent } from './components/main-page/main-page.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -17,7 +17,7 @@ const routes: Routes=[
 
 
   {path: '',redirectTo:'/home', pathMatch:'full'},
-  {path: 'home',component: MainPageComponent},
+  {path: 'home',component: HomeComponent},
   {path: 'combos',component: CombosCatalogComponent },
   {path: 'vinos',component: VinosCatalogComponent},
   {path: 'sinalcohol',component: SinAlcoholCatalogComponent },

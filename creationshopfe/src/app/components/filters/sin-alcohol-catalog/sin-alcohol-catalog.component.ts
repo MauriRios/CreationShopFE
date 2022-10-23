@@ -8,6 +8,7 @@ import { Products } from 'src/app/models/products.model';
 })
 export class SinAlcoholCatalogComponent implements OnInit {
 
+  filter = '';
   products = [
     {
       id: 1,
@@ -56,4 +57,9 @@ export class SinAlcoholCatalogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  filterMarca(products : any){
+    this.products.filter((products => products.marca == products.marca ),
+    );
+    return products.marca
+  }
 }

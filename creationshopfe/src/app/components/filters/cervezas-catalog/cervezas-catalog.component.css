@@ -6,7 +6,8 @@
     text-align: center;
 }
 .btn-filter{
-    text-align: end;
+    text-align: start;
+    display: inline-block;
 }
 .logoCanvas{
     height: 4em;

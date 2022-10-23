@@ -1,34 +1,13 @@
-import { Marca } from "./marcas";
 
-export class Products {
-    id: Number;
-    name: String;
-    marca: String;
-    img: String;
-    category:  String;
-    price: Number;
-    stock: Number;
-    quantity: Number;
-
-    constructor(
-        id: Number,
-        name: String,
-        marca: String,
-        img: String,
-        category: String,
-        price: Number,
-        stock: Number,
-        quantity: Number) {
-            
-this.id = id;
-this.name = name;
-this.marca = marca;
-this.img = img;
-this.category = category;
-this.price = price;
-this.stock = stock;
-this.quantity = quantity;
-}
-
+export interface Products {
+    id: number;
+    name: string;
+    marca: string;
+    img: string;
+    category:  string;
+    price: number;
+    stock: number;
+    quantity: number;
+    clearance?: boolean;
 }
 
