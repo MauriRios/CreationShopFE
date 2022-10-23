@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './components/cart/cart.component';
+import { CartComponent } from './views/cart/cart.component';
 import { AperitivosCatalogComponent } from './components/filters/aperitivos-catalog/aperitivos-catalog.component';
 import { CervezasCatalogComponent } from './components/filters/cervezas-catalog/cervezas-catalog.component';
 import { CombosCatalogComponent } from './components/filters/combos-catalog/combos-catalog.component';
@@ -9,7 +9,7 @@ import { RegalosCatalogComponent } from './components/filters/regalos-catalog/re
 import { SinAlcoholCatalogComponent } from './components/filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
 import { VinosCatalogComponent } from './components/filters/vinos-catalog/vinos-catalog.component';
 import { WhiskysCatalogComponent } from './components/filters/whiskys-catalog/whiskys-catalog.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './views/home/home.component';
 
 
 
