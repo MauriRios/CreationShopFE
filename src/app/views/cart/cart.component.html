@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="container">
+            <table class="table table-striped">
+                <thead >
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><img [src]="['assets/img/item100x100.jpg']" alt="item100x100.jpg"></td>
+                        <td>product.name}}</td>
+                        <td>product.marca}}</td>
+                        <td>2</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><img [src]="['assets/img/item100x100.jpg']" alt="item100x100.jpg"></td>
+                        <td>product.name}}</td>
+                        <td>product.marca}}</td>
+                        <td>1</td>
+                        <td>335</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><img [src]="['assets/img/item100x100.jpg']" alt="item100x100.jpg"></td>
+                        <td>product.name}}</td>
+                        <td>product.marca}}</td>
+                        <td>5</td>
+                        <td>250</td>
+                    </tr>
+                    <ng-container *ngFor="let product of products">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>{{product.image}}</td>
+                            <td>{{product.style}}</td>
+                            <td>{{product.brand}}</td>
+                            <td>{{product.quantity}}</td>
+                            <td>{{product.price}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+                    <div class="text-end">
+                        <p>Total {{total() | currency:'ARS'}}</p>
+                        <button class="btn btn-outline-dark" >Comprar</button>
+                    </div>
+        </div>
+    </div>
+</div>
