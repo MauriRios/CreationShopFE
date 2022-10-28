@@ -15,7 +15,7 @@ export class AperitivosCatalogComponent implements OnInit {
 
   filter = '';
   products: Products[] = [];
-  categorys: Category[]=[];
+  buyQuantity: Products[] = [];
   
   constructor(private cartService: CartService,
               private productsDataService: ProductsDataService,
@@ -34,7 +34,9 @@ export class AperitivosCatalogComponent implements OnInit {
 
   upQuantity(product : Products): void{
     if(product.stock > product.quantity) {
-      product.quantity ++;
+      this.buyQuantity.push(product) && product.quantity ++;
+      console.log(this.buyQuantity)
+      
       // this.cartService.addToCart(product);
     }
   }
@@ -44,6 +46,10 @@ export class AperitivosCatalogComponent implements OnInit {
       product.quantity --;
       // this.cartService.addToCart(product);
     }
+    
+  }
+  sum(product: Products){
+    this.cartService.addToCart(product)
   }
 
   verifyBeerQuantity(product : Products): void {

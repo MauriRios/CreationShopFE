@@ -1,7 +1,7 @@
 
   <nav class="navbar sticky-top nav-bg">
     <div class="container-fluid">
-      <span class=""
+      <span 
         ><a [routerLink]="['/home']"
           ><img
             class="logo"
@@ -90,13 +90,13 @@
     aria-labelledby="offcanvasScrollingLabel"
   >
     <div class="offcanvas-header img-fluid d-flex">
-      <span>
-        <img
-          class="logoCanvas"
+      <span 
+      ><a [routerLink]="['/home']" data-bs-toggle="offcanvas"
+        ><img
+          class="logo"
           src="../../../assets/img/ebrioslogo.png"
-          alt="Logo"
-        />
-      </span>
+          alt="Logo" /></a
+    ></span>
       <span>
         <a
           type="button"
@@ -113,30 +113,30 @@
       <div class="dropdown mt-3">
         <ul class="text-color-list text-underline">
           <li class="m-3">
-            <a class="menu-btns" [routerLink]="['/cervezas']">CERVEZAS</a>
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/cervezas']">CERVEZAS</a>
           </li>
           <li class="m-3 dropdown">
-            <a class="menu-btns" [routerLink]="['/vinos']"
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/vinos']"
               >VINOS Y ESPUMANTES</a
             >
           </li>
           <li class="m-3">
-            <a class="menu-btns" [routerLink]="['/destilados']">DESTILADOS</a>
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/destilados']">DESTILADOS</a>
           </li>
           <li class="m-3">
-            <a class="menu-btns" [routerLink]="['/whiskys']">WHISKY</a>
+            <a class="menu-btns" data-bs-toggle="offcanvas"  [routerLink]="['/whiskys']">WHISKY</a>
           </li>
           <li class="m-3">
-            <a class="menu-btns" [routerLink]="['/regalos']">PARA REGALAR</a>
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/regalos']">PARA REGALAR</a>
           </li>
           <li class="m-3">
-            <a class="menu-btns" [routerLink]="['/combos']">COMBOS</a>
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/combos']">COMBOS</a>
           </li>
           <li class="m-3">
-            <a class="menu-btns" [routerLink]="['/aperitivos']">APERITIVOS</a>
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/aperitivos']">APERITIVOS</a>
           </li>
           <li class="m-3">
-            <a class="menu-btns" [routerLink]="['/sinalcohol']"
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/sinalcohol']"
               >BEBIDAS SIN ALCOHOL</a
             >
           </li>
@@ -148,17 +148,17 @@
       <div class="canvasButtons">
         <ul class="text-underline">
           <li *ngIf="isLogged">
-            <a href=""><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
+            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
           </li>
 
           <li *ngIf="!isLogged">
-            <a href=""><i class="fa-solid fa-user-slash"></i> Desconectar</a>
+            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
           </li>
           <li *ngIf="isAdmin">
-            <a href=""><i class="fa-solid fa-hammer"></i> Editar Contenido</a>
+            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-hammer"></i> Editar Contenido</a>
           </li>
           <li *ngIf="isAdmin">
-            <a href=""><i class="fa-solid fa-truck-fast"></i> Ventas</a>
+            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-truck-fast"></i> Ventas</a>
           </li>
         </ul>
       </div>

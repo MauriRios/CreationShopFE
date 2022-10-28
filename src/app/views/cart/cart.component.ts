@@ -10,6 +10,9 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
 
   products : Products[] = [];
+  buyQuantity: Products[] = [];
+  productNum: number = 0; 
+  
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -17,6 +20,32 @@ export class CartComponent implements OnInit {
     .subscribe(data => this.products = data);
   }
 
+  upQuantity(product : Products): void{
+    if(product.stock > product.quantity) {
+      this.buyQuantity.push(product) && product.quantity ++;
+      console.log(this.buyQuantity)
+      
+      // this.cartService.addToCart(product);
+    }
+  }
+
+  downQuantity(product : Products): void{
+    if(product.quantity > 0) {
+      product.quantity --;
+      // this.cartService.addToCart(product);
+    }
+  }
+  
+  verifyBeerQuantity(product : Products): void {
+    if(product.stock < product.quantity) {
+      alert("No se pueden pedir más productos  de los que hay en stock");
+      product.quantity = product.stock;
+    }
+    if(product.quantity < 0) {
+      alert("No se pueden pedir menos que 0 productos");
+      product.quantity = 0;
+    }
+  }
   total(){
     let sum=0;
     this.products.forEach(products => {

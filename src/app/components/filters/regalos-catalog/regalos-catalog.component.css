@@ -1,8 +1,4 @@
-.main-container{
-    text-align: center;
-    width: 70vw;
-    height: 100vh;
-}
+
 a {
     list-style: none;
     text-decoration: none;
@@ -18,8 +14,4 @@ span{
     margin: 3px 0 0 0;
     color: #444;
     font-weight: 500;
-}
-.btn-buy{
-    text-decoration: none;
-    text-align: center;
 }

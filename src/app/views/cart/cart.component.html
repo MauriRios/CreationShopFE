@@ -5,45 +5,27 @@
                 <thead >
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Producto</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col">Imagen</th>
                     <th scope="col">Marca</th>
+                    <th scope="col">Estilo</th>
                     <th scope="col">Cantidad</th>
-                    <th scope="col">Precio</th>
+                    <th scope="col">Precio Unitario</th>
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><img [src]="['assets/img/item100x100.jpg']" alt="item100x100.jpg"></td>
-                        <td>product.name}}</td>
-                        <td>product.marca}}</td>
-                        <td>2</td>
-                        <td>400</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><img [src]="['assets/img/item100x100.jpg']" alt="item100x100.jpg"></td>
-                        <td>product.name}}</td>
-                        <td>product.marca}}</td>
-                        <td>1</td>
-                        <td>335</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><img [src]="['assets/img/item100x100.jpg']" alt="item100x100.jpg"></td>
-                        <td>product.name}}</td>
-                        <td>product.marca}}</td>
-                        <td>5</td>
-                        <td>250</td>
-                    </tr>
                     <ng-container *ngFor="let product of products">
                         <tr>
                             <th scope="row">1</th>
-                            <td>{{product.image}}</td>
-                            <td>{{product.style}}</td>
+                            <td><img class="image-size" src="{{product.image}}" alt="Imagen del producto"></td>
                             <td>{{product.brand}}</td>
-                            <td>{{product.quantity}}</td>
+                            <td>{{product.style}}</td>
+                            <td>
+                                <div class='input-group input-group-sm my-2' style='width:100px'>
+                                <button class='btn btn-outline-dark' type='button' (click)="downQuantity(product)">-</button>
+                                <input class='form-control text-center' type="number" name="quantity" [(ngModel)]="product.quantity" (focusout)="verifyBeerQuantity(product)"/>
+                                <button class='btn btn-outline-dark' type='button' (click)="upQuantity(product)">+</button>
+                                </div>
+                            </td>
                             <td>{{product.price}}</td>
                         </tr>
                     </ng-container>

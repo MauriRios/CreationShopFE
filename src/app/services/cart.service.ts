@@ -13,13 +13,14 @@ export class CartService {
   
   constructor() { }
 
-  addToCart(cartList:Products){
-    let index = this._cartList.findIndex(p => p.id === cartList.id);
-    if(index === -1)
-      this._cartList.push(cartList);
+  addToCart(newProduct:Products){
+
+    let index = this._cartList.findIndex(prod => prod.id == newProduct.id);
+    if (index == -1)
+      this._cartList.push(newProduct);
     else
-      this._cartList[index].quantity = cartList.quantity;
-    if (cartList.quantity == 0){
+      this._cartList[index].quantity =+ newProduct.quantity;
+    if (newProduct.quantity == 0){
       this._cartList.splice(index,1);
     }
   }

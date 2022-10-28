@@ -1,21 +1,3 @@
-.main-container{
-    width: 90vw;
-    height: 100vh;
-}
-.title-container{
-    text-align: center;
-}
-.btn-filter{
-    text-align: start;
-    display: inline-block;
-}
-.logoCanvas{
-    height: 4em;
-    width: 6em;
-}
-.filter-btns{
-    color: white !important;
-}
 
 li > a {
     color: black;
@@ -44,11 +26,4 @@ span{
     margin: 3px 0 0 0;
     color: #444;
     font-weight: 500;
-}
-.btn-buy{
-    text-decoration: none;
-    text-align: center;
-}
-.offcanvas-container{
-    background-color: black;
 }
