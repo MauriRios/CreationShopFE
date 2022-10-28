@@ -36,9 +36,8 @@
         <div class="col-lg-10" >
             <div class="row" >
 
-                <div class="col-6 col-md-4 col-lg-3 my-1"  *ngFor="let product of products | filter:filter">
-                        <!-- <ng-template #aperitivosList *ngIf="product.category == 'Aperitivos'; aperitivosList"> -->
-                            <div class="card-img text-center">
+                <div class="col-6 col-md-4 col-lg-3 my-1" *ngFor="let product of products | filter:filter">
+                            <div class="card-img text-center" >
                                 <figure>
                                         <img class="img-fluid" src="{{product.image}}" alt="image">
                                 </figure>
@@ -56,10 +55,16 @@
                                                 <button name='send' type='submit' class='btn btn-outline-dark'>AGREGAR</button>
                                         </form>
                                     </div>
-                
                             </div>
+
+                            <!-- <select class="form-select" aria-label="Default select example">
+                                <option selected>Seleccionar una category</option>
+                                <option value="category" *ngFor="let category of categorys" >{{category.name}}</option>
+                            </select>
+                            <select name="categorys" id="categorys" >
+                                <option *ngFor="let category of categorys">{{category.name}}</option>
+                            </select> -->
                             
-                        <!-- </ng-template> -->
                     </div>
 
             </div>

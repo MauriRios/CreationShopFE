@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/categorys.model';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
+import { CategorysService } from 'src/app/services/categorys.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
 
 @Component({
@@ -13,20 +15,22 @@ export class AperitivosCatalogComponent implements OnInit {
 
   filter = '';
   products: Products[] = [];
+  categorys: Category[]=[];
   
   constructor(private cartService: CartService,
-              private productsDataService: ProductsDataService) { }
+              private productsDataService: ProductsDataService,
+              ) { }
 
   ngOnInit(): void {
-    this.productsDataService.getProducts().subscribe(data => {
-      this.products = data, console.log(this.products)});
+    this.categoryFilter('Aperitivos');
+
   }
 
-  // filterMarca(){
-  //   this.products.filter((data => this.category == data.category ),
-  //   );
-  //   return this.products
-  // }
+  private categoryFilter(parametro: string) {
+    this.productsDataService.getProducts().subscribe(data => {
+      this.products = data.filter((products => products.category == parametro)), console.log(this.products);
+    });
+  }
 
   upQuantity(product : Products): void{
     if(product.stock > product.quantity) {
