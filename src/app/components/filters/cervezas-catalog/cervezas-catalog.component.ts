@@ -21,10 +21,10 @@ export class CervezasCatalogComponent implements OnInit{
   ngOnInit(): void {
     this.categoryFilter('Cervezas');
   }
-  
-  private categoryFilter(parametro: string) {
+
+  private categoryFilter(parameter: string) {
     this.productsDataService.getProducts().subscribe(data => {
-      this.products = data.filter((products => products.category == parametro)), console.log(this.products);
+      this.products = data.filter((products => products.category == parameter));
     });
   }
 

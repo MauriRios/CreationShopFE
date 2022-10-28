@@ -22,9 +22,9 @@ export class SinAlcoholCatalogComponent implements OnInit {
       this.categoryFilter('Sin Alcohol');
     }
     
-    private categoryFilter(parametro: string) {
+    private categoryFilter(parameter: string) {
       this.productsDataService.getProducts().subscribe(data => {
-        this.products = data.filter((products => products.category == parametro)), console.log(this.products);
+        this.products = data.filter((products => products.category == parameter));
       });
     }
 
