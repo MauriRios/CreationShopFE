@@ -13,6 +13,7 @@ export class CervezasCatalogComponent implements OnInit{
 
   filter = '';
   products: Products[] = [];
+  buyQuantity: Products[] = [];
   
   constructor(private cartService: CartService,
               private productsDataService: ProductsDataService,
@@ -26,6 +27,24 @@ export class CervezasCatalogComponent implements OnInit{
     this.productsDataService.getProducts().subscribe(data => {
       this.products = data.filter((products => products.category == parameter));
     });
+  }
+
+  upQuantity(product : Products): void{
+    this.cartService.upQuantity(product),
+    console.log(product)
+  }
+
+  downQuantity(product : Products): void{
+    this.cartService.downQuantity(product),
+    console.log(product)
+  }
+
+  addCart(product: Products){
+    this.cartService.addToCart(product)
+  }
+
+  verifyBeerQuantity(product : Products): void {
+    this.cartService.verifyBeerQuantity(product);
   }
 
   ngAfterViewInit() {
