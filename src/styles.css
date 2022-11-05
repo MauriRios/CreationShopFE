@@ -1,0 +1,57 @@
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a  {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Componentes de compras, vistas, carrito y categorias */
+
+.main-container{
+  width: 90vw;
+  height: 100vh;
+}
+.title-container{
+  text-align: center;
+}
+.btn-filter{
+  text-align: start;
+  display: inline-block;
+}
+.logoCanvas{
+  height: 4em;
+  width: 6em;
+}
+.filter-btns{
+  color: white !important;
+}
+
+.btn-buy{
+  text-decoration: none;
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { 
+    appearance:textfield;
+    -moz-appearance:textfield; 
+}
+/* FIN Componentes de compras, vistas, carrito y categorias */
+

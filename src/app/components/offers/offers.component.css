@@ -1,0 +1,48 @@
+
+h3 {
+    text-align: center;
+}
+
+b {
+    display: flex;
+    justify-content: center;
+}
+.slide-item{
+    margin: 2em;
+    
+}
+
+.img-settings:hover {
+    box-shadow: 0px 50px rgba(0,0,0,0.5);
+}
+
+.offers .owl-next, .offers .owl-prev {
+    background-color: aqua !important;
+    color: black !important;
+    height: 60px !important;
+    width: 60px !important;
+    border-radius: 50% !important;
+
+}
+
+/* Estilo de las tarjetas del carousel */
+.btn-buy{
+    text-decoration: none;
+    text-align: center;
+}
+a {
+    list-style: none;
+    text-decoration: none;
+}
+h3{
+    font-size: 1rem;
+    margin: 3px 0 0 0;
+    color: #444;
+    font-weight: 500;
+}
+span{
+    font-size: 0.8rem;
+    margin: 3px 0 0 0;
+    color: #444;
+    font-weight: 500;
+}
