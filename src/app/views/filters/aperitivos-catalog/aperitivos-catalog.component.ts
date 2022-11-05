@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/categorys.model';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
 import { CategorysService } from 'src/app/services/categorys.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
 
 @Component({
-  selector: 'app-cervezas-catalog',
-  templateUrl: './cervezas-catalog.component.html',
-  styleUrls: ['./cervezas-catalog.component.css']
+  selector: 'app-aperitivos-catalog',
+  templateUrl: './aperitivos-catalog.component.html',
+  styleUrls: ['./aperitivos-catalog.component.css']
 })
-export class CervezasCatalogComponent implements OnInit{
+export class AperitivosCatalogComponent implements OnInit {
+
 
   filter = '';
   products: Products[] = [];
@@ -17,10 +19,11 @@ export class CervezasCatalogComponent implements OnInit{
   
   constructor(private cartService: CartService,
               private productsDataService: ProductsDataService,
-              private categoryService: CategorysService) { }
+              ) { }
 
   ngOnInit(): void {
-    this.categoryFilter('Cervezas');
+    this.categoryFilter('Aperitivos');
+
   }
 
   private categoryFilter(parameter: string) {
@@ -30,25 +33,24 @@ export class CervezasCatalogComponent implements OnInit{
   }
 
   upQuantity(product : Products): void{
-    this.cartService.upQuantity(product),
-    console.log(product)
+    this.cartService.upQuantity(product)
   }
 
   downQuantity(product : Products): void{
-    this.cartService.downQuantity(product),
-    console.log(product)
+    this.cartService.downQuantity(product)
   }
 
   addCart(product: Products){
     this.cartService.addToCart(product)
   }
 
-  verifyBeerQuantity(product : Products): void {
-    this.cartService.verifyBeerQuantity(product);
+  verifyProductQuantity(product : Products): void {
+    this.cartService.verifyProductQuantity(product);
   }
 
   ngAfterViewInit() {
     window.scrollTo(0, 0);
 }
+
 
 }

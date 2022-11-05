@@ -18,17 +18,17 @@ import { SliderComponent } from '../components/slider/slider.component';
 import { SponsorshipComponent } from '../components/sponsorship/sponsorship.component';
 
 //Filter components
-import { AperitivosCatalogComponent } from '../components/filters/aperitivos-catalog/aperitivos-catalog.component';
-import { CervezasCatalogComponent } from '../components/filters/cervezas-catalog/cervezas-catalog.component';
-import { CombosCatalogComponent } from '../components/filters/combos-catalog/combos-catalog.component';
-import { DestiladosCatalogComponent } from '../components/filters/destilados-catalog/destilados-catalog.component';
-import { RegalosCatalogComponent } from '../components/filters/regalos-catalog/regalos-catalog.component';
-import { SinAlcoholCatalogComponent } from '../components/filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
-import { VinosCatalogComponent } from '../components/filters/vinos-catalog/vinos-catalog.component';
-import { WhiskysCatalogComponent } from '../components/filters/whiskys-catalog/whiskys-catalog.component';
+import { AperitivosCatalogComponent } from './filters/aperitivos-catalog/aperitivos-catalog.component';
+import { CervezasCatalogComponent } from './filters/cervezas-catalog/cervezas-catalog.component';
+import { CombosCatalogComponent } from './filters/combos-catalog/combos-catalog.component';
+import { DestiladosCatalogComponent } from './filters/destilados-catalog/destilados-catalog.component';
+import { RegalosCatalogComponent } from './filters/regalos-catalog/regalos-catalog.component';
+import { SinAlcoholCatalogComponent } from './filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
+import { VinosCatalogComponent } from './filters/vinos-catalog/vinos-catalog.component';
+import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catalog.component';
 
 //Pipes
-import { FilterPipe } from '../components/filters/filter.pipe';
+import { FilterPipe } from './filters/filter.pipe';
 
 //Views
 import { MainPageComponent } from './main-page/main-page.component';

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Products } from '../models/products.model';
+import { ProductsDataService } from './products-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class CartService {
   public products : Observable<Products[]> = this._cartListSubjects.asObservable();
   buyQuantity: Products[] = [];
   
-  constructor() { }
+  constructor(private productsDataService: ProductsDataService) { }
 
   addToCart(newProduct:Products){
     let index = this._cartList.findIndex(prod => prod.id == newProduct.id);
@@ -22,26 +23,29 @@ export class CartService {
     // else
     //   this._cartList[index].quantity =+ newProduct.quantity;
     // if (newProduct.quantity == 0){
-    //   this._cartList.splice(index,1);
+    // this._cartList.splice(index,1);
     // }
+  }
+
+  pay(product: Products){
+    this.productsDataService.postBuyProducts(product.id)
   }
 
   
   upQuantity(product : Products): void{
+    //(product.quantity > 0 && product.quantity < 0)
     if(product.stock > product.quantity) {
       this.buyQuantity.push(product) && product.quantity ++;
-      console.log(this.buyQuantity)
-
     }
   }
 
   downQuantity(product : Products): void{
-    if(product.quantity > 0) {
+    if(product.quantity > 0 && product.quantity <= 0) {
       product.quantity --;
     }
   }
 
-  verifyBeerQuantity(product : Products): void {
+  verifyProductQuantity(product : Products): void {
     if(product.stock < product.quantity) {
       alert("No se pueden pedir más productos  de los que hay en stock");
       product.quantity = product.stock;

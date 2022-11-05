@@ -6,7 +6,7 @@ import { Products } from '../models/products.model';
 
 
 const URL = 'http://localhost:8080/productos/traer'; 
-
+const apiMP = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js'
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +24,10 @@ export class ProductsDataService {
 
     public getProducts():Observable<Products[]>{
       return this.http.get<Products[]>(URL);
+    }
+
+    public postBuyProducts(productId: number) {
+      return this.http.post<Products[]>(URL, productId);
     }
   }
 

@@ -5,13 +5,12 @@ import { CategorysService } from 'src/app/services/categorys.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
 
 @Component({
-  selector: 'app-whiskys-catalog',
-  templateUrl: './whiskys-catalog.component.html',
-  styleUrls: ['./whiskys-catalog.component.css']
+  selector: 'app-regalos-catalog',
+  templateUrl: './regalos-catalog.component.html',
+  styleUrls: ['./regalos-catalog.component.css']
 })
-export class WhiskysCatalogComponent implements OnInit {
+export class RegalosCatalogComponent implements OnInit {
 
-  filter = '';
   products: Products[] = [] ;
   buyQuantity: Products[] = [];
   
@@ -20,7 +19,7 @@ export class WhiskysCatalogComponent implements OnInit {
     private categoryService: CategorysService) { }
 
     ngOnInit(): void {
-      this.categoryFilter('Whiskys');
+      this.categoryFilter('Regalos');
     }
 
     private categoryFilter(parameter: string) {
@@ -30,24 +29,23 @@ export class WhiskysCatalogComponent implements OnInit {
     }
 
     upQuantity(product : Products): void{
-      this.cartService.upQuantity(product),
-      console.log(product)
+      this.cartService.upQuantity(product)
     }
   
     downQuantity(product : Products): void{
-      this.cartService.downQuantity(product),
-      console.log(product)
+      this.cartService.downQuantity(product)
     }
   
     addCart(product: Products){
       this.cartService.addToCart(product)
     }
   
-    verifyBeerQuantity(product : Products): void {
-      this.cartService.verifyBeerQuantity(product);
+    verifyProductQuantity(product : Products): void {
+      this.cartService.verifyProductQuantity(product);
     }
 
   ngAfterViewInit() {
     window.scrollTo(0, 0);
 }
+
 }

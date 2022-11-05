@@ -1,7 +1,7 @@
 
 <div class="container main-container my-3">
     <div class="row my-5 title-container">
-        <h1>WHISKYS</h1>
+        <h1>DESTILADOS</h1>
         
     </div>
     <div class="btn-filter">
@@ -37,7 +37,7 @@
         <div class="col-lg-10" >
             <div class="row">
                 <div class="col-6 col-md-4 col-lg-3 my-1"  *ngFor="let product of products | filter:filter">
-                    <div class="card-img text-center" *ngIf="product.category == 'Whiskys'">
+                    <div class="card-img text-center">
                         <figure>
                                 <img class="img-fluid" src="{{product.image}}" alt="image">
                         </figure>
@@ -49,7 +49,7 @@
                                 <form (ngSubmit)="addCart(product)">
                                     <div class='input-group input-group-sm my-2' style='width:100px'>
                                             <button class='btn btn-outline-dark' type='button' (click)="downQuantity(product)">-</button>
-                                            <input class='form-control text-center' type="number" name="quantity" (focusout)="verifyBeerQuantity(product)" [(ngModel)]="product.quantity"/>
+                                            <input class='form-control text-center' type="number" name="quantity" (focusout)="verifyProductQuantity(product)" [(ngModel)]="product.quantity"/>
                                             <button class='btn btn-outline-dark' type='button' (click)="upQuantity(product)">+</button>
                                         </div>
                                             <button name='send' type='submit' class='btn btn-outline-dark'>AGREGAR</button>

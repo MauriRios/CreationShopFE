@@ -1,27 +1,27 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
 import { CategorysService } from 'src/app/services/categorys.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
 
 @Component({
-  selector: 'app-combos-catalog',
-  templateUrl: './combos-catalog.component.html',
-  styleUrls: ['./combos-catalog.component.css']
+  selector: 'app-destilados-catalog',
+  templateUrl: './destilados-catalog.component.html',
+  styleUrls: ['./destilados-catalog.component.css']
 })
-export class CombosCatalogComponent implements OnInit {
-
-  products: Products[] = [];
+export class DestiladosCatalogComponent implements OnInit {
+  
+  filter = '';
+  products: Products[] = [] ;
   buyQuantity: Products[] = [];
 
   constructor(private cartService: CartService,
-    private productsDataService: ProductsDataService,
-    private categoryService: CategorysService) { }
+              private productsDataService: ProductsDataService,
+              private categoryService: CategorysService) { }
 
     ngOnInit(): void {
-      this.categoryFilter('Combos');
+      this.categoryFilter('Destilados');
     }
-
     private categoryFilter(parameter: string) {
       this.productsDataService.getProducts().subscribe(data => {
         this.products = data.filter((products => products.category == parameter));
@@ -29,25 +29,22 @@ export class CombosCatalogComponent implements OnInit {
     }
 
     upQuantity(product : Products): void{
-      this.cartService.upQuantity(product),
-      console.log(product)
+      this.cartService.upQuantity(product)
     }
   
     downQuantity(product : Products): void{
-      this.cartService.downQuantity(product),
-      console.log(product)
+      this.cartService.downQuantity(product)
     }
   
     addCart(product: Products){
       this.cartService.addToCart(product)
     }
   
-    verifyBeerQuantity(product : Products): void {
-      this.cartService.verifyBeerQuantity(product);
+    verifyProductQuantity(product : Products): void {
+      this.cartService.verifyProductQuantity(product);
     }
 
   ngAfterViewInit() {
     window.scrollTo(0, 0);
 }
-
 }

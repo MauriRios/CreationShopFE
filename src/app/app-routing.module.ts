@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './views/cart/cart.component';
-import { AperitivosCatalogComponent } from './components/filters/aperitivos-catalog/aperitivos-catalog.component';
-import { CervezasCatalogComponent } from './components/filters/cervezas-catalog/cervezas-catalog.component';
-import { CombosCatalogComponent } from './components/filters/combos-catalog/combos-catalog.component';
-import { DestiladosCatalogComponent } from './components/filters/destilados-catalog/destilados-catalog.component';
-import { RegalosCatalogComponent } from './components/filters/regalos-catalog/regalos-catalog.component';
-import { SinAlcoholCatalogComponent } from './components/filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
-import { VinosCatalogComponent } from './components/filters/vinos-catalog/vinos-catalog.component';
-import { WhiskysCatalogComponent } from './components/filters/whiskys-catalog/whiskys-catalog.component';
+import { AperitivosCatalogComponent } from './views/filters/aperitivos-catalog/aperitivos-catalog.component';
+import { CervezasCatalogComponent } from './views/filters/cervezas-catalog/cervezas-catalog.component';
+import { CombosCatalogComponent } from './views/filters/combos-catalog/combos-catalog.component';
+import { DestiladosCatalogComponent } from './views/filters/destilados-catalog/destilados-catalog.component';
+import { RegalosCatalogComponent } from './views/filters/regalos-catalog/regalos-catalog.component';
+import { SinAlcoholCatalogComponent } from './views/filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
+import { VinosCatalogComponent } from './views/filters/vinos-catalog/vinos-catalog.component';
+import { WhiskysCatalogComponent } from './views/filters/whiskys-catalog/whiskys-catalog.component';
 import { HomeComponent } from './views/home/home.component';
 
 
