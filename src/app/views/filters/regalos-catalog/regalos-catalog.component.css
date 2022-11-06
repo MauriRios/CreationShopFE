@@ -15,3 +15,7 @@ span{
     color: #444;
     font-weight: 500;
 }
+
+button:disabled {
+    border: solid 1px gray
+}

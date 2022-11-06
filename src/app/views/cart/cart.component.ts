@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
   products : Products[] = [];
   buyQuantity: Products[] = [];
   productNum: number = 0; 
-  success = true
+  paySuccess = true
 
   constructor(private cartService: CartService,
               private productsDataService: ProductsDataService) 
@@ -25,12 +25,6 @@ export class CartComponent implements OnInit {
     .subscribe(data => this.products = data);
 
   }
-
-  // clearCart(product: Products){
-  //   let index = this.products.findIndex(p => p.id === product.id);
-  //   if(index === -1)
-
-  // }
   
   verifyBeerQuantity(product : Products): void {
     if(product.stock < product.quantity) {
@@ -52,7 +46,7 @@ export class CartComponent implements OnInit {
   }
 
   pay(){
-    if ( this.success = true ) {
+    if ( this.paySuccess = true ) {
       for(let product of this.products){
         if( product.id === product.id && product.stock > product.quantity -1){
         product.stock -= product.quantity, console.log(product.stock)
