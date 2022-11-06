@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
+import { ProductsDataService } from 'src/app/services/products-data.service';
 
 
 @Component({
@@ -13,8 +14,11 @@ export class CartComponent implements OnInit {
   products : Products[] = [];
   buyQuantity: Products[] = [];
   productNum: number = 0; 
+  success = true
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService,
+              private productsDataService: ProductsDataService) 
+                {   } 
 
   ngOnInit(): void {
     this.cartService.products
@@ -22,18 +26,23 @@ export class CartComponent implements OnInit {
 
   }
 
-  upQuantity(product : Products): void{
-    if(product.stock > product.quantity) {
-      this.buyQuantity.push(product) && product.quantity ++;
+  // upQuantity(product : Products): void{
+  //   if(product.stock > product.quantity) {
+  //   this.buyQuantity.push(product) && product.quantity ++;
+  //     console.log()
+  //   }
+  // }
 
-    }
-  }
+  // downQuantity(product : Products): void{
+  //   if(product.quantity > 0) {
+  //     product.quantity --;
 
-  downQuantity(product : Products): void{
-    if(product.quantity > 0) {
-      product.quantity --;
-    }
-  }
+  //     let index = this.products.findIndex(prod => prod.id === product.id);
+  //     if (product.quantity == 0){
+  //       this.products.splice(index,1);
+  //       }
+  //   }
+  // }
   
   verifyBeerQuantity(product : Products): void {
     if(product.stock < product.quantity) {
@@ -55,9 +64,13 @@ export class CartComponent implements OnInit {
   }
 
   pay(){
-    this.products.forEach((product) =>  console.log(product.quantity)),
-    this.products.forEach((product) =>  product.stock - product.quantity),
-    console.log(this.products);
-
+    if ( this.success = true ) {
+      for(let product of this.products){
+        if( product.id === product.id){
+        product.stock -= product.quantity, console.log(product.stock)
+        }
+      }
+    }
   }
+
 }
