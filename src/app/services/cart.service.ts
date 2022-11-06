@@ -21,11 +21,14 @@ export class CartService {
       this._cartList.push(newProduct),
       alert("Producto agregado al carrito");
     }
-    else{
+    else {
       this._cartList[index].quantity = newProduct.quantity;
       alert('Producto actualizado por la cantidad de ' + newProduct.quantity)
-    } console.log(newProduct);
-  
+      console.log(newProduct);}
+    if (newProduct.quantity == 0){
+      this._cartList.splice(index,1);
+      alert('Se elimino el producto del carrito')
+    }
   }
 
   pay(product: Products){

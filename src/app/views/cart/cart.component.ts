@@ -26,22 +26,10 @@ export class CartComponent implements OnInit {
 
   }
 
-  // upQuantity(product : Products): void{
-  //   if(product.stock > product.quantity) {
-  //   this.buyQuantity.push(product) && product.quantity ++;
-  //     console.log()
-  //   }
-  // }
+  // clearCart(product: Products){
+  //   let index = this.products.findIndex(p => p.id === product.id);
+  //   if(index === -1)
 
-  // downQuantity(product : Products): void{
-  //   if(product.quantity > 0) {
-  //     product.quantity --;
-
-  //     let index = this.products.findIndex(prod => prod.id === product.id);
-  //     if (product.quantity == 0){
-  //       this.products.splice(index,1);
-  //       }
-  //   }
   // }
   
   verifyBeerQuantity(product : Products): void {
