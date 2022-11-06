@@ -16,15 +16,19 @@ export class CartService {
   constructor(private productsDataService: ProductsDataService) { }
 
   addToCart(newProduct:Products){
-    let index = this._cartList.findIndex(prod => prod.id == newProduct.id);
-    if (index == -1)
+    let index = this._cartList.findIndex(prod => prod.id === newProduct.id);
+    if (index === -1){
       this._cartList.push(newProduct),
       alert("Producto agregado al carrito");
-    // else
-    //   this._cartList[index].quantity =+ newProduct.quantity;
-    // if (newProduct.quantity == 0){
-    // this._cartList.splice(index,1);
-    // }
+    }
+    else {
+      this._cartList[index].quantity = newProduct.quantity;
+      alert('Producto actualizado por la cantidad de ' + newProduct.quantity)
+      console.log(newProduct);}
+    if (newProduct.quantity == 0){
+      this._cartList.splice(index,1);
+      alert('Se elimino el producto del carrito')
+    }
   }
 
   pay(product: Products){
@@ -40,7 +44,7 @@ export class CartService {
   }
 
   downQuantity(product : Products): void{
-    if(product.quantity > 0 && product.quantity <= 0) {
+    if(product.quantity > 0) {
       product.quantity --;
     }
   }
@@ -50,7 +54,7 @@ export class CartService {
       alert("No se pueden pedir más productos  de los que hay en stock");
       product.quantity = product.stock;
     }
-    if(product.quantity < 0) {
+    if(product.quantity <= 0) {
       alert("No se pueden pedir menos que 0 productos");
       product.quantity = 0;
     }

@@ -19,13 +19,7 @@
                             <td><img class="image-size" src="{{product.image}}" alt="Imagen del producto"></td>
                             <td>{{product.brand}}</td>
                             <td>{{product.style}}</td>
-                            <td>
-                                <div class='input-group input-group-sm my-2' style='width:100px'>
-                                <button class='btn btn-outline-dark' type='button' (click)="downQuantity(product)">-</button>
-                                <input class='form-control text-center' type="number" name="quantity" [(ngModel)]="product.quantity" (focusout)="verifyBeerQuantity(product)"/>
-                                <button class='btn btn-outline-dark' type='button' (click)="upQuantity(product)">+</button>
-                                </div>
-                            </td>
+                            <td>{{product.quantity}}</td>
                             <td>{{product.price}}</td>
                         </tr>
                     </ng-container>

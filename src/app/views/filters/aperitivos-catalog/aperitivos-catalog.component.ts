@@ -33,7 +33,7 @@ export class AperitivosCatalogComponent implements OnInit {
   }
 
   upQuantity(product : Products): void{
-    this.cartService.upQuantity(product)
+    this.cartService.upQuantity(product);
   }
 
   downQuantity(product : Products): void{
