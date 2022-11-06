@@ -54,8 +54,11 @@ export class CartComponent implements OnInit {
   pay(){
     if ( this.success = true ) {
       for(let product of this.products){
-        if( product.id === product.id){
+        if( product.id === product.id && product.stock > product.quantity -1){
         product.stock -= product.quantity, console.log(product.stock)
+        }
+        else {
+          alert('No se pudo realizar la compra')
         }
       }
     }
