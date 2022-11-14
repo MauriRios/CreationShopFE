@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './views/cart/cart.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { EditsComponent } from './views/dashboard/edits/edits.component';
 import { AperitivosCatalogComponent } from './views/filters/aperitivos-catalog/aperitivos-catalog.component';
 import { CervezasCatalogComponent } from './views/filters/cervezas-catalog/cervezas-catalog.component';
 import { CombosCatalogComponent } from './views/filters/combos-catalog/combos-catalog.component';
@@ -13,20 +15,26 @@ import { HomeComponent } from './views/home/home.component';
 
 
 
+
+
 const routes: Routes=[
 
 
   {path: '',redirectTo:'/home', pathMatch:'full'},
-  {path: 'home',component: HomeComponent},
-  {path: 'combos',component: CombosCatalogComponent },
-  {path: 'vinos',component: VinosCatalogComponent},
-  {path: 'sinalcohol',component: SinAlcoholCatalogComponent },
-  {path: 'regalos',component: RegalosCatalogComponent},
-  {path: 'whiskys',component: WhiskysCatalogComponent },
-  {path: 'cervezas',component: CervezasCatalogComponent},
-  {path: 'aperitivos',component: AperitivosCatalogComponent },
-  {path: 'destilados',component: DestiladosCatalogComponent },
-  {path: 'carrito',component: CartComponent },
+
+    {path: 'home',component: HomeComponent},
+    {path: 'combos',component: CombosCatalogComponent },
+    {path: 'vinos',component: VinosCatalogComponent},
+    {path: 'sinalcohol',component: SinAlcoholCatalogComponent },
+    {path: 'regalos',component: RegalosCatalogComponent},
+    {path: 'whiskys',component: WhiskysCatalogComponent },
+    {path: 'cervezas',component: CervezasCatalogComponent},
+    {path: 'aperitivos',component: AperitivosCatalogComponent },
+    {path: 'destilados',component: DestiladosCatalogComponent },
+    {path: 'carrito',component: CartComponent },
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'edits', component: EditsComponent},
+
   // {path: 'login', component: LoginComponent},
   // {path: 'registro', component: RegistroComponent}
 

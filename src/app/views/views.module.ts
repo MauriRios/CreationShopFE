@@ -33,10 +33,12 @@ import { FilterPipe } from './filters/filter.pipe';
 //Views
 import { MainPageComponent } from './main-page/main-page.component';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditsComponent } from './dashboard/edits/edits.component';
+import { SalesComponent } from './dashboard/sales/sales.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -62,8 +64,11 @@ import { HttpClientModule } from '@angular/common/http';
     SinAlcoholCatalogComponent,
     FilterPipe,
     HomeComponent,
+    LoginComponent,
+    EditsComponent,
+    SalesComponent,
     DashboardComponent,
-    LoginComponent
+
   ],
   exports: [
     MainPageComponent,

@@ -56,6 +56,7 @@ export class CartComponent implements OnInit {
         }
       }
     }
+    this.cartService.pay(this.products)
   }
 
 }

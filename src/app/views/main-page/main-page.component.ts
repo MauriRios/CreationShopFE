@@ -8,6 +8,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
 
+  isAdmin = false
 
   constructor( private router: Router,) { }
 

@@ -13,6 +13,7 @@ export class CartService {
   public products : Observable<Products[]> = this._cartListSubjects.asObservable();
   buyQuantity: Products[] = [];
   
+
   constructor(private productsDataService: ProductsDataService) { }
 
   addToCart(newProduct:Products){
@@ -25,14 +26,14 @@ export class CartService {
       this._cartList[index].quantity = newProduct.quantity;
       alert('Producto actualizado por la cantidad de ' + newProduct.quantity)
       console.log(newProduct);}
-    if (newProduct.quantity == 0){
+    if (newProduct.quantity == 0) {
       this._cartList.splice(index,1);
       alert('Se elimino el producto del carrito')
     }
   }
 
-  pay(product: Products){
-    this.productsDataService.postBuyProducts(product.id)
+  pay(listProduct: Products[]){
+    this.productsDataService.postBuyProducts(this._cartList);
   }
 
   
