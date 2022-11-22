@@ -31,8 +31,9 @@ export class CartService {
     }
   }
 
-  pay(product: Products){
-    this.productsDataService.postBuyProducts(product.id)
+  pay(product: Products[]): any{
+    this.productsDataService.postBuyProducts(product).subscribe(data => (product == data));
+    console.log(product)
   }
 
   
