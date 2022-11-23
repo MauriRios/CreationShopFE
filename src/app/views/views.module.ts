@@ -23,8 +23,6 @@ import { AdminModule } from './admin/admin.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
-    routing,
     HttpClientModule,
     AdminModule,
     UsersModule

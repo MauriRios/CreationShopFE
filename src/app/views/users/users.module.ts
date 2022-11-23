@@ -5,7 +5,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { UsersRoutingModule } from './users-routing.module';
+import { routing, UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 
 import { CatalogsComponent } from 'src/app/components/catalogs/catalogs.component';
@@ -29,6 +29,7 @@ import { VinosCatalogComponent } from './filters/vinos-catalog/vinos-catalog.com
 import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catalog.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { routesA } from '../admin/admin-routing.module';
 
 
 
@@ -67,6 +68,7 @@ import { LoginComponent } from './login/login.component';
     UsersRoutingModule,
     BrowserAnimationsModule,
     CarouselModule,
+    routing,
 
   ]
 })

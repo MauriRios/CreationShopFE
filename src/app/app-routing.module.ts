@@ -14,27 +14,9 @@ import { UsersComponent } from './views/users/users.component';
 
 const routes: Routes=[
 
-  { path: 'users', loadChildren: () => import('./views/users/users.module').then(m => m.UsersModule) },
+  { path: 'home', loadChildren: () => import('./views/users/users.module').then(m => m.UsersModule) },
 
   { path: 'admin', loadChildren: () => import('./views/admin/admin.module').then(m => m.AdminModule) },
-
-  // {path: 'login', component: LoginComponent},
-  // {path: 'registro', component: RegistroComponent}
-
-  {path: '',redirectTo:'/home', pathMatch:'full'},
-
-  { path: 'home', component: HomeComponent },
-
-  {path: 'combos',component: CombosCatalogComponent },
-  {path: 'vinos',component: VinosCatalogComponent},
-  {path: 'sinalcohol',component: SinAlcoholCatalogComponent },
-  {path: 'regalos',component: RegalosCatalogComponent},
-  {path: 'whiskys',component: WhiskysCatalogComponent },
-  {path: 'cervezas',component: CervezasCatalogComponent},
-  {path: 'aperitivos',component: AperitivosCatalogComponent },
-  {path: 'destilados',component: DestiladosCatalogComponent },
-
-
 
 ];
 
