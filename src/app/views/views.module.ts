@@ -1,17 +1,12 @@
 //Angular modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule, routing } from '../app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 //Views
-import { HttpClientModule } from '@angular/common/http';
 import { UsersModule } from './users/users.module';
 import { AdminModule } from './admin/admin.module';
-
-
-
-
 
 
 @NgModule({
