@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="container">
+            <table class="table table-striped">
+                <thead >
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Estilo</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio Unitario</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let product of products">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><img class="image-size" src="{{product.image}}" alt="Imagen del producto"></td>
+                            <td>{{product.brand}}</td>
+                            <td>{{product.style}}</td>
+                            <td>{{product.quantity}}</td>
+                            <td>{{product.price}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+                    <div class="text-end">
+                        <p>Total: {{total() | currency:'ARS'}}</p>
+                        <button class="btn btn-outline-dark" (click)="pay()" >Comprar</button>
+                    <!--  <div class="cho-container"></div>
+                        <script>
+                            const mp = new MercadoPago('TEST-650fc448-6a2b-4910-8d20-21342cc183c0', {
+                                locale: 'es-AR'
+                            });
+
+                            mp.checkout({
+                                preference: {
+                                id: 'YOUR_PREFERENCE_ID'
+                                },
+                                render: {
+                                container: '.cho-container',
+                                label: 'Pagar',
+                                }
+                            });
+                            </script> -->
+                    </div>
+        </div>
+    </div>
+</div>

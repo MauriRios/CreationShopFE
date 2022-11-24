@@ -155,10 +155,7 @@
             <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
           </li>
           <li *ngIf="isAdmin">
-            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-hammer"></i> Editar Contenido</a>
-          </li>
-          <li *ngIf="isAdmin">
-            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-truck-fast"></i> Ventas</a>
+            <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i>Editar Contenido</a>
           </li>
         </ul>
       </div>
