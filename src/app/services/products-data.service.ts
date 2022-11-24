@@ -19,6 +19,7 @@ export class ProductsDataService {
   constructor(private http: HttpClient) { 
     this.http.get<Products[]>(URL + 'productos/traer').subscribe(data => {
       this._productsList.push(...data);
+      console.log(data)
     });
   }
 
@@ -26,8 +27,8 @@ export class ProductsDataService {
       return this.http.get<Products[]>(URL + 'productos/traer');
     }
 
-    public postBuyProducts(listProduct: Products[]) {
-      return this.http.post<Products[]>(URL + '/process_payment', listProduct);
+    public postBuyProducts(products: Products[]): Observable<Products[]> {
+      return this.http.post<Products[]>('http://localhost:8080/' + 'cart/buy', products);
     }
   }
 
