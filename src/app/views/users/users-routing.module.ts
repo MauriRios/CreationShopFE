@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { routesA } from '../admin/admin-routing.module';
 import { CartComponent } from './cart/cart.component';
 import { AperitivosCatalogComponent } from './filters/aperitivos-catalog/aperitivos-catalog.component';
 import { CervezasCatalogComponent } from './filters/cervezas-catalog/cervezas-catalog.component';
@@ -16,7 +17,7 @@ import { UsersComponent } from './users.component';
 
 const routesU: Routes = [
 
-  // { path: 'administrador', loadChildren: () => import('src/app/views/admin/admin.module').then(m => m.AdminModule) },
+  { path: 'admin', loadChildren: () => import('src/app/views/admin/admin.module').then(m => m.AdminModule) },
 
   {
     path: '',

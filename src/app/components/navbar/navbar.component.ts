@@ -6,10 +6,13 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
+
 export class NavbarComponent implements OnInit {
 
   isLogged = true
   isAdmin = true
+  scrollPosition = 0
 
   constructor( private router: Router,) { }
 
@@ -22,12 +25,12 @@ export class NavbarComponent implements OnInit {
 
     window.onscroll = function () {
 
-    if (window.scrollY > 80) {
-      headerStick?.classList.add("sticky_element");
-    } else {
-      headerStick?.classList.remove("sticky_element");
-    }
-  };
+      if (window.scrollY > 80) {
+        headerStick?.classList.add("sticky_element");
+      } else {
+        headerStick?.classList.remove("sticky_element");
+      }
+    };
   }
 
 }

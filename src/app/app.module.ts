@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { ViewsModule } from './views/views.module';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
