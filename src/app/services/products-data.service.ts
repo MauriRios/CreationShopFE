@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Products } from '../models/products.model';
 
 
@@ -11,6 +11,12 @@ const apiMP = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checko
   providedIn: 'root'
 })
 export class ProductsDataService {
+
+  private _refresh$ = new Subject<void>();
+
+  get refresh$() {
+    return this._refresh$;
+  }
 
   private _productsList : Products[] = [];
   private _productsSubjects : BehaviorSubject<Products[]> = new BehaviorSubject(this._productsList);

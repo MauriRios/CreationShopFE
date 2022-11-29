@@ -55,3 +55,6 @@ input[type=number] {
 }
 /* FIN Componentes de compras, vistas, carrito y categorias */
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
