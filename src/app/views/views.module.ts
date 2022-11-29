@@ -5,8 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 //Views
-import { UsersModule } from './users/users.module';
+
 import { AdminModule } from './admin/admin.module';
+import { UsersModule } from './users/users.module';
 
 
 @NgModule({
