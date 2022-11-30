@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   isLogged = true
   isAdmin = true
-  scrollPosition = 0
+
 
   constructor( private router: Router,) { }
 

@@ -39,6 +39,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AddProductComponent } from './dashboard/edits/add-product/add-product.component';
+import { DeleteProductComponent } from './dashboard/edits/delete-product/delete-product.component';
+import { EditProductComponent } from './dashboard/edits/edit-product/edit-product.component';
 
 
 
@@ -48,6 +51,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     DashboardComponent,
     EditsComponent,
     SalesComponent,
+    AddProductComponent,
+    DeleteProductComponent,
+    EditProductComponent,
+
     
 
   ],

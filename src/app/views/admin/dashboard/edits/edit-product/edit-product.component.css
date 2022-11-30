@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td, th {
+    width: 25%;
+}
+
+.mat-icon {
+    font-size: 18px;
+    
+}
+.btn {
+    color: rgb(7, 7, 7);
+}
+.btn:hover{
+    color: rgb(112, 112, 112);
+}

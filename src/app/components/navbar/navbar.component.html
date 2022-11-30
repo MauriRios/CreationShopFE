@@ -148,14 +148,13 @@
       <div class="canvasButtons">
         <ul class="text-underline">
           <li *ngIf="isLogged">
-            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
+            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i>Ingresa/Registrate</a>
           </li>
-
           <li *ngIf="!isLogged">
             <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
           </li>
           <li *ngIf="isAdmin">
-            <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i>Editar Contenido</a>
+            <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i>Administración</a>
           </li>
         </ul>
       </div>

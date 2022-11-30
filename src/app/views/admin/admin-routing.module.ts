@@ -25,7 +25,7 @@ export const routesA: Routes = [
 
 ];
 
-export const routing = RouterModule.forRoot(routesA);
+export const routing = RouterModule.forChild(routesA);
 
 @NgModule({
   imports: [RouterModule.forChild(routesA)],
