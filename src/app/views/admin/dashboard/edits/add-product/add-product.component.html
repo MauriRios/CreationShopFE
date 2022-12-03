@@ -1,1 +1,59 @@
-<p>add-product works!</p>
+<div class="container ">
+
+    <div class="row">
+
+    </div>
+    <div class="title ">
+        <h2>Agregar Producto</h2>
+    </div>
+    <form  (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>Marca</mat-label>
+        <input matInput formControlName="brand" name="brand" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Estilo</mat-label>
+        <input matInput formControlName="style" name="style" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Volumen</mat-label>
+        <input matInput formControlName="volume" name="volume" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Precio</mat-label>
+        <input matInput formControlName="price" name="price" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Stock</mat-label>
+        <input matInput formControlName="stock" name="stock" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Imagen</mat-label>
+        <input matInput formControlName="image" name="image" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline" matInput formControlName="clearance" name="clearance" required>
+        <mat-label>¿En Oferta?</mat-label>
+        <mat-select>
+        <mat-option value="Si">Si</mat-option>
+        <mat-option value="No">No</mat-option>
+        </mat-select >
+    </mat-form-field >
+    <mat-form-field appearance="outline" matInput formControlName="category" name="category" required>
+        <mat-label>Categoria</mat-label>
+        <mat-select>
+        <mat-option value="Aperitivos">Aperitivos</mat-option>
+        <mat-option value="Cervezas">Cervezas</mat-option>
+        <mat-option value="Whiskys">Whiskys</mat-option>
+        <mat-option value="Vinos">Vinos</mat-option>
+        <mat-option value="Combos">Combos</mat-option>
+        <mat-option value="Regalos">Regalos</mat-option>
+        <mat-option value="Sin Alcohol">Sin Alcohol</mat-option>
+        <mat-option value="Destilados">Destilados</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="button-add">
+        <a class="btn btn-danger" type="submit" >Agregar</a>
+    </div>
+</form>
+
+</div>

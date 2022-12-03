@@ -42,6 +42,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AddProductComponent } from './dashboard/edits/add-product/add-product.component';
 import { DeleteProductComponent } from './dashboard/edits/delete-product/delete-product.component';
 import { EditProductComponent } from './dashboard/edits/edit-product/edit-product.component';
+import { UsersModule } from '../users/users.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -62,6 +64,8 @@ import { EditProductComponent } from './dashboard/edits/edit-product/edit-produc
     AdminComponent,
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     AdminRoutingModule,
     MatCardModule,

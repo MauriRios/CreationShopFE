@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing, UsersRoutingModule } from './users-routing.module';
 
 //view
@@ -63,11 +63,20 @@ import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catal
   ],
   exports: [
     UsersComponent,
+    NavbarComponent,
+    SliderComponent,
+    CatalogsComponent,
+    OffersComponent,
+    ContactComponent,
+    FooterComponent,
+    HotsComponent,
+    SponsorshipComponent,
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     BrowserModule,
-    FormsModule,
     UsersRoutingModule,
     BrowserAnimationsModule,
     CarouselModule,

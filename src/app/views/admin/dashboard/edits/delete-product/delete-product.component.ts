@@ -50,16 +50,16 @@ export class DeleteProductComponent implements OnInit {
   }
 
   delete():void{
-  this.productsDataService.deleteProduct(this.product.id).subscribe(
-    data => {
-      this._snackBar.open('Producto Eliminado', 'Cerrar', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      }
-      )
-      this.dialogRef.close()
-    }
-  );
+  // this.productsDataService.deleteProduct(this.product.id).subscribe(
+  //   data => {
+  //     this._snackBar.open('Producto Eliminado', 'Cerrar', {
+  //       horizontalPosition: this.horizontalPosition,
+  //       verticalPosition: this.verticalPosition,
+  //     }
+  //     )
+  //     this.dialogRef.close()
+  //   }
+  // );
  // window.location.reload();
   }
 

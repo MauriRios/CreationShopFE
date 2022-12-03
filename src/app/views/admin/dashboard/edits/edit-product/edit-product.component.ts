@@ -16,12 +16,12 @@ import { DeleteProductComponent } from '../delete-product/delete-product.compone
 })
 export class EditProductComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ['id', 'brand', 'style', 'volume', 'category', 'price','stock', 'clearance', 'acciones' ];
+  displayedColumns: string[] = [ 'brand', 'style', 'volume', 'category', 'price','stock', 'clearance', 'acciones' ];
   dataSource = new MatTableDataSource<any>();
   products: Products[] = [];
-  product = this.products.forEach(() => {this.product});
+  clearance = false
 
-  subscription!: Subscription;
+  subscription!: Subscription; 
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

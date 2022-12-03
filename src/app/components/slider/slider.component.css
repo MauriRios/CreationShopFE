@@ -1,0 +1,9 @@
+.btn-edit{
+    position: relative;
+}
+
+.carousel-indicators{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

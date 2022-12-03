@@ -1,14 +1,40 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade mh-100 mw-100 " 
-data-bs-ride="carousel">
+data-bs-ride="carousel"  *ngFor="let config of homeConfigs">
+<div class="carousel-indicators m-2">
+<div>
+  <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+  <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</div>
+<div class="btn-edit">
+  <a *ngIf="!isAdmin"
+  (click)="openEdit(editConfig, config)"
+  class="btn btn-danger btn-sm gap-1"
+  >Editar Slider <i class="fa-solid fa-pen"></i
+></a> 
+</div>
+</div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../../../assets/img/beb1.jpg" class="d-block w-100" alt="slide1">
+        <img src="{{config.slider1}}" class="d-block w-100" alt="slider1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{config.title1}}</h5>
+          <p>{{config.text1}}</p>
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="../../../assets/img/beb2.jpg" class="d-block w-100" alt="slide2">
+        <img src="{{config.slider2}}" class="d-block w-100" alt="slider2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{config.title2}}</h5>
+          <p>{{config.text2}}</p>
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="../../../assets/img/beb3.jpg" class="d-block w-100" alt="slide3">
+        <img src="{{config.slider3}}" class="d-block w-100" alt="slider3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{config.title3}}</h5>
+          <p>{{config.text3}}</p>
+        </div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" 
@@ -22,3 +48,115 @@ data-bs-ride="carousel">
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  
+  <!-- <div class="d-flex justify-content-center mt-1">
+    <a 
+      (click)="openEdit(editImages, image)"
+      class="btn btn-danger gap-1"
+      >Editar Imagenes Slider <i class="fa-solid fa-pen"></i
+    ></a>   
+  </div> -->
+
+  <!-- Modal Editar imagenes Slider -->
+
+  <ng-template #editConfig let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title2">Editar Carrusel</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="editForm" validate>
+        <div>
+          <label >Imagen 1</label>
+          <div class="input-group">
+            <input class="form-group"
+            type="file" alife-file-to-base64 (onFileChanged)="onFileChanged($event)"
+            formControlName="slider1" name="slider1" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="title1">Titulo 1</label>
+          <div class="input-group">
+            <input formControlName="title1" name="title1" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="text1">Texto 1</label>
+          <div class="input-group">
+            <input formControlName="text1" name="text1" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="slider2">Imagen 2</label>
+          <div class="input-group">
+            <input 
+            type="file" alife-file-to-base64 (onFileChanged)="onFileChanged($event)"
+            formControlName="slider2" name="slider2" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="title2">Titulo 2</label>
+          <div class="input-group">
+            <input formControlName="title2" name="title2" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="text2">Texto 2</label>
+          <div class="input-group">
+            <input formControlName="text2" name="text2" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="slider3">Imagen 3</label>
+          <div class="input-group">
+            <input
+            type="file" alife-file-to-base64 (onFileChanged)="onFileChanged($event)"
+            formControlName="slider3" name="slider3" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="title3">Titulo 3</label>
+          <div class="input-group">
+            <input 
+            formControlName="title3" name="title3" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="text3">Texto 3</label>
+          <div class="input-group">
+            <input formControlName="text3" name="text3" class="form-control" />
+          </div>
+        </div>
+        <!-- <div class="form-group">
+          <label for="img">Imagen:</label>
+          <div class="input-group">
+            <input 
+            type="file" alife-file-to-base64 (onFileChanged)="onFileChanged($event)"
+            name="img"
+            class="form-control" 
+            /><img src="{{this.editForm.value.img}}" height="100px">
+          </div>
+        </div> -->
+      </form>
+  
+      <div class="modal-footer">
+  
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="modal.close('Save click')"
+        >
+          Cerrar
+        </button>
+        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()">
+          Actualizar
+        </button>
+      </div>
+    </div>
+  </ng-template>
