@@ -1,28 +1,21 @@
-export interface HomeConfig{
-    id?: number
-    slider1?: string;
-    title1?: string;
-    text1?: string;
-    slider2?: string;
-    title2?: string;
-    text2?: string;
-    slider3?: string;
-    title3?: string;
-    text3?: string;
-    cervezasCatalog?: string;
-    vinosCatalog?: string;
-    regalosCatalog?: string;
-    whiskysCatalog?: string;
-    combosCatalog?: string;
-    aperitivosCatalog?: string;
-    destiladosCatalog?: string;
-    sinAlcoholCatalog?: string;
-    elegidoDelMes?: string;
-    masVendido1?: string;
-    masVendido2?: string;
-    masVendido3?: string;
-    masVendido4?: string;
-    spronsors?: string;
+export interface SliderConfig{
+    id: number
+    slider1: string;
+    title1: string;
+    text1: string;
+    slider2: string;
+    title2: string;
+    text2: string;
+    slider3: string;
+    title3: string;
+    text3: string;
+
+    // elegidoDelMes: string;
+    // masVendido1: string;
+    // masVendido2: string;
+    // masVendido3: string;
+    // masVendido4: string;
+    // spronsors: string;
 
 //     constructor(id: number,
 //         slider1: string,

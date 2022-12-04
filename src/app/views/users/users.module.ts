@@ -6,6 +6,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing, UsersRoutingModule } from './users-routing.module';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 //view
 import { UsersComponent } from './users.component';
@@ -33,6 +34,7 @@ import { RegalosCatalogComponent } from './filters/regalos-catalog/regalos-catal
 import { SinAlcoholCatalogComponent } from './filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
 import { VinosCatalogComponent } from './filters/vinos-catalog/vinos-catalog.component';
 import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catalog.component';
+
 
 
 
@@ -73,6 +75,7 @@ import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catal
     SponsorshipComponent,
   ],
   imports: [
+    AlifeFileToBase64Module,
     ReactiveFormsModule,
     FormsModule,
     CommonModule,

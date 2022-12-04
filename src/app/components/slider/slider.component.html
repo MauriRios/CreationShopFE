@@ -1,5 +1,5 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade mh-100 mw-100 " 
-data-bs-ride="carousel"  *ngFor="let config of homeConfigs">
+data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
 <div class="carousel-indicators m-2">
 <div>
   <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -16,21 +16,21 @@ data-bs-ride="carousel"  *ngFor="let config of homeConfigs">
 </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{config.slider1}}" class="d-block w-100" alt="slider1">
+        <img src="{{config.slider1}}" accept="image/*" class="d-block w-100" alt="slider1">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{config.title1}}</h5>
           <p>{{config.text1}}</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{config.slider2}}" class="d-block w-100" alt="slider2">
+        <img src="{{config.slider2}}" accept="image/*" class="d-block w-100" alt="slider2">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{config.title2}}</h5>
           <p>{{config.text2}}</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{config.slider3}}" class="d-block w-100" alt="slider3">
+        <img src="{{config.slider3}}" accept="image/*" class="d-block w-100" alt="slider3">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{config.title3}}</h5>
           <p>{{config.text3}}</p>
@@ -71,78 +71,68 @@ data-bs-ride="carousel"  *ngFor="let config of homeConfigs">
       </button>
     </div>
     <div class="modal-body">
-      <form [formGroup]="editForm" validate>
+      <form [formGroup]="editForm" #f="ngForm">
         <div>
-          <label >Imagen 1</label>
+          <label for="slider1">Imagen 1</label>
           <div class="input-group">
             <input class="form-group"
-            type="file" alife-file-to-base64 (onFileChanged)="onFileChanged($event)"
-            formControlName="slider1" name="slider1" class="form-control" />
+            formControlName="slider1"
+            name="slider1" class="form-control" required/><img src="{{this.editForm.value.slider1}}" height="100px">
           </div>
         </div>
         <div class="form-group">
           <label for="title1">Titulo 1</label>
           <div class="input-group">
-            <input formControlName="title1" name="title1" class="form-control" />
+            <input type="text" formControlName="title1" name="title1" class="form-control" required/>
           </div>
         </div>
         <div class="form-group">
           <label for="text1">Texto 1</label>
           <div class="input-group">
-            <input formControlName="text1" name="text1" class="form-control" />
+            <input  type="text" formControlName="text1" name="text1" class="form-control" required/>
           </div>
         </div>
         <div class="form-group">
           <label for="slider2">Imagen 2</label>
           <div class="input-group">
             <input 
-            type="file" alife-file-to-base64 (onFileChanged)="onFileChanged($event)"
-            formControlName="slider2" name="slider2" class="form-control" />
+            formControlName="slider2"
+            name="slider2" class="form-control" required/><img src="{{this.editForm.value.slider2}}" height="100px">
           </div>
         </div>
         <div class="form-group">
           <label for="title2">Titulo 2</label>
           <div class="input-group">
-            <input formControlName="title2" name="title2" class="form-control" />
+            <input type="text" formControlName="title2" name="title2" class="form-control" required/>
           </div>
         </div>
         <div class="form-group">
           <label for="text2">Texto 2</label>
           <div class="input-group">
-            <input formControlName="text2" name="text2" class="form-control" />
+            <input type="text" formControlName="text2" name="text2" class="form-control" required/>
           </div>
         </div>
         <div class="form-group">
           <label for="slider3">Imagen 3</label>
           <div class="input-group">
             <input
-            type="file" alife-file-to-base64 (onFileChanged)="onFileChanged($event)"
-            formControlName="slider3" name="slider3" class="form-control" />
+            formControlName="slider3"
+            name="slider3" class="form-control" required/><img src="{{this.editForm.value.slider3}}" height="100px">
           </div>
         </div>
         <div class="form-group">
           <label for="title3">Titulo 3</label>
           <div class="input-group">
-            <input 
-            formControlName="title3" name="title3" class="form-control" />
+            <input type="text"
+            formControlName="title3" name="title3" class="form-control" required/>
           </div>
         </div>
         <div class="form-group">
           <label for="text3">Texto 3</label>
           <div class="input-group">
-            <input formControlName="text3" name="text3" class="form-control" />
+            <input type="text" formControlName="text3" name="text3" class="form-control" required/>
           </div>
         </div>
-        <!-- <div class="form-group">
-          <label for="img">Imagen:</label>
-          <div class="input-group">
-            <input 
-            type="file" alife-file-to-base64 (onFileChanged)="onFileChanged($event)"
-            name="img"
-            class="form-control" 
-            /><img src="{{this.editForm.value.img}}" height="100px">
-          </div>
-        </div> -->
       </form>
   
       <div class="modal-footer">
@@ -154,7 +144,7 @@ data-bs-ride="carousel"  *ngFor="let config of homeConfigs">
         >
           Cerrar
         </button>
-        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()">
+        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()" >
           Actualizar
         </button>
       </div>

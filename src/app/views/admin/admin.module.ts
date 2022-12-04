@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 import { AdminRoutingModule, routing } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
@@ -42,7 +43,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AddProductComponent } from './dashboard/edits/add-product/add-product.component';
 import { DeleteProductComponent } from './dashboard/edits/delete-product/delete-product.component';
 import { EditProductComponent } from './dashboard/edits/edit-product/edit-product.component';
-import { UsersModule } from '../users/users.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -64,6 +64,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdminComponent,
   ],
   imports: [
+    AlifeFileToBase64Module,
     ReactiveFormsModule,
     FormsModule,
     CommonModule,

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 //views
 import { ViewsModule } from './views/views.module';
@@ -19,6 +20,7 @@ import { ViewsModule } from './views/views.module';
     AppRoutingModule,
     routing,
     NgbModule,
+    AlifeFileToBase64Module,
 
   ],
   providers: [],

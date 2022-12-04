@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { NgbModalConfig, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { HomeConfig } from 'src/app/models/homeConfig.model';
-import { HomeConfigService } from 'src/app/services/home-config.service';
+import { SliderConfig } from 'src/app/models/slider-config.model';
+import { SliderConfigService } from 'src/app/services/slider-config.service';
 
 
 
@@ -13,13 +13,13 @@ import { HomeConfigService } from 'src/app/services/home-config.service';
 })
 export class SliderComponent implements OnInit {
 
-  base64!: String
+  base64!: string
   closeResult!: string;
   editForm!: FormGroup;
-  homeConfigs!: HomeConfig[];
+  sliderConfig!: SliderConfig[];
   isAdmin!: true
   
-  constructor(private homeConfigService : HomeConfigService,
+  constructor(private sliderConfigService : SliderConfigService,
               config: NgbModalConfig,
               private modalService: NgbModal,
               private fb: FormBuilder,
@@ -33,58 +33,68 @@ export class SliderComponent implements OnInit {
             }
 
   ngOnInit(): void {
-    this.getHomeConfigs();
+    this.getSliderConfig();
 
     this.editForm = this.fb.group({
-      slider1: [''],
-      title1: [''],
-      text1: [''],
-      slider2: [''],
-      title2: [''],
-      text2: [''],
-      slider3: [''],
-      title3: [''],
-      text3: [''],
+      id: ['', Validators.required],
+      slider1: ['', Validators.required],
+      title1: ['', Validators.required],
+      text1: ['', Validators.required],
+      slider2: ['', Validators.required],
+      title2: ['', Validators.required],
+      text2: ['', Validators.required],
+      slider3: ['', Validators.required],
+      title3: ['', Validators.required],
+      text3: ['', Validators.required],
     });
   }
 
-  getHomeConfigs() {
-    this.homeConfigService.getHomeConfigs()
-    .subscribe( data =>(this.homeConfigs = data,
-      console.log(this.homeConfigs)))
+  getSliderConfig() {
+    this.sliderConfigService.getSliderConfig()
+    .subscribe( data =>(this.sliderConfig = data,
+      console.log(this.sliderConfig)))
   }
 
-  onFileChanged(e:any):void {
-    this.base64 = e[0].base64;
-    this.editForm.value.slider1 = this.base64;
-    this.editForm.value.slider2 = this.base64;
-    this.editForm.value.slider3 = this.base64;
-  }
+  // onFileChanged1(e:any):void {
+  //   this.base64 = e[0].base64;
+  //   this.editForm.value.slider1 = this.base64;
+  // }
+  // onFileChanged2(e:any):void {
+  //   this.base64 = e[0].base64;
+  //   this.editForm.value.slider2 = this.base64;
+  // }
+
+  // onFileChanged3(e:any):void {
+  //   this.base64 = e[0].base64;
+  //   this.editForm.value.slider3 = this.base64;
+  // }
+
 
   //Abre modal de editar
-  openEdit(targetModal: any, homeConfig:HomeConfig) {
+  openEdit(targetModal: any, sliderConfig:SliderConfig) {
     this.modalService.open(targetModal, {
       centered: true,
       backdrop: 'static',
       size: 'lg'
     });
     this.editForm.patchValue( {
-      slider1: homeConfig.slider1,
-      title1: homeConfig.title1,
-      text1: homeConfig.text1,
-      slider2: homeConfig.slider2,
-      title2: homeConfig.title2,
-      text2: homeConfig.text2,
-      slider3: homeConfig.slider3,
-      title3: homeConfig.title3,
-      text3: homeConfig.text3,
-
+      id: sliderConfig.id,
+      slider1: sliderConfig.slider1,
+      title1: sliderConfig.title1,
+      text1: sliderConfig.text1,
+      slider2: sliderConfig.slider2,
+      title2: sliderConfig.title2,
+      text2: sliderConfig.text2,
+      slider3: sliderConfig.slider3,
+      title3: sliderConfig.title3,
+      text3: sliderConfig.text3,
+      
     });
   }
 
     //Guarda lo editado
     onSave() {
-      this.homeConfigService.updateHomeConfig(this.editForm.value)
+      this.sliderConfigService.updateSliderConfig(this.editForm.value)
         .subscribe((results) => {
           this.ngOnInit();
           this.modalService.dismissAll();
