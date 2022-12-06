@@ -9,6 +9,11 @@
   padding: 4px;
 }
 
+.btn-edit{
+  display: flex;
+  justify-content: center
+}
+
 .card {
   padding: 0;
   height: 200px;

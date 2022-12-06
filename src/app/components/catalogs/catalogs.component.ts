@@ -22,7 +22,6 @@ export class CatalogsComponent implements OnInit {
               private modalService: NgbModal,
               private fb: FormBuilder,
 
-              
               ) { 
 
               config.backdrop = 'static',
@@ -31,7 +30,7 @@ export class CatalogsComponent implements OnInit {
             }
 
   ngOnInit(): void {
-    this.getSliderConfig();
+    this.getCatalogConfig();
 
     this.editForm = this.fb.group({
       id: [''],
@@ -46,7 +45,7 @@ export class CatalogsComponent implements OnInit {
     });
   }
 
-  getSliderConfig() {
+  getCatalogConfig() {
     this.catalogConfigService.getCatalogConfig()
     .subscribe( data =>(this.catalogConfig = data,
       console.log(this.catalogConfig)))
