@@ -1,50 +1,42 @@
 <div class="container ">
-
-    <div class="row">
-
-    </div>
     <div class="title ">
         <h2>Agregar Producto</h2>
     </div>
-    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="outline" >
-        <mat-label>Marca</mat-label>
-        <input matInput class="form-group" formControlName="brand" name="brand" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline" >
-        <mat-label>Estilo</mat-label>
-        <input matInput class="form-group" formControlName="style" name="style" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline" >
-        <mat-label>Volumen</mat-label>
-        <input matInput class="form-group" formControlName="volume" name="volume" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline" >
-        <mat-label>Precio</mat-label>
-        <input matInput type="number" class="form-group" formControlName="price" name="price" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline" >
-        <mat-label>Stock</mat-label>
-        <input type="number" class="form-group" matInput formControlName="stock" name="stock" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline" >
-        <mat-label>Imagen</mat-label>
-        <input matInput type="URL" class="form-group" formControlName="image" name="image" required>
-    </mat-form-field>
-    <mat-form-field >
-        <mat-label>¿En Oferta?</mat-label>
-        <mat-select matInput formControlName="category" name="category" required  class="form-group">
-        <mat-option value=true>Si</mat-option>
-        <mat-option value=false>No</mat-option>
-        </mat-select >
-    </mat-form-field >
-    <mat-form-field >
-        <mat-label>Categoria</mat-label>
-        <mat-select matInput formControlName="category" name="category" required class="form-group">
-        <mat-option *ngFor="let category of categorys" 
-        value="{{category.name}}">{{category.name}}</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit(newProduct)">
+            <mat-form-field appearance="outline" >
+                <mat-label>Marca</mat-label>
+                <input matInput class="form-group" formControlName="brand" name="brand" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" >
+                <mat-label>Estilo</mat-label>
+                <input matInput class="form-group" formControlName="style" name="style" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" >
+                <mat-label>Volumen</mat-label>
+                <input matInput class="form-group" formControlName="volume" name="volume" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" >
+                <mat-label>Precio</mat-label>
+                <input matInput type="number" class="form-group" formControlName="price" name="price" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" >
+                <mat-label>Stock</mat-label>
+                <input type="number" class="form-group" matInput formControlName="stock" name="stock" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" >
+                <mat-label>Imagen</mat-label>
+                <input matInput class="form-group" formControlName="image" name="image" required>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Categoria</mat-label>
+                <mat-select matInput formControlName="category" name="category" required class="form-group">
+                <mat-option *ngFor="let category of categorys" 
+                value="{{category.name}}">{{category.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-checkbox type="checkbox" formControlName="clearance" name="clearance" class="form-group">
+                    <mat-label>¿En Oferta?</mat-label>
+            </mat-checkbox>
     <div class="button-add">
         <button class="btn btn-danger" type="submit" [disabled]="!addProductForm.valid">Agregar</button>
     </div>

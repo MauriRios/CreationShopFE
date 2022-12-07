@@ -21,3 +21,15 @@ td, th {
 .btn:hover{
     color: rgb(112, 112, 112);
 }
+
+.my-2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+mat-form-field{
+    width: 100%;
+    display: block;
+    flex-direction: row;
+}

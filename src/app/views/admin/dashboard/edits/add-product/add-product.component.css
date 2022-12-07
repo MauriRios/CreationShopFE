@@ -8,7 +8,7 @@
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     justify-content: center;
 
 }
@@ -22,6 +22,16 @@
     margin: 0 auto;
 }
 
+
 mat-form-field{
     margin-right: 30px;
+    display: block;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .container {
+        width: 70%;
+    }
 }
