@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/models/categorys.model';
-import { Products } from 'src/app/models/products.model';
 
 @Component({
   selector: 'app-add-product',
@@ -10,16 +9,7 @@ import { Products } from 'src/app/models/products.model';
 })
 export class AddProductComponent implements OnInit {
 
-  addProductForm = new FormGroup({
-    brand: new FormControl(''),
-    style: new FormControl(''),
-    category: new FormControl(''),
-    volume: new FormControl(''),
-    price: new FormControl(0),
-    stock: new FormControl(0),
-    clearance: new FormControl(false),
-    image: new FormControl(''),
-  });
+addProductForm!:FormGroup;
 
   categorys: Category[] = [
     {name: 'Aperitivos'},
@@ -32,13 +22,24 @@ export class AddProductComponent implements OnInit {
     {name: 'Vinos'},
   ];
 
-  constructor() { }
+  constructor(private formBuilder:FormBuilder,) { }
 
   ngOnInit(): void {
+
+    this.addProductForm = this.formBuilder.group({
+      brand: new FormControl('', [Validators.minLength(3)]),
+      style: new FormControl('', [Validators.minLength(3)]),
+      category: new FormControl(''),
+      volume: new FormControl('', [Validators.minLength(3)]),
+      price: new FormControl(0),
+      stock: new FormControl(0),
+      clearance: new FormControl(),
+      image: new FormControl('', [Validators.minLength(10)]),
+    });
   }
 
 
   onSubmit(){
-
+    console.log(this.addProductForm.value)
   }
 }
