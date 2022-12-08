@@ -57,16 +57,16 @@
           "
           class="btn position-relative"
         >
-          <a [routerLink]="['/carrito']" (click)="checkCart()">
+          <a [routerLink]="['/carrito']">
             <i class="fa-solid fa-cart-shopping text-secondary"></i
           ></a>
-          <span *ngIf="length > 0"
+          <span *ngIf="alertCartLength > 0"
             class="position-absolute top-0 start-100
             translate-middle bg-danger
             border border-light
             rounded-circle alert-icon"
             >
-            <span *ngIf="length > 0">{{length}}</span>
+            <span>{{alertCartLength}}</span>
           </span>
         </button>
         <a

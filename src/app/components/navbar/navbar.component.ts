@@ -24,27 +24,13 @@ export class NavbarComponent implements OnInit {
     private router: Router,) { }
 
   ngOnInit(): void {
-
     this.navBarSticky();
     this.getProductsList();
   }
 
   getProductsList(){
-
     this.cartService.products
     .subscribe(data => this.products = data);
-  }
-
-  cartAlert(){
-    if (this.products.length > 0) {
-    
-      console.log(this.cartAlertCount)
-    }
-  }
-
-  checkCart(){
-    console.log(this.cartAlertCount)
-    console.log(this.products.length)
   }
 
   navBarSticky(){
@@ -62,7 +48,7 @@ export class NavbarComponent implements OnInit {
   }
 
   //Icono de alerta del carrito, tomo la longitud del array
-  get length() { return this.products.length }
+  get alertCartLength() { return this.products.length }
 
 }
 

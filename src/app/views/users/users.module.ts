@@ -34,6 +34,7 @@ import { RegalosCatalogComponent } from './filters/regalos-catalog/regalos-catal
 import { SinAlcoholCatalogComponent } from './filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
 import { VinosCatalogComponent } from './filters/vinos-catalog/vinos-catalog.component';
 import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catalog.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -75,6 +76,7 @@ import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catal
     SponsorshipComponent,
   ],
   imports: [
+    SweetAlert2Module,
     AlifeFileToBase64Module,
     ReactiveFormsModule,
     FormsModule,
