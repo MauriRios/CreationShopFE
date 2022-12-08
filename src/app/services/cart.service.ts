@@ -29,7 +29,7 @@ export class CartService {
     if (newProduct.quantity == 0) {
       this._cartList.splice(index,1);
       alert('Se elimino el producto del carrito')
-    }
+    };
   }
 
   pay(listProduct: Products[]){
