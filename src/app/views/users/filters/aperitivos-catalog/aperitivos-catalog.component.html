@@ -49,7 +49,7 @@
                                         <form (ngSubmit)="addCart(product)">
                                         <div class='input-group input-group-sm my-2' style='width:100px'>
                                                 <button class='btn btn-outline-dark' type='button' (click)="downQuantity(product)" [disabled]="product.quantity <= 0">-</button>
-                                                <input class='form-control text-center' type="number" name="quantity" (focusout)="verifyProductQuantity(product)" [(ngModel)]="product.quantity"/>
+                                                <input class='form-control text-center' type="number" name="quantity" [(ngModel)]="product.quantity" (focusout)="verifyProductQuantity(product)"/>
                                                 <button class='btn btn-outline-dark' type='button' (click)="upQuantity(product)">+</button>
                                             </div>
                                                 <button name='send' type='submit' class='btn btn-outline-dark'>AGREGAR</button>

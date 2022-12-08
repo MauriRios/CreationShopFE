@@ -1,4 +1,4 @@
-
+/* 
 h3 {
     text-align: center;
 }
@@ -25,7 +25,7 @@ b {
 
 }
 
-/* Estilo de las tarjetas del carousel */
+/* Estilo de las tarjetas del carousel 
 .btn-buy{
     text-decoration: none;
     text-align: center;
@@ -45,4 +45,55 @@ span{
     margin: 3px 0 0 0;
     color: #444;
     font-weight: 500;
+} */
+
+
+li > a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
 }
+a{    
+    list-style: none;
+    text-decoration: none;}
+
+ul , li {
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+h3{
+    text-align: center;
+    font-size: 1rem;
+    margin: 3px 0 0 0;
+    color: #444;
+    font-weight: 500;
+}
+
+span{
+    width: 10px;
+    font-size: 0.8rem;
+    margin: 3px 0 0 0;
+    color: #444;
+    font-weight: 500;
+}
+
+.btn-send{
+    margin-bottom: 10px;
+}
+
+button:disabled {
+    border: solid 1px gray
+}
+
+img{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.img-center{
+    display: flex;
+    justify-content: center;
+}
+

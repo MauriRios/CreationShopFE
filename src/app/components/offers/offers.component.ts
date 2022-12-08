@@ -1,12 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Products } from 'src/app/models/products.model';
+import { CartService } from 'src/app/services/cart.service';
+import { ProductsDataService } from 'src/app/services/products-data.service';
 
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.css']
 })
+
+
 export class OffersComponent implements OnInit {
+  
+  @ViewChild('clearQuantity') clearQuantity!:number;
+
+  products!:Products[];
 
   customOptions: OwlOptions = {
     loop: true,
@@ -21,10 +30,10 @@ export class OffersComponent implements OnInit {
         items: 1
       },
       400: {
-        items: 2
+        items: 3
       },
       740: {
-        items: 3
+        items: 4
       },
       940: {
         items: 4
@@ -34,9 +43,32 @@ export class OffersComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor( private cartService: CartService,
+              private productsDataService: ProductsDataService,
+              ) { }
 
   ngOnInit(): void {
+
+    this.productsDataService.getProducts().subscribe(data => {
+      this.products = data})
   }
+
+
+  upQuantity(product : Products): void{
+    this.cartService.upQuantity(product);
+  }
+
+  downQuantity(product : Products): void{
+    this.cartService.downQuantity(product)
+  }
+
+  addCart(product: Products){
+    this.cartService.addToCart(product);
+  }
+
+  verifyProductQuantity(product : Products): void {
+    this.cartService.verifyProductQuantity(product);
+  }
+  
 
 }

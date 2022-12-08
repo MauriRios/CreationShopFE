@@ -38,16 +38,17 @@ export class CartService {
         timer: 2500
       })
       this._cartList[index].quantity = newProduct.quantity;
-      console.log(newProduct);}
+      console.log(newProduct);
+    }
     if (newProduct.quantity == 0) {
       Swal.fire({
         position: 'center',
-        icon: 'error',
-        title: 'Se elimino el producto del carrito',
+        icon: 'warning',
+        title: 'Elige la cantidad ',
         showConfirmButton: false,
         timer: 2500
       })
-      this._cartList.splice(index,1);
+      //this._cartList.splice(index,1);
     };
   }
 
@@ -93,7 +94,7 @@ export class CartService {
   }
 
   clearQuantity(product: Products){
-    product.quantity = 0;
+    product.quantity = 0
   }
 
 }
