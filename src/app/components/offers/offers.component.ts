@@ -13,9 +13,9 @@ import { ProductsDataService } from 'src/app/services/products-data.service';
 
 export class OffersComponent implements OnInit {
   
-  @ViewChild('clearQuantity') clearQuantity!:number;
 
   products!:Products[];
+  offersProducts!:Products[];
 
   customOptions: OwlOptions = {
     loop: true,
@@ -48,10 +48,18 @@ export class OffersComponent implements OnInit {
               ) { }
 
   ngOnInit(): void {
-
     this.productsDataService.getProducts().subscribe(data => {
       this.products = data})
+    
+
+    console.log(this.offersProducts);
   }
+
+  filterProducts(product: Products):void{
+        if (product.clearance = true){
+          this.offersProducts.push(product)
+        }
+      }
 
 
   upQuantity(product : Products): void{

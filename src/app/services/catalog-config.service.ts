@@ -16,10 +16,6 @@ export class CatalogConfigService {
     return this.http.get<CatalogConfig[]>(this.URL + '/traer');
   }
 
-  // public getSliderConfig(id: any): Observable<SliderConfig> {
-  //   return this.http.get<SliderConfig>(this.URL + '/traer/' + id);
-  // }
-
   public updateCatalogConfig(CatalogConfig: CatalogConfig) {
     return this.http.put<CatalogConfig>(this.URL + '/editar/' + CatalogConfig.id, CatalogConfig)
   }

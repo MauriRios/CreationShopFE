@@ -20,10 +20,6 @@ export class SliderConfigService {
     return this.http.get<SliderConfig[]>(this.URL + '/traer');
   }
 
-  // public getSliderConfig(id: any): Observable<SliderConfig> {
-  //   return this.http.get<SliderConfig>(this.URL + '/traer/' + id);
-  // }
-
   public updateSliderConfig(sliderConfig: SliderConfig) {
     return this.http.put<SliderConfig>(this.URL + '/editar/' + sliderConfig.id, sliderConfig)
   }

@@ -30,10 +30,5 @@ public get getCategorys(): Category[] {
   return this.categorys
 }
 
-  // newMethod(parametro: string) {
-  //   this.productsDataService.getProducts().subscribe(data => {
-  //     this.products = data.filter((products => products.category == parametro)), console.log(this.products);
-  //   });
-  // }
 
 }

@@ -93,8 +93,4 @@ export class CartService {
     }
   }
 
-  clearQuantity(product: Products){
-    product.quantity = 0
-  }
-
 }
