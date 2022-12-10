@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { subscribeOn } from 'rxjs';
 import { Category } from 'src/app/models/categorys.model';
 import { Products } from 'src/app/models/products.model';
 import { ProductsDataService } from 'src/app/services/products-data.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-product',
@@ -29,11 +29,12 @@ newProduct!:Products;
 
   constructor(private formBuilder:FormBuilder,
               private productsDataService: ProductsDataService,
-              private router:Router,) { }
+              private router:Router,) { 
+                this.createForm();
+              }
 
   ngOnInit(): void {
-    this.createForm();
-
+    
   }
 
   createForm(){
@@ -49,17 +50,39 @@ newProduct!:Products;
     });
   }
 
-
-  onSubmit(newProduct: Products){
-    this.productsDataService.createProduct(this.addProductForm.value)
-    .subscribe(newProduct => {
-      alert("creado con eeeeeeeeexito!");
-      window.scrollTo(0, 0);
-      this.createForm();
-    });
+  onResetForm(){
+    this.addProductForm.reset();
   }
 
-  ngAfterViewInit() {
+
+  onSubmit(newProduct: Products){
+    if(this.addProductForm.valid){
+      const value = this.addProductForm.value;
+      console.log(value);
+    this.productsDataService.createProduct(this.addProductForm.value)
+    .subscribe(newProduct => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto Agregado con éxito',
+        showConfirmButton: false,
+        timer: 2500
+      }),
+      window.scrollTo(0, 0);
+      this.onResetForm();
+      });
+    } else 
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Hubo un Error',
+        showConfirmButton: false,
+        timer: 2500
+      })
+  }
+  
+
+  ngAfterViewInit(): void {
     window.scrollTo(0, 0);
 }
 

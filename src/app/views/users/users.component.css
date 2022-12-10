@@ -19,3 +19,26 @@ a{
 .container-fluid{
     padding: 0;
 }
+
+
+.to-top {
+    bottom: 80px;
+    cursor: pointer;
+    margin: 0 8px 12px 0;
+    padding: 8px 13px;
+    position: fixed;
+    right: 20px;
+    border-radius: 100%;
+    background-color: #6c757d;
+    display: none;
+}
+
+.to-top:hover{
+    background-color: black;
+}
+
+.show-scrollTop {
+    display: block;
+    transition: all 0.2s ease-in-out;
+
+}

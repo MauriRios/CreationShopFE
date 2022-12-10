@@ -48,12 +48,13 @@
         <td mat-cell *matCellDef="let row"> {{row.stock}} </td>
     </ng-container>
 
-    <!-- Ofer Column -->
+    <!-- Offer Column -->
     <ng-container matColumnDef="clearance">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Oferta </th>
         <td mat-cell *matCellDef="let row" >
             <mat-checkbox  type="checkbox" [(ngModel)]="row.clearance" disabled>
-            </mat-checkbox></td>
+            </mat-checkbox>
+        </td>
     </ng-container>
 
     <ng-container matColumnDef="acciones">

@@ -68,44 +68,71 @@
     </div>
     <div class="modal-body">
     <form [formGroup]="editForm" #f="ngForm">
-        <div>
-        <label for="elegidoDelMes">Imagen del Elegido del Mes</label>
-        <div class="input-group">
-            <input class="form-group"
-            formControlName="elegidoDelMes"
-            name="elegidoDelMes" class="form-control" required/>
-            <img src="{{this.editForm.value.elegidoDelMes}}" height="100px">
-        </div>
-        </div>
+
         <div class="form-group">
-        <label for="masVendido1">Imagen del Primer Más Vendido</label>
-        <div class="input-group">
-            <input type="text" formControlName="masVendido1" name="masVendido1" class="form-control" required/>
-            <img src="{{this.editForm.value.masVendido1}}" height="100px">
+            <mat-form-field  appearance="outline" >
+                <mat-label for="elegidoDelMes">Elegido del Mes</mat-label>
+                <div class="input-group">
+                    <input matInput class="form-group"
+                    formControlName="elegidoDelMes"
+                    name="elegidoDelMes" class="form-control" required/>
+                    <img src="{{this.editForm.value.elegidoDelMes}}" height="100px">        
+                </div>
+            </mat-form-field>
         </div>
-        </div>
+
         <div class="form-group">
-        <label for="masVendido2">Imagen del Segundo Más Vendido</label>
-        <div class="input-group">
-            <input  type="text" formControlName="masVendido2" name="masVendido2" class="form-control" required/>
-            <img src="{{this.editForm.value.masVendido2}}" height="100px">
+            <mat-form-field appearance="outline" >
+                <mat-label for="masVendido1">Primer Más Vendido</mat-label>
+                <div class="input-group">
+                    <input matInput type="text" 
+                    formControlName="masVendido1" 
+                    name="masVendido1" class="form-control" 
+                    required/>
+                    <img src="{{this.editForm.value.masVendido1}}" height="100px">
+                </div>
+            </mat-form-field>
         </div>
-        </div>
+
         <div class="form-group">
-        <label for="masVendido3">Imagen del Tercer Más Vendido</label>
-        <div class="input-group">
-            <input 
-            formControlName="masVendido3"
-            name="masVendido3" class="form-control" required/>
-            <img src="{{this.editForm.value.masVendido3}}" height="100px">
+            <mat-form-field appearance="outline" >
+                <mat-label for="masVendido2">Segundo Más Vendido</mat-label>
+                <div class="input-group">
+                    <input matInput type="text" 
+                    formControlName="masVendido2" 
+                    name="masVendido2" class="form-control" 
+                    required/>
+                    <img src="{{this.editForm.value.masVendido2}}" height="100px">
+                </div>               
+            </mat-form-field>
         </div>
-        </div>
+
         <div class="form-group">
-        <label for="masVendido4">Imagen del Cuarto Más Vendido</label>
-        <div class="input-group">
-            <input type="text" formControlName="masVendido4" name="masVendido4" class="form-control" required/>
-            <img src="{{this.editForm.value.masVendido4}}" height="100px">
+            <mat-form-field appearance="outline" >
+                <mat-label for="masVendido3">Tercer Más Vendido</mat-label>
+                <div class="input-group">
+                    <input matInput
+                    formControlName="masVendido3"
+                    name="masVendido3" 
+                    class="form-control" 
+                    required/>
+                    <img src="{{this.editForm.value.masVendido3}}" height="100px">
+                </div>
+            </mat-form-field>
         </div>
+
+        <div class="form-group">
+            <mat-form-field appearance="outline" >
+                <mat-label for="masVendido4">Cuarto Más Vendido</mat-label>
+                <div class="input-group">
+                    <input matInput type="text" 
+                    formControlName="masVendido4" 
+                    name="masVendido4" 
+                    class="form-control" 
+                    required/>
+                    <img src="{{this.editForm.value.masVendido4}}" height="100px">
+                </div>              
+            </mat-form-field>
         </div>
     </form>
 

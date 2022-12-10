@@ -43,6 +43,10 @@
   opacity: 0;
 }
 
+mat-form-field{
+  width: 100%;
+}
+
 @keyframes myAnim {
   0% {
     transform: translateY(700px);

@@ -31,6 +31,10 @@
       <router-outlet></router-outlet>
     </div>
 
+  <a class="to-top " (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+      <i class="fas fa-arrow-up"></i>
+  </a>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
 

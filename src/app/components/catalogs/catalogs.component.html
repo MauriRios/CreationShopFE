@@ -116,69 +116,101 @@
     </div>
     <div class="modal-body">
       <form [formGroup]="editForm" #f="ngForm">
-        <div>
-          <label for="cervezasCatalog">Imagen del Catalogo de Cervezas</label>
-          <div class="input-group">
-            <input class="form-group"
-            formControlName="cervezasCatalog"
-            name="cervezasCatalog" class="form-control" required/>
-            <img src="{{this.editForm.value.cervezasCatalog}}" height="100px">
-          </div>
-        </div>
+
         <div class="form-group">
-          <label for="vinosCatalog">Imagen del Catalogo de Vinos Y Espumantes</label>
-          <div class="input-group">
-            <input type="text" formControlName="vinosCatalog" name="vinosCatalog" class="form-control" required/>
-            <img src="{{this.editForm.value.vinosCatalog}}" height="100px">
-          </div>
+          <mat-form-field appearance="outline" >
+            <mat-label for="cervezasCatalog">Imagen del Catalogo de Cervezas</mat-label>
+            <div class="input-group">
+              <input matInput class="form-group"
+              formControlName="cervezasCatalog"
+              name="cervezasCatalog" class="form-control" required/>
+              <img src="{{this.editForm.value.cervezasCatalog}}" height="100px">
+            </div>
+          </mat-form-field>
         </div>
+
         <div class="form-group">
-          <label for="destiladosCatalog">Imagen del Catalogo de Destilados</label>
-          <div class="input-group">
-            <input  type="text" formControlName="destiladosCatalog" name="destiladosCatalog" class="form-control" required/>
-            <img src="{{this.editForm.value.destiladosCatalog}}" height="100px">
-          </div>
+          <mat-form-field appearance="outline" >
+            <mat-label for="vinosCatalog">Imagen del Catalogo de Vinos Y Espumantes</mat-label>
+            <div class="input-group">
+              <input matInput type="text" formControlName="vinosCatalog" name="vinosCatalog" class="form-control" required/>
+              <img src="{{this.editForm.value.vinosCatalog}}" height="100px">
+            </div>
+
+          </mat-form-field>
         </div>
+
         <div class="form-group">
-          <label for="whiskysCatalog">Imagen del Catalogo de Whiskys</label>
-          <div class="input-group">
-            <input 
-            formControlName="whiskysCatalog"
-            name="whiskysCatalog" class="form-control" required/>
-            <img src="{{this.editForm.value.whiskysCatalog}}" height="100px">
+          <mat-form-field appearance="outline" >
+            <mat-label for="destiladosCatalog">Imagen del Catalogo de Destilados</mat-label>
+            <div class="input-group">
+              <input matInput type="text" formControlName="destiladosCatalog" name="destiladosCatalog" class="form-control" required/>
+              <img src="{{this.editForm.value.destiladosCatalog}}" height="100px">
+            </div>
+          </mat-form-field>
           </div>
-        </div>
+
         <div class="form-group">
-          <label for="regalosCatalog">Imagen del Catalogo de Regalos</label>
-          <div class="input-group">
-            <input type="text" formControlName="regalosCatalog" name="regalosCatalog" class="form-control" required/>
-            <img src="{{this.editForm.value.regalosCatalog}}" height="100px">
-          </div>
+          <mat-form-field appearance="outline" >
+            <mat-label for="whiskysCatalog">Imagen del Catalogo de Whiskys</mat-label>
+            <div class="input-group">
+              <input matInput
+              formControlName="whiskysCatalog"
+              name="whiskysCatalog" class="form-control" required/>
+              <img src="{{this.editForm.value.whiskysCatalog}}" height="100px">
+            </div>
+
+          </mat-form-field>
         </div>
+
         <div class="form-group">
-          <label for="combosCatalog">Imagen del Catalogo de Combos</label>
-          <div class="input-group">
-            <input type="text" formControlName="combosCatalog" name="combosCatalog" class="form-control" required/>
-            <img src="{{this.editForm.value.combosCatalog}}" height="100px">
-          </div>
+          <mat-form-field appearance="outline" >
+            <mat-label for="regalosCatalog">Imagen del Catalogo de Regalos</mat-label>
+            <div class="input-group">
+              <input matInput type="text" 
+              formControlName="regalosCatalog" 
+              name="regalosCatalog" 
+              class="form-control" required/>
+              <img src="{{this.editForm.value.regalosCatalog}}" height="100px">
+            </div>
+          </mat-form-field>
         </div>
+
         <div class="form-group">
-          <label for="aperitivosCatalog">Imagen del Catalogo de Aperitivos</label>
-          <div class="input-group">
-            <input
-            formControlName="aperitivosCatalog"
-            name="aperitivosCatalog" class="form-control" required/>
-            <img src="{{this.editForm.value.aperitivosCatalog}}" height="100px">
-          </div>
+          <mat-form-field appearance="outline" >
+            <mat-label for="combosCatalog">Imagen del Catalogo de Combos</mat-label>
+            <div class="input-group">
+              <input matInput type="text" formControlName="combosCatalog" name="combosCatalog" class="form-control" required/>
+              <img src="{{this.editForm.value.combosCatalog}}" height="100px">
+            </div>
+          </mat-form-field>  
         </div>
+
         <div class="form-group">
-          <label for="sinAlcoholCatalog">Imagen del Catalogo de Sin Alcohol</label>
-          <div class="input-group">
-            <input type="sinAlcoholCatalog"
-            formControlName="sinAlcoholCatalog" name="sinAlcoholCatalog" class="form-control" required/>
-            <img src="{{this.editForm.value.sinAlcoholCatalog}}" height="100px">
-          </div>
+          <mat-form-field appearance="outline" >
+            <mat-label for="aperitivosCatalog">Imagen del Catalogo de Aperitivos</mat-label>
+            <div class="input-group">
+              <input matInput
+              formControlName="aperitivosCatalog"
+              name="aperitivosCatalog" class="form-control" required/>
+              <img src="{{this.editForm.value.aperitivosCatalog}}" height="100px">
+            </div>
+          </mat-form-field>
+
         </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline" >
+            <mat-label for="sinAlcoholCatalog">Imagen del Catalogo de Sin Alcohol</mat-label>
+            <div class="input-group">
+              <input matInput type="sinAlcoholCatalog"
+              formControlName="sinAlcoholCatalog" name="sinAlcoholCatalog" class="form-control" required/>
+              <img src="{{this.editForm.value.sinAlcoholCatalog}}" height="100px">
+            </div>
+          </mat-form-field>
+
+        </div>
+
       </form>
   
       <div class="modal-footer">

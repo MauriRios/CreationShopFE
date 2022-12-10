@@ -50,11 +50,11 @@ export class EditProductComponent implements OnInit, AfterViewInit {
     ) {
               config.backdrop = 'static',
               config.keyboard = false
+              this.createEditForm();
   }
 
   ngOnInit(): void {
     this.getProducts();
-    this.createEditForm();
 
     this.subscription = this.productsDataService.refresh$.subscribe(() => {
       this.getProducts();
