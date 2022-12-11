@@ -49,6 +49,7 @@
           </label>
         </form>
         <button
+          aria-label="Carrito"
           type="button"
           style="
             --bs-btn-padding-y: 0.15rem;
@@ -57,7 +58,7 @@
           "
           class="btn position-relative"
         >
-          <a [routerLink]="['/carrito']">
+          <a [routerLink]="['/carrito']" aria-label="Ve al Carrito">
             <i class="fa-solid fa-cart-shopping text-secondary"></i
           ></a>
           <span *ngIf="alertCartLength > 0"
