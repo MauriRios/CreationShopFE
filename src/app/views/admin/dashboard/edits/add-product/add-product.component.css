@@ -29,6 +29,11 @@ mat-form-field{
     flex-direction: row;
 }
 
+.error{
+    color: red;
+}
+
+
 @media screen and (max-width: 1000px) {
 
     .container {

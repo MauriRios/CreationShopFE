@@ -40,14 +40,14 @@ newProduct!:Products;
 
   createForm(){
     this.addProductForm = this.formBuilder.group({
-      brand: ['', Validators.minLength(3)],
-      style: ['', Validators.minLength(3)],
+      brand: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+      style: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       category: ['', Validators.required],
-      volume: ['', Validators.minLength(2)],
-      price: ['', Validators.required],
-      stock: ['', Validators.required],
-      clearance: ['', Validators.required],
-      image: ['', Validators.minLength(10)],
+      volume: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      price: ['', [Validators.required, Validators.min(1)] ],
+      stock: ['', [Validators.required, Validators.min(1)] ],
+      clearance: [''],
+      image: ['', Validators.required],
     });
   }
 
@@ -72,7 +72,7 @@ newProduct!:Products;
       window.scrollTo(0, 0);
       this.onResetForm();
       });
-    } else 
+    } else {
       Swal.fire({
         position: 'center',
         icon: 'error',
@@ -80,11 +80,37 @@ newProduct!:Products;
         showConfirmButton: false,
         timer: 2500
       })
+      this.addProductForm.markAllAsTouched();
+    }
   }
   
-
+//Volver a top luego de cambiar de vista/componente
   ngAfterViewInit(): void {
     window.scrollTo(0, 0);
 }
+
+
+//Form getters
+get brandField(){
+  return this.addProductForm.get('brand')
+};
+get styleField(){
+  return this.addProductForm.get('style')
+};
+get categoryField(){
+  return this.addProductForm.get('category')
+};
+get volumeField(){
+  return this.addProductForm.get('volume')
+};
+get priceField(){
+  return this.addProductForm.get('price')
+};
+get stockField(){
+  return this.addProductForm.get('stock')
+};
+get imageField(){
+  return this.addProductForm.get('image')
+};
 
 }

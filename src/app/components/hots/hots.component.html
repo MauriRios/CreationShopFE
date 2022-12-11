@@ -80,7 +80,7 @@
                 </div>
             </mat-form-field>
         </div>
-        <div  *ngIf="elegidoDelMesField!.errors && elegidoDelMesField!.touched">
+        <div  *ngIf="elegidoDelMesField!.errors && (elegidoDelMesField!.dirty || elegidoDelMesField!.touched)">
             <div class="error mb-4" *ngIf="elegidoDelMesField!.hasError('required')">
               * Imagen Requerida en formato URL
             </div>
@@ -98,7 +98,7 @@
                 </div>
             </mat-form-field>
         </div>
-        <div  *ngIf="masVendido1Field!.errors && masVendido1Field!.touched">
+        <div  *ngIf="masVendido1Field!.errors && (masVendido1Field!.dirty || masVendido1Field!.touched)">
             <div class="error mb-4" *ngIf="masVendido1Field!.hasError('required')">
               * Imagen Requerida en formato URL
             </div>
@@ -116,7 +116,7 @@
                 </div>               
             </mat-form-field>
         </div>
-        <div  *ngIf="masVendido2Field!.errors && masVendido2Field!.touched">
+        <div  *ngIf="masVendido2Field!.errors && (masVendido2Field!.dirty || masVendido2Field!.touched)">
             <div class="error mb-4" *ngIf="masVendido2Field!.hasError('required')">
               * Imagen Requerida en formato URL
             </div>
@@ -135,7 +135,7 @@
                 </div>
             </mat-form-field>
         </div>
-        <div  *ngIf="masVendido3Field!.errors && masVendido3Field!.touched">
+        <div  *ngIf="masVendido3Field!.errors && (masVendido3Field!.dirty || masVendido3Field!.touched)">
             <div class="error mb-4" *ngIf="masVendido3Field!.hasError('required')">
               * Imagen Requerida en formato URL
             </div>
@@ -154,7 +154,7 @@
                 </div>              
             </mat-form-field>
         </div>
-        <div  *ngIf="masVendido4Field!.errors && masVendido4Field!.touched">
+        <div  *ngIf="masVendido4Field!.errors && (masVendido4Field!.dirty || masVendido4Field!.touched)">
             <div class="error mb-4" *ngIf="masVendido4Field!.hasError('required')">
               * Imagen Requerida en formato URL
             </div>
@@ -171,7 +171,7 @@
         >
         Cerrar
         </button>
-        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()" >
+        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()" [disabled]="!editForm.valid">
         Actualizar
         </button>
     </div>

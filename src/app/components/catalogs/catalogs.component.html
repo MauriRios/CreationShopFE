@@ -258,7 +258,7 @@
         >
           Cerrar
         </button>
-        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()" >
+        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()" [disabled]="!editForm.valid">
           Actualizar
         </button>
       </div>

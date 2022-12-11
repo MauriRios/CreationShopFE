@@ -48,14 +48,6 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  
-  <!-- <div class="d-flex justify-content-center mt-1">
-    <a 
-      (click)="openEdit(editImages, image)"
-      class="btn btn-danger gap-1"
-      >Editar Imagenes Slider <i class="fa-solid fa-pen"></i
-    ></a>   
-  </div> -->
 
   <!-- Modal Editar imagenes y texto del Slider -->
 
@@ -84,7 +76,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
             </mat-form-field >
         </div>
-        <div  *ngIf="slider1Field!.errors && slider1Field!.touched">
+        <div  *ngIf="slider1Field!.errors && (slider1Field!.dirty || slider1Field!.touched)">
           <div class="error mb-4" *ngIf="slider1Field!.hasError('required')">
             * Imagen Requerida en formato URL
           </div>
@@ -100,7 +92,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
               required/>
           </mat-form-field>
         </div>
-        <div  *ngIf="title1Field!.errors && title1Field!.touched">
+        <div  *ngIf="title1Field!.errors && (title1Field!.dirty || title1Field!.touched)">
           <div class="error mb-4" *ngIf="title1Field!.hasError('required')">
             * El campo Titulo es requerido
           </div>
@@ -125,7 +117,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
-        <div  *ngIf="text1Field!.errors && text1Field!.touched">
+        <div  *ngIf="text1Field!.errors && (text1Field!.dirty || text1Field!.touched)">
           <div class="error mb-4" *ngIf="text1Field!.hasError('required')">
             * El campo Titulo es requerido
           </div>
@@ -148,7 +140,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
-        <div  *ngIf="slider2Field!.errors && slider2Field!.touched">
+        <div  *ngIf="slider2Field!.errors && (slider2Field!.dirty || slider2Field!.touched)">
           <div class="error mb-4" *ngIf="slider2Field!.hasError('required')">
             * Imagen Requerida en formato URL
           </div>
@@ -166,7 +158,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
-        <div  *ngIf="title2Field!.errors && title2Field!.touched">
+        <div  *ngIf="title2Field!.errors && (title2Field!.dirty || title2Field!.touched)">
           <div class="error mb-4" *ngIf="title2Field!.hasError('required')">
             * El campo Titulo es requerido
           </div>
@@ -190,7 +182,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
-        <div  *ngIf="text2Field!.errors && text2Field!.touched">
+        <div  *ngIf="text2Field!.errors && (text2Field!.dirty || text2Field!.touched)">
           <div class="error mb-4" *ngIf="text2Field!.hasError('required')">
             * El campo Titulo es requerido
           </div>
@@ -213,7 +205,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
-        <div  *ngIf="slider3Field!.errors && slider3Field!.touched">
+        <div  *ngIf="slider3Field!.errors && (slider3Field!.dirty || slider3Field!.touched)">
           <div class="error mb-4" *ngIf="slider3Field!.hasError('required')">
             * Imagen Requerida en formato URL
           </div>
@@ -231,7 +223,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
-        <div  *ngIf="title3Field!.errors && title3Field!.touched">
+        <div  *ngIf="title3Field!.errors && (title3Field!.dirty || title3Field!.touched)">
           <div class="error mb-4" *ngIf="title3Field!.hasError('required')">
             * El campo Titulo es requerido
           </div>
@@ -255,7 +247,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>      
           </mat-form-field>
         </div>
-        <div  *ngIf="text3Field!.errors && text3Field!.touched">
+        <div  *ngIf="text3Field!.errors && (text3Field!.dirty || text3Field!.touched)">
           <div class="error mb-4" *ngIf="text3Field!.hasError('required')">
             * El campo Titulo es requerido
           </div>
@@ -277,7 +269,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
         >
           Cerrar
         </button>
-        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()" >
+        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()" [disabled]="!editForm.valid">
           Actualizar
         </button>
       </div>
