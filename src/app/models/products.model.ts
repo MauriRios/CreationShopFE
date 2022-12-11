@@ -1,6 +1,6 @@
 
 export interface Products {
-    id: number;
+    id?: number;
     brand: string;
     style: string;
     volume: string;

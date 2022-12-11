@@ -9,6 +9,11 @@
   padding: 4px;
 }
 
+.btn-edit{
+  display: flex;
+  justify-content: center
+}
+
 .card {
   padding: 0;
   height: 200px;
@@ -37,6 +42,15 @@
 .card > a {
   opacity: 0;
 }
+
+mat-form-field{
+  width: 100%;
+}
+
+.error{
+  color: red;
+}
+
 
 @keyframes myAnim {
   0% {

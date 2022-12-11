@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
                 {   } 
 
   ngOnInit(): void {
+
     this.cartService.products
     .subscribe(data => this.products = data);
 
@@ -59,5 +60,6 @@ export class CartComponent implements OnInit {
     this.cartService.pay(this.products)
     console.log(this.products)
   }
+  
 
 }

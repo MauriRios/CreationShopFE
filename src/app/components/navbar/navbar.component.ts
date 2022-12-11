@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Products } from 'src/app/models/products.model';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,14 +13,24 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
 
-  isLogged = true
-  isAdmin = true
-  scrollPosition = 0
+  products!: Products[];
+  cartAlertCount!: number;
+  isLogged = true;
+  isAdmin = true;
 
-  constructor( private router: Router,) { }
+
+  constructor( 
+    private cartService: CartService,
+    private router: Router,) { }
 
   ngOnInit(): void {
-    this.navBarSticky()
+    this.navBarSticky();
+    this.getProductsList();
+  }
+
+  getProductsList(){
+    this.cartService.products
+    .subscribe(data => this.products = data);
   }
 
   navBarSticky(){
@@ -31,7 +44,11 @@ export class NavbarComponent implements OnInit {
         headerStick?.classList.remove("sticky_element");
       }
     };
+    
   }
+
+  //Icono de alerta del carrito, tomo la longitud del array
+  get alertCartLength() { return this.products.length }
 
 }
 

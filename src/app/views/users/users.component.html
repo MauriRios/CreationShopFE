@@ -22,6 +22,10 @@
 
     <router-outlet ></router-outlet>
 
+    <a class="to-top btn-dark" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
         <div class="row">
             <app-footer></app-footer>
         </div>

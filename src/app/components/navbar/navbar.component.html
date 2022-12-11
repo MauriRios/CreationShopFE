@@ -49,6 +49,7 @@
           </label>
         </form>
         <button
+          aria-label="Carrito"
           type="button"
           style="
             --bs-btn-padding-y: 0.15rem;
@@ -57,13 +58,16 @@
           "
           class="btn position-relative"
         >
-          <a [routerLink]="['/carrito']"
-            ><i class="fa-solid fa-cart-shopping text-secondary"></i
+          <a [routerLink]="['/carrito']" aria-label="Ve al Carrito">
+            <i class="fa-solid fa-cart-shopping text-secondary"></i
           ></a>
-          <span
-            class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle alert-icon"
-          >
-            <span class="visually-hidden">New alerts</span>
+          <span *ngIf="alertCartLength > 0"
+            class="position-absolute top-0 start-100
+            translate-middle bg-danger
+            border border-light
+            rounded-circle alert-icon"
+            >
+            <span>{{alertCartLength}}</span>
           </span>
         </button>
         <a
@@ -148,14 +152,13 @@
       <div class="canvasButtons">
         <ul class="text-underline">
           <li *ngIf="isLogged">
-            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
+            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i>Ingresa/Registrate</a>
           </li>
-
           <li *ngIf="!isLogged">
             <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
           </li>
           <li *ngIf="isAdmin">
-            <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i>Editar Contenido</a>
+            <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i>Administración</a>
           </li>
         </ul>
       </div>

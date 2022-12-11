@@ -1,0 +1,42 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+
+}
+
+.button-add{
+    display: flex;
+    justify-content: flex-end
+}
+
+.title{
+    margin: 0 auto;
+}
+
+
+mat-form-field{
+    margin-right: 30px;
+    display: block;
+    flex-direction: row;
+}
+
+.error{
+    color: red;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .container {
+        width: 70%;
+    }
+}

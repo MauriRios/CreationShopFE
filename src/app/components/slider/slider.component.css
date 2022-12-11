@@ -1,0 +1,17 @@
+.btn-edit{
+    position: relative;
+}
+
+.carousel-indicators{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+.error{
+    color: red;
+}

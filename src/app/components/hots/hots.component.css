@@ -8,6 +8,11 @@ padding: 0 !important;
 margin: 0 !important;
 }
 
+.btn-edit{
+    display: flex;
+    justify-content: center
+}
+
 .card-most {
     padding: 0;
     height: 100%;
@@ -27,10 +32,22 @@ margin: 0 !important;
     overflow: hidden;
 }
 
+input{
+    margin-bottom: 15px;
+}
+mat-form-field{
+    width: 100%;
+}
+
+.error{
+    color: red;
+}
+
 img:hover {
     transform: scale(1.05);
     transition: 0.5s;
 }
+
 
 @media (min-width: 767px) {
     .img-inside{
@@ -46,4 +63,5 @@ img:hover {
         object-position: 0rem 2rem;
 
     }
+
 }

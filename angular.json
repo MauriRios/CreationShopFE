@@ -5,7 +5,8 @@
   "projects": {
     "CreationShopFE": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, tap } from 'rxjs';
 import { Products } from '../models/products.model';
 
 
@@ -11,6 +11,12 @@ const apiMP = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checko
   providedIn: 'root'
 })
 export class ProductsDataService {
+
+  private _refresh$ = new Subject<void>();
+
+  get refresh$() {
+    return this._refresh$;
+  }
 
   private _productsList : Products[] = [];
   private _productsSubjects : BehaviorSubject<Products[]> = new BehaviorSubject(this._productsList);
@@ -27,9 +33,42 @@ export class ProductsDataService {
       return this.http.get<Products[]>(URL + 'productos/traer');
     }
 
+    public getProductById(id: number): Observable<Products> {
+      return this.http.get<Products>(URL + 'producto/traer/' + (1+id));
+    }
+
     public postBuyProducts(products: Products[]): Observable<Products[]> {
       return this.http.post<Products[]>('http://localhost:8080/' + 'cart/buy', products);
     }
+
+    public deleteProduct(id: number): Observable<Products> {
+      return this.http.delete<Products>(URL + 'producto/borrar/' + id)
+      .pipe(
+        tap(()=> {
+            this._refresh$.next();
+        })
+      );
+    }
+
+    public createProduct(product: Products): Observable<Products> {
+      return this.http.post<Products>(URL + 'producto/crear', product)
+      .pipe(
+        tap(()=> {
+            this._refresh$.next();
+        })
+      );
+    }
+
+    public updateProduct(id: number, product: Products): Observable<Products> {
+      return this.http.put<Products>(URL + 'producto/editar/' + id, product)
+      .pipe(
+        tap(()=> {
+            this._refresh$.next();
+        })
+      );
+    }
+
+
   }
 
   // create(product: Products): void{

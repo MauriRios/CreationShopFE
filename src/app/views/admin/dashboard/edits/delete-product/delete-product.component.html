@@ -1,0 +1,8 @@
+<h1 mat-dialog-title >¿Estás seguro que desea eliminar el producto? {{product.id}}</h1>
+<div mat-dialog-content>
+<p></p>
+</div>
+<div mat-dialog-actions>
+<button mat-button (click)="onNoClick()">No Thanks</button>
+<button mat-button  (click)="delete()" cdkFocusInitial>Ok</button>
+</div>

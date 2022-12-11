@@ -13,8 +13,11 @@
 }
 
 .alert-icon{
-    padding: 0.35rem;
+    height: 17px;
+    width: 17px;
+    color: white;
 }
+
 .offcanvas-header{
     height: 10vh;
 }

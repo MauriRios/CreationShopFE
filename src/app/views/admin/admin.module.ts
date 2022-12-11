@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule, routing } from './admin-routing.module';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditsComponent } from './dashboard/edits/edits.component';
 import { SalesComponent } from './dashboard/sales/sales.component';
+import { AddProductComponent } from './dashboard/edits/add-product/add-product.component';
+import { DeleteProductComponent } from './dashboard/edits/delete-product/delete-product.component';
+import { EditProductComponent } from './dashboard/edits/edit-product/edit-product.component';
+
+//angular material modules
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -48,6 +56,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     DashboardComponent,
     EditsComponent,
     SalesComponent,
+    AddProductComponent,
+    DeleteProductComponent,
+    EditProductComponent,
+
     
 
   ],
@@ -55,8 +67,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AdminComponent,
   ],
   imports: [
-    CommonModule,
-    AdminRoutingModule,
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
@@ -90,6 +100,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatRadioModule,
     MatDatepickerModule,
     MatTooltipModule,
+    SweetAlert2Module,
+    AlifeFileToBase64Module,
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    AdminRoutingModule,
     routing
   ],
 

@@ -15,7 +15,8 @@ import { UsersModule } from './users/users.module';
     
   ],
   exports: [
-    
+    AdminModule,
+    UsersModule
   ],
   imports: [
     CommonModule,

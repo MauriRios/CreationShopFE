@@ -1,14 +1,40 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade mh-100 mw-100 " 
-data-bs-ride="carousel">
+data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
+<div class="carousel-indicators m-2">
+<div>
+  <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+  <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</div>
+<div class="btn-edit">
+  <a *ngIf="!isAdmin"
+  (click)="openEdit(editConfig, config)"
+  class="btn btn-danger btn-sm gap-1"
+  >Editar Slider <i class="fa-solid fa-pen"></i
+></a> 
+</div>
+</div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../../../assets/img/beb1.jpg" class="d-block w-100" alt="slide1">
+        <img src="{{config.slider1}}" accept="image/*" class="d-block w-100" alt="slider1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{config.title1}}</h5>
+          <p>{{config.text1}}</p>
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="../../../assets/img/beb2.jpg" class="d-block w-100" alt="slide2">
+        <img src="{{config.slider2}}" accept="image/*" class="d-block w-100" alt="slider2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{config.title2}}</h5>
+          <p>{{config.text2}}</p>
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="../../../assets/img/beb3.jpg" class="d-block w-100" alt="slide3">
+        <img src="{{config.slider3}}" accept="image/*" class="d-block w-100" alt="slider3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{config.title3}}</h5>
+          <p>{{config.text3}}</p>
+        </div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" 
@@ -22,3 +48,230 @@ data-bs-ride="carousel">
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+  <!-- Modal Editar imagenes y texto del Slider -->
+
+  <ng-template #editConfig let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title2">Editar Carrusel</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="editForm" #f="ngForm">
+
+        <div class="form-group">
+          <mat-form-field  appearance="outline">
+            <mat-label for="slider1">Imagen 1</mat-label>
+            <div class="input-group">
+              <input matInput class="input-group form-control"
+              formControlName="slider1"
+              name="slider1" required/>
+              <img src="{{this.editForm.value.slider1}}" height="100px">
+            </div>
+            </mat-form-field >
+        </div>
+        <div  *ngIf="slider1Field!.errors && (slider1Field!.dirty || slider1Field!.touched)">
+          <div class="error mb-4" *ngIf="slider1Field!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
+      </div>
+
+        <div class="form-group">
+          <mat-form-field  appearance="outline">
+            <mat-label for="title1">Titulo 1</mat-label>
+              <input matInput type="text" 
+              formControlName="title1" 
+              name="title1" 
+              class="form-control" 
+              required/>
+          </mat-form-field>
+        </div>
+        <div  *ngIf="title1Field!.errors && (title1Field!.dirty || title1Field!.touched)">
+          <div class="error mb-4" *ngIf="title1Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="title1Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="title1Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 20 caracteres
+          </div>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field  appearance="outline">
+            <mat-label for="text1">Texto 1</mat-label>
+            <div class="input-group">
+              <input matInput 
+              type="text" 
+              formControlName="text1" 
+              name="text1" 
+              class="form-control" 
+              required/>
+            </div>
+          </mat-form-field>
+        </div>
+        <div  *ngIf="text1Field!.errors && (text1Field!.dirty || text1Field!.touched)">
+          <div class="error mb-4" *ngIf="text1Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="text1Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="text1Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 50 caracteres
+          </div>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label for="slider2">Imagen 2</mat-label>
+            <div class="input-group">
+              <input matInput
+              formControlName="slider2"
+              name="slider2" class="form-control" required/>
+              <img src="{{this.editForm.value.slider2}}" height="100px">
+            </div>
+          </mat-form-field>
+        </div>
+        <div  *ngIf="slider2Field!.errors && (slider2Field!.dirty || slider2Field!.touched)">
+          <div class="error mb-4" *ngIf="slider2Field!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
+      </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label for="title2">Titulo 2</mat-label>
+            <div class="input-group">
+              <input matInput type="text" 
+              formControlName="title2" 
+              name="title2" 
+              class="form-control" 
+              required/>
+            </div>
+          </mat-form-field>
+        </div>
+        <div  *ngIf="title2Field!.errors && (title2Field!.dirty || title2Field!.touched)">
+          <div class="error mb-4" *ngIf="title2Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="title2Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="title2Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 20 caracteres
+          </div>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field  appearance="outline">
+            <mat-label for="text2">Texto 2</mat-label>
+            <div class="input-group">
+              <input matInput type="text" 
+              formControlName="text2" 
+              name="text2" 
+              class="form-control" 
+              required/>
+            </div>
+          </mat-form-field>
+        </div>
+        <div  *ngIf="text2Field!.errors && (text2Field!.dirty || text2Field!.touched)">
+          <div class="error mb-4" *ngIf="text2Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="text2Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="text2Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 50 caracteres
+          </div>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field  appearance="outline">
+            <mat-label for="slider3">Imagen 3</mat-label>
+            <div class="input-group">
+              <input matInput
+              formControlName="slider3"
+              name="slider3" class="form-control" required/>
+              <img src="{{this.editForm.value.slider3}}" height="100px">
+            </div>
+          </mat-form-field>
+        </div>
+        <div  *ngIf="slider3Field!.errors && (slider3Field!.dirty || slider3Field!.touched)">
+          <div class="error mb-4" *ngIf="slider3Field!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
+      </div>
+
+        <div class="form-group">
+          <mat-form-field  appearance="outline">
+            <mat-label for="title3">Titulo 3</mat-label>
+            <div class="input-group">
+              <input matInput type="text"
+              formControlName="title3" 
+              name="title3" 
+              class="form-control" 
+              required/>
+            </div>
+          </mat-form-field>
+        </div>
+        <div  *ngIf="title3Field!.errors && (title3Field!.dirty || title3Field!.touched)">
+          <div class="error mb-4" *ngIf="title3Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="title3Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="title3Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 20 caracteres
+          </div>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field  appearance="outline">
+            <mat-label for="text3">Texto 3</mat-label>
+            <div class="input-group">
+              <input matInput type="text" 
+              formControlName="text3" 
+              name="text3" 
+              class="form-control" 
+              required/>
+            </div>      
+          </mat-form-field>
+        </div>
+        <div  *ngIf="text3Field!.errors && (text3Field!.dirty || text3Field!.touched)">
+          <div class="error mb-4" *ngIf="text3Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="text3Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="text3Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 50 caracteres
+          </div>
+        </div>
+      </form>
+  
+      <div class="modal-footer">
+  
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="modal.close('Save click')"
+        >
+          Cerrar
+        </button>
+        <button data-dismiss="modal" class="btn btn-danger" (click)="onSave()" [disabled]="!editForm.valid">
+          Actualizar
+        </button>
+      </div>
+    </div>
+  </ng-template>

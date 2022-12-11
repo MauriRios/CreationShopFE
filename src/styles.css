@@ -55,3 +55,6 @@ input[type=number] {
 }
 /* FIN Componentes de compras, vistas, carrito y categorias */
 
+
+body { height: 100%; }
+
