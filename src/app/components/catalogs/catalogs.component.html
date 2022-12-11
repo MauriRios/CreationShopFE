@@ -128,6 +128,11 @@
             </div>
           </mat-form-field>
         </div>
+        <div  *ngIf="cervezasCatalogField!.errors && cervezasCatalogField!.touched">
+          <div class="error mb-4" *ngIf="cervezasCatalogField!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
+        </div>
 
         <div class="form-group">
           <mat-form-field appearance="outline" >
@@ -136,8 +141,12 @@
               <input matInput type="text" formControlName="vinosCatalog" name="vinosCatalog" class="form-control" required/>
               <img src="{{this.editForm.value.vinosCatalog}}" height="100px">
             </div>
-
           </mat-form-field>
+        </div>
+        <div  *ngIf="vinosCatalogField!.errors && vinosCatalogField!.touched">
+          <div class="error mb-4" *ngIf="vinosCatalogField!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
         </div>
 
         <div class="form-group">
@@ -149,6 +158,11 @@
             </div>
           </mat-form-field>
           </div>
+          <div  *ngIf="destiladosCatalogField!.errors && destiladosCatalogField!.touched">
+            <div class="error mb-4" *ngIf="destiladosCatalogField!.hasError('required')">
+              * Imagen Requerida en formato URL
+            </div>
+          </div>
 
         <div class="form-group">
           <mat-form-field appearance="outline" >
@@ -159,8 +173,12 @@
               name="whiskysCatalog" class="form-control" required/>
               <img src="{{this.editForm.value.whiskysCatalog}}" height="100px">
             </div>
-
           </mat-form-field>
+        </div>
+        <div  *ngIf="whiskysCatalogField!.errors && whiskysCatalogField!.touched">
+          <div class="error mb-4" *ngIf="whiskysCatalogField!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
         </div>
 
         <div class="form-group">
@@ -175,6 +193,11 @@
             </div>
           </mat-form-field>
         </div>
+        <div  *ngIf="regalosCatalogField!.errors && regalosCatalogField!.touched">
+          <div class="error mb-4" *ngIf="regalosCatalogField!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
+        </div>
 
         <div class="form-group">
           <mat-form-field appearance="outline" >
@@ -184,6 +207,11 @@
               <img src="{{this.editForm.value.combosCatalog}}" height="100px">
             </div>
           </mat-form-field>  
+        </div>
+        <div  *ngIf="combosCatalogField!.errors && combosCatalogField!.touched">
+          <div class="error mb-4" *ngIf="combosCatalogField!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
         </div>
 
         <div class="form-group">
@@ -196,7 +224,11 @@
               <img src="{{this.editForm.value.aperitivosCatalog}}" height="100px">
             </div>
           </mat-form-field>
-
+        </div>
+        <div  *ngIf="aperitivosCatalogField!.errors && aperitivosCatalogField!.touched">
+          <div class="error mb-4" *ngIf="aperitivosCatalogField!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
         </div>
 
         <div class="form-group">
@@ -208,7 +240,11 @@
               <img src="{{this.editForm.value.sinAlcoholCatalog}}" height="100px">
             </div>
           </mat-form-field>
-
+        </div>
+        <div  *ngIf="sinAlcoholCatalogField!.errors && sinAlcoholCatalogField!.touched">
+          <div class="error mb-4" *ngIf="sinAlcoholCatalogField!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
         </div>
 
       </form>

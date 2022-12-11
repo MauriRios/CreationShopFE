@@ -84,6 +84,11 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
             </mat-form-field >
         </div>
+        <div  *ngIf="slider1Field!.errors && slider1Field!.touched">
+          <div class="error mb-4" *ngIf="slider1Field!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
+      </div>
 
         <div class="form-group">
           <mat-form-field  appearance="outline">
@@ -94,6 +99,17 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
               class="form-control" 
               required/>
           </mat-form-field>
+        </div>
+        <div  *ngIf="title1Field!.errors && title1Field!.touched">
+          <div class="error mb-4" *ngIf="title1Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="title1Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="title1Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 20 caracteres
+          </div>
         </div>
 
         <div class="form-group">
@@ -109,6 +125,17 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
+        <div  *ngIf="text1Field!.errors && text1Field!.touched">
+          <div class="error mb-4" *ngIf="text1Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="text1Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="text1Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 50 caracteres
+          </div>
+        </div>
 
         <div class="form-group">
           <mat-form-field appearance="outline">
@@ -121,6 +148,11 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
+        <div  *ngIf="slider2Field!.errors && slider2Field!.touched">
+          <div class="error mb-4" *ngIf="slider2Field!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
+      </div>
 
         <div class="form-group">
           <mat-form-field appearance="outline">
@@ -132,8 +164,18 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
               class="form-control" 
               required/>
             </div>
-
           </mat-form-field>
+        </div>
+        <div  *ngIf="title2Field!.errors && title2Field!.touched">
+          <div class="error mb-4" *ngIf="title2Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="title2Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="title2Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 20 caracteres
+          </div>
         </div>
 
         <div class="form-group">
@@ -148,6 +190,17 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
+        <div  *ngIf="text2Field!.errors && text2Field!.touched">
+          <div class="error mb-4" *ngIf="text2Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="text2Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="text2Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 50 caracteres
+          </div>
+        </div>
 
         <div class="form-group">
           <mat-form-field  appearance="outline">
@@ -160,6 +213,11 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
+        <div  *ngIf="slider3Field!.errors && slider3Field!.touched">
+          <div class="error mb-4" *ngIf="slider3Field!.hasError('required')">
+            * Imagen Requerida en formato URL
+          </div>
+      </div>
 
         <div class="form-group">
           <mat-form-field  appearance="outline">
@@ -173,6 +231,17 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
             </div>
           </mat-form-field>
         </div>
+        <div  *ngIf="title3Field!.errors && title3Field!.touched">
+          <div class="error mb-4" *ngIf="title3Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="title3Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="title3Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 20 caracteres
+          </div>
+        </div>
 
         <div class="form-group">
           <mat-form-field  appearance="outline">
@@ -183,9 +252,19 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
               name="text3" 
               class="form-control" 
               required/>
-            </div>
-
+            </div>      
           </mat-form-field>
+        </div>
+        <div  *ngIf="text3Field!.errors && text3Field!.touched">
+          <div class="error mb-4" *ngIf="text3Field!.hasError('required')">
+            * El campo Titulo es requerido
+          </div>
+          <div class="error mb-4" *ngIf="text3Field!.hasError('minlength')">
+            * El Titulo debe tener mas de 7 caracteres
+          </div>
+          <div class="error mb-4" *ngIf="text3Field!.hasError('maxlength')">
+            * El Titulo debe tener menos de 50 caracteres
+          </div>
         </div>
       </form>
   

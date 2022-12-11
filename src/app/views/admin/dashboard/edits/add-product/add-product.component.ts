@@ -29,7 +29,8 @@ newProduct!:Products;
 
   constructor(private formBuilder:FormBuilder,
               private productsDataService: ProductsDataService,
-              private router:Router,) { 
+              private router:Router,) 
+              { 
                 this.createForm();
               }
 
@@ -39,14 +40,14 @@ newProduct!:Products;
 
   createForm(){
     this.addProductForm = this.formBuilder.group({
-      brand: new FormControl('', [Validators.minLength(3)]),
-      style: new FormControl('', [Validators.minLength(3)]),
-      category: new FormControl(''),
-      volume: new FormControl('', [Validators.minLength(2)]),
-      price: new FormControl(''),
-      stock: new FormControl(''),
-      clearance: new FormControl(),
-      image: new FormControl('', [Validators.minLength(10)]),
+      brand: ['', Validators.minLength(3)],
+      style: ['', Validators.minLength(3)],
+      category: ['', Validators.required],
+      volume: ['', Validators.minLength(2)],
+      price: ['', Validators.required],
+      stock: ['', Validators.required],
+      clearance: ['', Validators.required],
+      image: ['', Validators.minLength(10)],
     });
   }
 

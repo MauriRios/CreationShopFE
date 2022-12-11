@@ -20,10 +20,10 @@ export class CatalogsComponent implements OnInit {
   constructor(private catalogConfigService : CatalogConfigService,
               config: NgbModalConfig,
               private modalService: NgbModal,
-              private fb: FormBuilder,
-
+              private formBuilder: FormBuilder,
               ) { 
-
+                
+              this.createEditForm(),
               config.backdrop = 'static',
               config.keyboard = false
 
@@ -32,7 +32,10 @@ export class CatalogsComponent implements OnInit {
   ngOnInit(): void {
     this.getCatalogConfig();
 
-    this.editForm = this.fb.group({
+  }
+
+  createEditForm(){
+    this.editForm = this.formBuilder.group({
       id: [''],
       aperitivosCatalog: ['', Validators.required],
       cervezasCatalog: ['', Validators.required],
@@ -45,6 +48,7 @@ export class CatalogsComponent implements OnInit {
     });
   }
 
+  //traer imagenes del back
   getCatalogConfig() {
     this.catalogConfigService.getCatalogConfig()
     .subscribe( data =>(this.catalogConfig = data,
@@ -80,6 +84,32 @@ export class CatalogsComponent implements OnInit {
           this.modalService.dismissAll();
         });
     }
+
+    //form getters
+    get cervezasCatalogField(){
+      return this.editForm.get('cervezasCatalog')
+    };
+    get whiskysCatalogField(){
+      return this.editForm.get('whiskysCatalog')
+    };
+    get aperitivosCatalogField(){
+      return this.editForm.get('aperitivosCatalog')
+    };
+    get combosCatalogField(){
+      return this.editForm.get('combosCatalog')
+    };
+    get destiladosCatalogField(){
+      return this.editForm.get('destiladosCatalog')
+    };
+    get regalosCatalogField(){
+      return this.editForm.get('regalosCatalog')
+    };
+    get sinAlcoholCatalogField(){
+      return this.editForm.get('sinAlcoholCatalog')
+    };
+    get vinosCatalogField(){
+      return this.editForm.get('vinosCatalog')
+    };
 
 //Metodo para cerrar el modal con esc y click fuera del modal
   private getDismissReason(reason: any): string {

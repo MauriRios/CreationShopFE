@@ -80,6 +80,11 @@
                 </div>
             </mat-form-field>
         </div>
+        <div  *ngIf="elegidoDelMesField!.errors && elegidoDelMesField!.touched">
+            <div class="error mb-4" *ngIf="elegidoDelMesField!.hasError('required')">
+              * Imagen Requerida en formato URL
+            </div>
+        </div>
 
         <div class="form-group">
             <mat-form-field appearance="outline" >
@@ -93,6 +98,11 @@
                 </div>
             </mat-form-field>
         </div>
+        <div  *ngIf="masVendido1Field!.errors && masVendido1Field!.touched">
+            <div class="error mb-4" *ngIf="masVendido1Field!.hasError('required')">
+              * Imagen Requerida en formato URL
+            </div>
+        </div>
 
         <div class="form-group">
             <mat-form-field appearance="outline" >
@@ -105,6 +115,11 @@
                     <img src="{{this.editForm.value.masVendido2}}" height="100px">
                 </div>               
             </mat-form-field>
+        </div>
+        <div  *ngIf="masVendido2Field!.errors && masVendido2Field!.touched">
+            <div class="error mb-4" *ngIf="masVendido2Field!.hasError('required')">
+              * Imagen Requerida en formato URL
+            </div>
         </div>
 
         <div class="form-group">
@@ -120,6 +135,11 @@
                 </div>
             </mat-form-field>
         </div>
+        <div  *ngIf="masVendido3Field!.errors && masVendido3Field!.touched">
+            <div class="error mb-4" *ngIf="masVendido3Field!.hasError('required')">
+              * Imagen Requerida en formato URL
+            </div>
+        </div>
 
         <div class="form-group">
             <mat-form-field appearance="outline" >
@@ -134,6 +154,12 @@
                 </div>              
             </mat-form-field>
         </div>
+        <div  *ngIf="masVendido4Field!.errors && masVendido4Field!.touched">
+            <div class="error mb-4" *ngIf="masVendido4Field!.hasError('required')">
+              * Imagen Requerida en formato URL
+            </div>
+        </div>
+
     </form>
 
     <div class="modal-footer">

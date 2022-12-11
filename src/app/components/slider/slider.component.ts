@@ -26,7 +26,8 @@ export class SliderComponent implements OnInit {
 
               
               ) { 
-
+                
+              this.createFormEdit();
               config.backdrop = 'static',
               config.keyboard = false
 
@@ -35,18 +36,22 @@ export class SliderComponent implements OnInit {
   ngOnInit(): void {
     this.getSliderConfig();
 
+  }
+  
+  createFormEdit(){
     this.editForm = this.fb.group({
-      id: ['', Validators.required],
+      id: [''],
       slider1: ['', Validators.required],
-      title1: ['', Validators.required],
-      text1: ['', Validators.required],
+      title1: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(7)]],
+      text1: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(7)]],
       slider2: ['', Validators.required],
-      title2: ['', Validators.required],
-      text2: ['', Validators.required],
+      title2: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(7)]],
+      text2: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(7)]],
       slider3: ['', Validators.required],
-      title3: ['', Validators.required],
-      text3: ['', Validators.required],
+      title3: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(7)]],
+      text3: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(7)]],
     });
+
   }
 
   getSliderConfig() {
@@ -100,6 +105,35 @@ export class SliderComponent implements OnInit {
           this.modalService.dismissAll();
         });
     }
+
+      //form getters
+      get slider1Field(){
+        return this.editForm.get('slider1')
+      };
+      get slider2Field(){
+        return this.editForm.get('slider2')
+      };
+      get slider3Field(){
+        return this.editForm.get('slider3')
+      };
+      get title1Field(){
+        return this.editForm.get('title1')
+      };
+      get title2Field(){
+        return this.editForm.get('title2')
+      };
+      get title3Field(){
+        return this.editForm.get('title3')
+      };
+      get text1Field(){
+        return this.editForm.get('text1')
+      };
+      get text2Field(){
+        return this.editForm.get('text2')
+      };
+      get text3Field(){
+        return this.editForm.get('text3')
+      };
 
 //Metodo para cerrar el modal con esc y click fuera del modal
   private getDismissReason(reason: any): string {

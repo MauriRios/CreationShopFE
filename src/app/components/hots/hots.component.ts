@@ -24,7 +24,7 @@ export class HotsComponent implements OnInit {
               private fb: FormBuilder,
 
     ) { 
-
+    this.createFormEdit();
     config.backdrop = 'static',
     config.keyboard = false
 
@@ -33,15 +33,18 @@ export class HotsComponent implements OnInit {
 ngOnInit(): void {
 this.getHotConfig();
 
-this.editForm = this.fb.group({
-id: [''],
-elegidoDelMes: ['', Validators.required],
-masVendido1: ['', Validators.required],
-masVendido2: ['', Validators.required],
-masVendido3: ['', Validators.required],
-masVendido4: ['', Validators.required],
 
-});
+}
+
+createFormEdit(){
+  this.editForm = this.fb.group({
+    id: [''],
+    elegidoDelMes: ['', Validators.required],
+    masVendido1: ['', Validators.required],
+    masVendido2: ['', Validators.required],
+    masVendido3: ['', Validators.required],
+    masVendido4: ['', Validators.required],
+    });
 }
 
 getHotConfig() {
@@ -77,6 +80,23 @@ this.ngOnInit();
 this.modalService.dismissAll();
 });
 }
+
+   //form getters
+  get elegidoDelMesField(){
+    return this.editForm.get('elegidoDelMes')
+  };
+  get masVendido1Field(){
+    return this.editForm.get('masVendido1')
+  };
+  get masVendido2Field(){
+    return this.editForm.get('masVendido2')
+  };
+  get masVendido3Field(){
+    return this.editForm.get('masVendido3')
+  };
+  get masVendido4Field(){
+    return this.editForm.get('masVendido4')
+  };
 
 //Metodo para cerrar el modal con esc y click fuera del modal
 private getDismissReason(reason: any): string {
