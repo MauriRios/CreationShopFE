@@ -43,13 +43,13 @@ export class SliderComponent implements OnInit {
       id: [''],
       slider1: ['', Validators.required],
       title1: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(7)]],
-      text1: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(7)]],
+      text1: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(7)]],
       slider2: ['', Validators.required],
       title2: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(7)]],
-      text2: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(7)]],
+      text2: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(7)]],
       slider3: ['', Validators.required],
       title3: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(7)]],
-      text3: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(7)]],
+      text3: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(7)]],
     });
 
   }

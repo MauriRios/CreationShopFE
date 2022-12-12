@@ -33,3 +33,7 @@ mat-form-field{
     display: block;
     flex-direction: row;
 }
+
+.error{
+    color: red;
+}
