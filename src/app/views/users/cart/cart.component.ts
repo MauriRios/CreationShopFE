@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -29,11 +30,23 @@ export class CartComponent implements OnInit {
   
   verifyBeerQuantity(product : Products): void {
     if(product.stock < product.quantity) {
-      alert("No se pueden pedir más productos  de los que hay en stock");
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'No se pueden pedir más productos de los que hay en stock',
+        showConfirmButton: false,
+        timer: 2500
+      })
       product.quantity = product.stock;
     }
     if(product.quantity < 0) {
-      alert("No se pueden pedir menos que 0 productos");
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'No se pueden pedir menos que 0 productos',
+        showConfirmButton: false,
+        timer: 2500
+      })
       product.quantity = 0;
     }
   }
@@ -53,8 +66,13 @@ export class CartComponent implements OnInit {
         product.stock -= product.quantity, console.log(product.stock)
         }
         else {
-          alert('No se pudo realizar la compra')
-        }
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'No se pudo realizar la compra',
+            showConfirmButton: false,
+            timer: 2500
+          });}
       }
     }
     this.cartService.pay(this.products)

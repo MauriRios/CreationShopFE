@@ -11,6 +11,7 @@ import { DeleteProductComponent } from '../delete-product/delete-product.compone
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Category } from 'src/app/models/categorys.model';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -88,14 +89,14 @@ export class EditProductComponent implements OnInit, AfterViewInit {
   createEditForm(){
     this.editForm = this.fb.group({
       id: ['', Validators.required],
-      brand: ['', Validators.required],
-      style: ['', Validators.required],
-      volume: ['', Validators.required],
+      brand: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+      style: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       category: ['', Validators.required],
-      price: ['', Validators.required],
-      stock: ['', Validators.required],
-      image: ['', Validators.required],
+      volume: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      price: ['', [Validators.required, Validators.min(1)] ],
+      stock: ['', [Validators.required, Validators.min(1)] ],
       clearance: [''],
+      image: ['', Validators.required],
     })
   }
 
@@ -122,12 +123,32 @@ export class EditProductComponent implements OnInit, AfterViewInit {
 
     //Guarda lo editado
     onSave() {
+      if(this.editForm.valid){
+        const value = this.editForm.value;
+        console.log(value);
       this.productsDataService.updateProduct(this.editForm.value.id, this.editForm.value)
         .subscribe((results) => {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Producto Editado con éxito',
+            showConfirmButton: false,
+            timer: 2500
+          }),
+          window.scrollTo(0, 0);
+          this.editForm.markAllAsTouched();
           this.ngOnInit();
           this.modalService.dismissAll();
-        });
-    }
+          });
+        } else {
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Hubo un Error',
+            showConfirmButton: false,
+            timer: 2500
+          })};  
+      }
 
   openDialog(product: Products): void {
     const dialogRef = this.dialog.open(DeleteProductComponent, {
@@ -138,5 +159,28 @@ export class EditProductComponent implements OnInit, AfterViewInit {
       console.log('The dialog was closed');
     });
   }
+
+    //Form getters
+    get brandField(){
+      return this.editForm.get('brand')
+    };
+    get styleField(){
+      return this.editForm.get('style')
+    };
+    get categoryField(){
+      return this.editForm.get('category')
+    };
+    get volumeField(){
+      return this.editForm.get('volume')
+    };
+    get priceField(){
+      return this.editForm.get('price')
+    };
+    get stockField(){
+      return this.editForm.get('stock')
+    };
+    get imageField(){
+      return this.editForm.get('image')
+    };
 
 }
