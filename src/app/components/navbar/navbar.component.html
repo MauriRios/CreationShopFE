@@ -18,11 +18,10 @@
             --bs-btn-padding-x: 0.3rem;
             --bs-btn-font-size: 0.95rem;
           "
-          class="btn position-relative"
-        >
+          class="btn position-relative">
           <a [routerLink]="['/carrito']" aria-label="Ve al Carrito">
-            <i class="fa-solid fa-cart-shopping text-secondary"></i
-          ></a>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
           <span *ngIf="alertCartLength > 0"
             class="position-absolute top-0 start-100
             translate-middle bg-danger
@@ -39,7 +38,7 @@
           data-bs-target="#offcanvasScrolling"
           aria-controls="offcanvasScrolling"
         >
-          <i class="fa-solid fa-user-gear text-secondary"></i
+          <i class="fa-solid fa-user-gear"></i
         ></a>
       </span>
     </div>

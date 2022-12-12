@@ -64,12 +64,12 @@ input[type=number] {
   position: fixed;
   right: 20px;
   border-radius: 100%;
-  color: white;
   background-color: #6c757d;
   display: none;
 }
 
 .to-top:hover{
+  color: white;
   background-color: black;
 }
 
