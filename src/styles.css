@@ -19,10 +19,7 @@ h1, h2, h3, h4, h5, h6, p, span, a  {
 
 /* Componentes de compras, vistas, carrito y categorias */
 
-.main-container{
-  width: 90vw;
-  height: 100vh;
-}
+
 .title-container{
   text-align: center;
 }
