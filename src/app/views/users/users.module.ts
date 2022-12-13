@@ -12,15 +12,15 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { UsersComponent } from './users.component';
 
 //components
-import { CatalogsComponent } from 'src/app/components/catalogs/catalogs.component';
-import { ContactComponent } from 'src/app/components/contact/contact.component';
-import { FooterComponent } from 'src/app/components/footer/footer.component';
-import { HotsComponent } from 'src/app/components/hots/hots.component';
-import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
-import { OffersComponent } from 'src/app/components/offers/offers.component';
-import { SliderComponent } from 'src/app/components/slider/slider.component';
-import { SponsorshipComponent } from 'src/app/components/sponsorship/sponsorship.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { CartComponent } from './cart/cart.component';
+import { CatalogsComponent } from './components/catalogs/catalogs.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HotsComponent } from './components/hots/hots.component';
+import { OffersComponent } from './components/offers/offers.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { SponsorshipComponent } from './components/sponsorship/sponsorship.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
@@ -70,6 +70,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 
 

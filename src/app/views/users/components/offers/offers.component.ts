@@ -36,8 +36,11 @@ export class OffersComponent implements OnInit {
         items: 4
       },
       940: {
-        items: 4
-      }
+        items: 5
+      },
+      1500: {
+        items: 6
+      },
     },
     nav: true
   }

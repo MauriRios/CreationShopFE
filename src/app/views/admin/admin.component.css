@@ -31,9 +31,9 @@ mat-toolbar {
     font-size: 38px;
     
 }
-.btn {
+a {
     color: white;
 }
 .btn:hover{
-    color: rgb(196, 195, 195);
+    color: rgb(122, 122, 122);
 }

@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row"> 
+        <div class="col-12 title">
+            <h1>
+                Contacto
+            </h1>
+        </div>
+    
+        <div class="row content">
+            <div class="col-lg-4 icon">
+                    <i class="fa-regular fa-envelope"></i>
+                    <h3>
+                        Contacto
+                    </h3>
+                    <a href="">1164740303</a>
+                    <a href="">ebrios@gmail.com</a>
+            </div>   
+            <div class="col-lg-4 icon">
+                <i class="fa-regular fa-map"></i>
+                <h3>
+                    Ubicación
+                </h3>
+                <p>Av. Blvd. de Mayo 410, Alejandro Korn</p>
+                <small>Provincia de Buenos Aires</small>
+            </div>   
+            <div class="col-lg-4 icon">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h3>
+                    Horarios
+                </h3>
+                <p>Martes a Sábado</p>
+                <p>de 11 a 20Hs.</p>
+            </div>
+        </div>
+
+        <div class="row form-map">
+            <div class="col-lg-6 form-content ">
+                <form [formGroup]="contactForm" class="form" >
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Nombre</mat-label>
+                        <input type="text" class="form-group" matInput formControlName="name" name="name" required>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Email</mat-label>
+                        <input type="text" class="form-group" matInput formControlName="email" name="email" required>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Teléfono</mat-label>
+                        <input type="number" class="form-group" matInput formControlName="phone" name="phone" required>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Mensaje</mat-label>
+                        <textarea type="text" class="form-group" matInput formControlName="message" name="message" required></textarea>
+                    </mat-form-field>
+                </form>
+                <button class="btn btn-danger" type="submit" [disabled]="!contactForm.valid" >ENVIAR</button>
+            </div>
+
+            <div class="col-lg-6 map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d204.29845142549763!2d-58.3791782!3d-34.9872946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bd2d96a780fdeb%3A0xdd6b919690001332!2sEbrio%E2%80%99s%20Bebidas%20Alejandro%20Korn!5e0!3m2!1ses-419!2sar!4v1670899384814!5m2!1ses-419!2sar" width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        </div>
+    
+    </div>
+
+        <!-- <app-catalogs></app-catalogs> -->

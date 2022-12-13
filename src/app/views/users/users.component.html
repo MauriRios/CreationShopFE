@@ -3,10 +3,10 @@
     <span>
     <ul class="menu-btns d-flex text-color-list p-0 mb-0">
         <li>
-        <a href="" class="text-secondary mx-3">¿Cómo Llegar?</a>
+        <a href="https://www.google.com.ar/maps/place/Ebrio%E2%80%99s+Bebidas+Alejandro+Korn/@-34.9872946,-58.3791782,21z/data=!4m12!1m6!3m5!1s0x95bd2d96a780fdeb:0xdd6b919690001332!2sEbrio%E2%80%99s+Bebidas+Alejandro+Korn!8m2!3d-34.9872946!4d-58.3790414!3m4!1s0x95bd2d96a780fdeb:0xdd6b919690001332!8m2!3d-34.9872946!4d-58.3790414" target="_blank" class="text-secondary mx-3">¿Cómo Llegar?</a>
         </li>
         <li>
-        <a href="" class="text-secondary mx-3">Contacto</a>
+        <a [routerLink]="['/contacto']" class="text-secondary mx-3">Contacto</a>
         </li>
 
         <li>
@@ -22,7 +22,7 @@
 
     <router-outlet ></router-outlet>
 
-    <a class="to-top btn-dark" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+    <a class="to-top btn" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
         <i class="fas fa-arrow-up"></i>
     </a>
 

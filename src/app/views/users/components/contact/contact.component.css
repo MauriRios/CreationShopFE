@@ -1,0 +1,49 @@
+.title{
+    display: flex;
+    justify-content: center;
+    margin: 70px 0 20px 0;
+
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+i{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+p{
+    margin: 0px;
+}
+
+a{
+    list-style: none;
+    color: #212529;
+    text-decoration: none;
+}
+
+.content{
+    margin-bottom: 50px;
+}
+
+.form-content{
+    padding: 15px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.map{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
