@@ -28,6 +28,10 @@ a{
     text-decoration: none;
 }
 
+textarea {
+    size: 100px;
+}
+
 .content{
     margin-bottom: 50px;
 }
