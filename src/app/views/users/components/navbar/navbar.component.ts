@@ -35,9 +35,7 @@ export class NavbarComponent implements OnInit {
 
   navBarSticky(){
     const headerStick = document.querySelector(".sticky-top");
-
     window.onscroll = function () {
-
       if (window.scrollY > 80) {
         headerStick?.classList.add("sticky_element");
       } else {

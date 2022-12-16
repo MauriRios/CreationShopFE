@@ -15,12 +15,16 @@ export class ContactComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder
     ) { 
+      this.createContactForm();
 
     }
 
   ngOnInit(): void {
-    this.createContactForm();
   }
+
+  ngAfterViewInit() {
+    window.scrollTo(0, 0);
+}
 
   createContactForm(){
     this.contactForm = this.formBuilder.group({

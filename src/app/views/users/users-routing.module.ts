@@ -27,7 +27,7 @@ const routesU: Routes = [
   },
   
   { path: '', component: UsersComponent, children:[
-
+    
     {path: 'home',component: HomeComponent },
     {path: 'combos',component: CombosCatalogComponent },
     {path: 'vinos',component: VinosCatalogComponent},

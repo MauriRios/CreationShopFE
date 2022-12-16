@@ -14,7 +14,6 @@ export class CartService {
   public products : Observable<Products[]> = this._cartListSubjects.asObservable();
   buyQuantity: Products[] = [];
   
-
   constructor(private productsDataService: ProductsDataService) { }
 
   addToCart(newProduct:Products){

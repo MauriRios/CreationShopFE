@@ -39,6 +39,12 @@
   transform: scale(1.05);
   transition: 0.5s ease;
 }
+
+.card:not(:hover) > img {
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+
 .card > a {
   opacity: 0;
 }

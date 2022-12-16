@@ -4,11 +4,11 @@ import { CartService } from 'src/app/services/cart.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
 
 @Component({
-  selector: 'app-aperitivos-catalog',
-  templateUrl: './aperitivos-catalog.component.html',
-  styleUrls: ['./aperitivos-catalog.component.css']
+  selector: 'app-filters',
+  templateUrl: './filters.component.html',
+  styleUrls: ['./filters.component.css']
 })
-export class AperitivosCatalogComponent implements OnInit {
+export class FiltersComponent implements OnInit {
 
 
   filter = '';
@@ -45,10 +45,13 @@ export class AperitivosCatalogComponent implements OnInit {
   verifyProductQuantity(product : Products): void {
     this.cartService.verifyProductQuantity(product);
   }
+  
+
 
   ngAfterViewInit() {
     window.scrollTo(0, 0);
 }
+
 
 
 }

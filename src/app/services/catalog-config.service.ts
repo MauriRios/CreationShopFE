@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { CatalogConfig } from '../models/catalog-config.model';
 
 @Injectable({
@@ -8,15 +9,14 @@ import { CatalogConfig } from '../models/catalog-config.model';
 })
 export class CatalogConfigService {
 
-  URL = 'http://localhost:8080/catalogconfig'; 
 
   constructor(private http:HttpClient) { }
 
   public getCatalogConfig(): Observable<CatalogConfig[]>  {
-    return this.http.get<CatalogConfig[]>(this.URL + '/traer');
+    return this.http.get<CatalogConfig[]>(environment.URL + 'catalogconfig/traer');
   }
 
   public updateCatalogConfig(CatalogConfig: CatalogConfig) {
-    return this.http.put<CatalogConfig>(this.URL + '/editar/' + CatalogConfig.id, CatalogConfig)
+    return this.http.put<CatalogConfig>(environment.URL + 'catalogconfig/editar/' + CatalogConfig.id, CatalogConfig)
   }
 }

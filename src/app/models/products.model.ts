@@ -1,5 +1,6 @@
 
 export interface Products {
+    
     id?: number;
     brand: string;
     style: string;
@@ -10,5 +11,6 @@ export interface Products {
     stock: number;
     quantity: number;
     clearance?: boolean;
+
 }
 
