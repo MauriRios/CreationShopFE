@@ -150,11 +150,11 @@ export class EditProductComponent implements OnInit, AfterViewInit {
           })};  
       }
 
-  openDialog(product: Products): void {
+  openDialogDelete(product: Products): void {
     const dialogRef = this.dialog.open(DeleteProductComponent, {
-      width: '250px',
+      width: '320px',
     });
-    localStorage.setItem("idPerfilBorrar", product.id!.toString());
+    localStorage.setItem("idproductDelete", product.id!.toString());
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });

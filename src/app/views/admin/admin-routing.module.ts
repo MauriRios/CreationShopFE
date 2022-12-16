@@ -9,8 +9,8 @@ import { SalesComponent } from './sales/sales.component';
 export const routesA: Routes = [
 
   {
-    path: '',
-    redirectTo: 'home',
+    path: 'admin',
+    redirectTo: 'admin/productos',
     pathMatch: 'full'
   },
 

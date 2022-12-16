@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Products } from 'src/app/models/products.model';
 import { ProductsDataService } from 'src/app/services/products-data.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-delete-product',
@@ -50,17 +51,24 @@ export class DeleteProductComponent implements OnInit {
   }
 
   delete():void{
-  // this.productsDataService.deleteProduct(this.product.id).subscribe(
-  //   data => {
-  //     this._snackBar.open('Producto Eliminado', 'Cerrar', {
-  //       horizontalPosition: this.horizontalPosition,
-  //       verticalPosition: this.verticalPosition,
-  //     }
-  //     )
-  //     this.dialogRef.close()
-  //   }
-  // );
- // window.location.reload();
+  this.productsDataService.deleteProduct(this.product.id).subscribe(
+    data => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto Eliminado con éxito',
+        showConfirmButton: false,
+        timer: 2500
+      }),
+      // this._snackBar.open('Producto Eliminado', 'Cerrar', {
+      //   horizontalPosition: this.horizontalPosition,
+      //   verticalPosition: this.verticalPosition,
+      // }
+      // )
+      this.dialogRef.close()
+    }
+  );
+//  window.location.reload();
   }
 
 }

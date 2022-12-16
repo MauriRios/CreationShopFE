@@ -21,7 +21,7 @@ import { OffersComponent } from './components/offers/offers.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SponsorshipComponent } from './components/sponsorship/sponsorship.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 
 //filters components
 import { AperitivosCatalogComponent } from './filters/aperitivos-catalog/aperitivos-catalog.component';
