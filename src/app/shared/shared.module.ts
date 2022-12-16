@@ -38,7 +38,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
-const sharedModelule = [
+const sharedAngularMaterialModule = [
   MatCardModule,
   MatToolbarModule,
   MatIconModule,
@@ -72,19 +72,18 @@ const sharedModelule = [
   MatRadioModule,
   MatDatepickerModule,
   MatTooltipModule,
-  
-  SweetAlert2Module,
-  AlifeFileToBase64Module,
 ];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    sharedModelule
+    SweetAlert2Module,
+    AlifeFileToBase64Module,
+    sharedAngularMaterialModule
   ],
   exports:[
-    sharedModelule
+    sharedAngularMaterialModule
   ]
 })
 export class SharedModule { }

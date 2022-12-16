@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Products } from 'src/app/models/products.model';
@@ -14,15 +13,13 @@ import Swal from 'sweetalert2';
 })
 export class DeleteProductComponent implements OnInit {
 
-  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   subscription!: Subscription;
   product!:Products;
 
   constructor(private productsDataService : ProductsDataService,
               private router : Router,
               public dialogRef: MatDialogRef<DeleteProductComponent>,
-              private _snackBar: MatSnackBar) { }
+              ) { }
 
   ngOnInit(): void {
     this.getProduct();
@@ -68,7 +65,6 @@ export class DeleteProductComponent implements OnInit {
       this.dialogRef.close()
     }
   );
-//  window.location.reload();
   }
 
 }

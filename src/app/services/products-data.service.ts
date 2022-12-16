@@ -17,7 +17,7 @@ export class ProductsDataService {
 
   private _productsList : Products[] = [];
   private _productsSubjects : BehaviorSubject<Products[]> = new BehaviorSubject(this._productsList);
-  public products : Observable<Products[]> = this._productsSubjects.asObservable();
+  products : Observable<Products[]> = this._productsSubjects.asObservable();
   
   constructor(private http: HttpClient) { 
     this.http.get<Products[]>(environment.URL + 'productos/traer').subscribe(data => {

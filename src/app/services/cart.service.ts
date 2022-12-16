@@ -11,7 +11,7 @@ export class CartService {
 
   private _cartList : Products[] = [];
   private _cartListSubjects : BehaviorSubject<Products[]> = new BehaviorSubject(this._cartList);
-  public products : Observable<Products[]> = this._cartListSubjects.asObservable();
+  products : Observable<Products[]> = this._cartListSubjects.asObservable();
   buyQuantity: Products[] = [];
   
   constructor(private productsDataService: ProductsDataService) { }
