@@ -1,8 +1,8 @@
-<h1 mat-dialog-title >¿Estás seguro que desea eliminar el producto "{{product.brand}} {{product.style}} {{product.volume}}" ?</h1>
+<h1 mat-dialog-title class="title" >Eliminar Producto</h1>
 <div mat-dialog-content>
-<p></p>
+<p>¿Estás seguro que desea eliminar este producto "{{product.brand!}} {{product.style!}} {{product.volume!}}" ?</p>
 </div>
-<div mat-dialog-actions>
-<button mat-button (click)="onNoClick()">No</button>
-<button mat-button  (click)="delete()" cdkFocusInitial>Si</button>
+<div mat-dialog-actions class="buttons">
+<button class="btn btn-primary" (click)="onNoClick()">Cancelar</button>
+<button class="btn btn-danger" (click)="delete()" cdkFocusInitial>Aceptar</button>
 </div>

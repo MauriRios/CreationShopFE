@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { routesA } from '../admin/admin-routing.module';
 import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { LoginComponent } from '../../auth/login/login.component';
+import { RegisterComponent } from '../../auth/register/register.component';
 import { AperitivosCatalogComponent } from './filters/aperitivos-catalog/aperitivos-catalog.component';
 import { CervezasCatalogComponent } from './filters/cervezas-catalog/cervezas-catalog.component';
 import { CombosCatalogComponent } from './filters/combos-catalog/combos-catalog.component';
@@ -39,9 +41,8 @@ const routesU: Routes = [
     {path: 'destilados',component: DestiladosCatalogComponent },
     {path: 'carrito',component: CartComponent },
     {path: 'contacto', component: ContactComponent},
-
-      // {path: 'login', component: LoginComponent},
-      // {path: 'registro', component: RegistroComponent}
+    {path: 'login', component: LoginComponent},
+    {path: 'registro', component: RegisterComponent }
   ] },
 
 ];

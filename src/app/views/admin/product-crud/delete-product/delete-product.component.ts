@@ -62,9 +62,14 @@ export class DeleteProductComponent implements OnInit {
       //   verticalPosition: this.verticalPosition,
       // }
       // )
-      this.dialogRef.close()
+      this.dialogRef.close();
+      this.clearStorage();
     }
   );
+  }
+
+  clearStorage():void {
+    window.localStorage.clear();
   }
 
 }

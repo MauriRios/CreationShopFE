@@ -10,6 +10,7 @@ import { AdminModule } from './admin/admin.module';
 import { UsersModule } from './users/users.module';
 
 
+
 @NgModule({
   declarations: [
     
@@ -22,7 +23,8 @@ import { UsersModule } from './users/users.module';
     CommonModule,
     HttpClientModule,
     AdminModule,
-    UsersModule
+    UsersModule,
+
 
   ],
   providers: [

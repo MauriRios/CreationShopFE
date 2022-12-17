@@ -21,7 +21,8 @@ import { OffersComponent } from './components/offers/offers.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SponsorshipComponent } from './components/sponsorship/sponsorship.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from '../../auth/login/login.component';
+import { RegisterComponent } from '../../auth/register/register.component';
 
 //filters components
 import { AperitivosCatalogComponent } from './filters/aperitivos-catalog/aperitivos-catalog.component';
@@ -33,7 +34,6 @@ import { RegalosCatalogComponent } from './filters/regalos-catalog/regalos-catal
 import { SinAlcoholCatalogComponent } from './filters/sin-alcohol-catalog/sin-alcohol-catalog.component';
 import { VinosCatalogComponent } from './filters/vinos-catalog/vinos-catalog.component';
 import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catalog.component';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 //angular material modules
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -64,6 +64,9 @@ import { FiltersComponent } from './components/filters/filters.component';
     FilterPipe,
     HomeComponent,
     LoginComponent,
+    RegisterComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   exports: [
     UsersComponent,

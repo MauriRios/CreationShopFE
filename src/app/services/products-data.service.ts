@@ -31,7 +31,7 @@ export class ProductsDataService {
     }
 
     public getProductById(id: number): Observable<Products> {
-      return this.http.get<Products>(environment.URL + 'product/traer/'+id);
+      return this.http.get<Products>(environment.URL + 'producto/traer/'+id);
     }
 
     public postBuyProducts(products: Products[]): Observable<Products[]> {
