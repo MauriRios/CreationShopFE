@@ -64,11 +64,13 @@ input[type=number] {
   border-radius: 100%;
   background-color: rgb(122, 122, 122, 0.6);
   display: none;
+
 }
 
 .to-top:hover{
   color: white;
   background-color: black;
+ 
 }
 
 .show-scrollTop {

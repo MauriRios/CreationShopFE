@@ -1,1 +1,36 @@
-<p>login works!</p>
+
+<div class="container form-content text-center"> 
+        <div class="">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                <a class="nav-link active" routerLink="/login">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" routerLink="/registro">Crear Cuenta</a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <form #f="ngForm" (ngSubmit)="onLogin()" class="form" novalidate >
+            
+            <h1 class="h3 mb-3 fw-normal text-color-list">Por favor Inicia Sesión</h1>
+        
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Email</mat-label>
+                <input class="form-control" type="text"  matInput id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Contraseña</mat-label>
+                <input class="form-control" type="password" matInput id="password" name="password" [(ngModel)]="password" required>
+            </mat-form-field>
+    
+            <mat-checkbox  type="checkbox" name="remember" class="form-group mb-3">
+                <mat-label>Recuérdame</mat-label>
+            </mat-checkbox>
+
+        <button class="w-100 btn btn-lg btn-dark" type="submit" [disabled]="!f.valid" >Inicia Sesión</button>
+        <p class="mt-5 mb-3 text-muted">© Ebrios 2022</p>
+    </form>
+</div>

@@ -44,13 +44,14 @@ export class LoginComponent implements OnInit {
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
-        alert('logeado')
+        alert('loged')
         this.router.navigate(['/']);
       },
       err => {
         this.isLogged = false;
         this.errMsj = err.error.message;
-        alert('Fail')
+        alert('fail')
+        // console.log(err.error.message);
       }
     );
   }
