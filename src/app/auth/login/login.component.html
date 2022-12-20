@@ -12,12 +12,12 @@
             </ul>
         </div>
 
-        <form #f="ngForm" (ngSubmit)="onLogin()" class="form" novalidate >
+        <form #f="ngForm" (ngSubmit)="onLogin()" class="form">
             
-            <h1 class="h3 mb-3 fw-normal text-color-list">Por favor Inicia Sesión</h1>
+            <h1 class="h3 my-3 fw-normal text-color-list">Por favor Inicia Sesión</h1>
         
             <mat-form-field appearance="outline" class="form-group">
-                <mat-label>Email</mat-label>
+                <mat-label>Usuario</mat-label>
                 <input class="form-control" type="text"  matInput id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required>
             </mat-form-field>
 
@@ -31,6 +31,5 @@
             </mat-checkbox>
 
         <button class="w-100 btn btn-lg btn-dark" type="submit" [disabled]="!f.valid" >Inicia Sesión</button>
-        <p class="mt-5 mb-3 text-muted">© Ebrios 2022</p>
     </form>
 </div>

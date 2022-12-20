@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CatalogConfig } from 'src/app/models/catalog-config.model';
 import { CatalogConfigService } from 'src/app/services/catalog-config.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-catalogs',
@@ -15,12 +16,14 @@ export class CatalogsComponent implements OnInit {
   closeResult!: string;
   editForm!: FormGroup;
   catalogConfig!: CatalogConfig[];
-  isAdmin!: true
+  roles!: string[];
+  isAdmin!: boolean;
   
   constructor(private catalogConfigService : CatalogConfigService,
               config: NgbModalConfig,
               private modalService: NgbModal,
               private formBuilder: FormBuilder,
+              private tokenService: TokenService,
               ) { 
                 
               this.createEditForm(),
@@ -32,6 +35,12 @@ export class CatalogsComponent implements OnInit {
   ngOnInit(): void {
     this.getCatalogConfig();
 
+    (this.roles = this.tokenService.getAuthorities());
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
   createEditForm(){

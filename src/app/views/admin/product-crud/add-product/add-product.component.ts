@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Category } from 'src/app/models/categorys.model';
 import { Products } from 'src/app/models/products.model';
 import { ProductsDataService } from 'src/app/services/products-data.service';
+import { TokenService } from 'src/app/services/token.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,6 +16,8 @@ export class AddProductComponent implements OnInit {
 
 addProductForm!:FormGroup;
 newProduct!:Products;
+roles!: string[];
+isAdmin!: boolean;
 
   categorys: Category[] = [
     {name: 'Aperitivos'},
@@ -29,13 +32,21 @@ newProduct!:Products;
 
   constructor(private formBuilder:FormBuilder,
               private productsDataService: ProductsDataService,
-              private router:Router,) 
+              private router:Router,
+              private tokenService: TokenService,
+              ) 
               { 
                 this.createForm();
               }
 
   ngOnInit(): void {
     
+    (this.roles = this.tokenService.getAuthorities());
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
   createForm(){

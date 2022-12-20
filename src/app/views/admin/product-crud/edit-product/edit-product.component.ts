@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Category } from 'src/app/models/categorys.model';
 import Swal from 'sweetalert2';
+import { TokenService } from 'src/app/services/token.service';
 
 
 @Component({
@@ -25,6 +26,8 @@ export class EditProductComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<any>();
   products: Products[] = [];
   closeResult!: string;
+  isAdmin!: boolean;
+  roles!: string[];
   editForm!: FormGroup;
   editProduct!: Products[];
   subscription!: Subscription; 
@@ -48,6 +51,7 @@ export class EditProductComponent implements OnInit, AfterViewInit {
               config: NgbModalConfig,
               private modalService: NgbModal,
               private fb: FormBuilder,
+              private tokenService: TokenService,
     ) {
               config.backdrop = 'static',
               config.keyboard = false
@@ -59,7 +63,14 @@ export class EditProductComponent implements OnInit, AfterViewInit {
 
     this.subscription = this.productsDataService.refresh$.subscribe(() => {
       this.getProducts();
-    })
+    }),
+
+    (this.roles = this.tokenService.getAuthorities());
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
   
   ngAfterViewInit() {

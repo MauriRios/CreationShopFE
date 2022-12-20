@@ -91,7 +91,7 @@
     </div>
     </div>
     <div class="btn-edit">
-        <button *ngIf="!isAdmin"
+        <button *ngIf="isAdmin"
         (click)="openEdit(editConfig, config)"
         class="btn btn-danger btn-sm gap-1 mt-2"
         >Editar Catalogos <i class="fa-solid fa-pen"></i

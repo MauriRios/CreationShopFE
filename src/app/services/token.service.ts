@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUserName';
@@ -10,6 +11,7 @@ const AUTHORITIES_KEY = 'AuthAuthorities';
 export class TokenService {
 
   roles: Array<string> = [];
+  isLogged!: boolean;
 
   constructor() { }
 
@@ -46,7 +48,16 @@ export class TokenService {
     return this.roles;
   }
 
+  islogged(){
+    if (this.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    };
+  }
+
   public logOut(): void {
     window.sessionStorage.clear();
+    
   }
 }

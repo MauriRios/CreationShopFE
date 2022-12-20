@@ -10,12 +10,17 @@
           </a>
         </span>
       <span>
-        <button type="button" class="btn" *ngIf="isLogged">
+        <button type="button" class="btn" *ngIf="!isLogged">
           <a [routerLink]="['/login']">
             <i class="fa-solid fa-user"></i>
           </a>
         </button>
-        <button
+        <button type="button" class="btn" *ngIf="isLogged" (click)="onLogOut()">
+          <a  >
+            <i class="fa-solid fa-user-slash"></i>
+          </a>
+        </button>
+        <button *ngIf="isLogged"
           aria-label="Carrito"
           type="button"
           style="
@@ -36,7 +41,7 @@
             <span>{{alertCartLength}}</span>
           </span>
         </button>
-        <a
+        <a *ngIf="isLogged"
           class="btn"
           type="button"
           data-bs-toggle="offcanvas"
@@ -117,13 +122,13 @@
       <hr width="100%" class="text-secondary" size="5" />
       <div class="canvasButtons">
         <ul class="text-underline">
-          <li *ngIf="isLogged">
-            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i>Ingresa/Registrate</a>
-          </li>
           <li *ngIf="!isLogged">
-            <a href="" data-bs-toggle="offcanvas"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
+            <a [routerLink]="['/login']" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i>Ingresa/Registrate</a>
           </li>
-          <li *ngIf="isAdmin">
+          <li *ngIf="isLogged">
+            <a href="" data-bs-toggle="offcanvas" (click)="onLogOut()"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
+          </li>
+          <li *ngIf="isLogged && isAdmin">
             <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i>Administración</a>
           </li>
         </ul>

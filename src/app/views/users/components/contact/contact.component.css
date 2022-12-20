@@ -28,8 +28,9 @@ a{
     text-decoration: none;
 }
 
-textarea {
-    size: 100px;
+.buttoncontainer{
+    display: flex;
+    justify-content: end;
 }
 
 .content{
@@ -50,4 +51,8 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.error{
+    color: red;
 }

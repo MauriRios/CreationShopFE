@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Products } from 'src/app/models/products.model';
 import { ProductsDataService } from 'src/app/services/products-data.service';
+import { TokenService } from 'src/app/services/token.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,10 +16,13 @@ export class DeleteProductComponent implements OnInit {
 
   subscription!: Subscription;
   product!:Products;
+  roles!: string[];
+  isAdmin!: boolean;
 
   constructor(private productsDataService : ProductsDataService,
               private router : Router,
               public dialogRef: MatDialogRef<DeleteProductComponent>,
+              private tokenService: TokenService,
               ) { }
 
   ngOnInit(): void {
@@ -26,7 +30,15 @@ export class DeleteProductComponent implements OnInit {
 
     this.subscription =  this.productsDataService.refresh$.subscribe(()=>{
       this.delete();
-    })
+    });
+    
+
+    (this.roles = this.tokenService.getAuthorities());
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
   ngOnDestroy(): void {

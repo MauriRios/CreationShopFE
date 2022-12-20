@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,22 +16,47 @@ export class NavbarComponent implements OnInit {
 
   products!: Products[];
   cartAlertCount!: number;
-  isLogged = true;
-  isAdmin = true;
-
+  isLogged!: boolean;
+  roles!: string[];
+  isAdmin!: boolean;
 
   constructor( 
     private cartService: CartService,
-    private router: Router,) { }
+    private router: Router,
+    private tokenService: TokenService,
+    
+    ) { 
+
+      //si esta logeado
+      if (this.tokenService.getToken()) {
+        this.isLogged = true;
+      } else {
+        this.isLogged = false;
+      };
+
+      //si es adm
+      (this.roles = this.tokenService.getAuthorities());
+      this.roles.forEach((rol) => {
+        if (rol === 'ROLE_ADMIN') {
+          this.isAdmin = true;
+        }
+      });
+    }
 
   ngOnInit(): void {
     this.navBarSticky();
     this.getProductsList();
+
   }
 
   getProductsList(){
     this.cartService.products
     .subscribe(data => this.products = data);
+  }
+
+  onLogOut(){
+    this.tokenService.logOut(),
+    window.location.reload();
   }
 
   navBarSticky(){

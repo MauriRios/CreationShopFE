@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/models/login-usuario';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -44,13 +45,26 @@ export class LoginComponent implements OnInit {
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
-        alert('loged')
-        this.router.navigate(['/']);
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Bienvenido',
+          showConfirmButton: false,
+          timer: 2500
+        }),
+        this.ngOnInit();
+        this.router.navigate(['/home']);
       },
       err => {
         this.isLogged = false;
         this.errMsj = err.error.message;
-        alert('fail')
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Contraseña o Usuario incorrecto',
+          showConfirmButton: false,
+          timer: 2500
+        });
         // console.log(err.error.message);
       }
     );

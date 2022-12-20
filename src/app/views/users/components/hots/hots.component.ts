@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { HotConfig } from 'src/app/models/hot-config.model';
 import { HotsConfigService } from 'src/app/services/hots-config.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-hots',
@@ -15,14 +16,14 @@ export class HotsComponent implements OnInit {
   closeResult!: string;
   editForm!: FormGroup;
   hotConfig!: HotConfig[];
-  isAdmin!: true
-
+  roles!: string[];
+  isAdmin!: boolean;
 
   constructor(private hotConfigService : HotsConfigService,
               config: NgbModalConfig,
               private modalService: NgbModal,
               private fb: FormBuilder,
-
+              private tokenService: TokenService,
     ) { 
     this.createFormEdit();
     config.backdrop = 'static',
@@ -33,7 +34,12 @@ export class HotsComponent implements OnInit {
 ngOnInit(): void {
 this.getHotConfig();
 
-
+(this.roles = this.tokenService.getAuthorities());
+this.roles.forEach((rol) => {
+  if (rol === 'ROLE_ADMIN') {
+    this.isAdmin = true;
+  }
+});
 }
 
 createFormEdit(){

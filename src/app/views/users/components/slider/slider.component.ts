@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { NgbModalConfig, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { SliderConfig } from 'src/app/models/slider-config.model';
 import { SliderConfigService } from 'src/app/services/slider-config.service';
+import { TokenService } from 'src/app/services/token.service';
 
 
 
@@ -17,13 +18,14 @@ export class SliderComponent implements OnInit {
   closeResult!: string;
   editForm!: FormGroup;
   sliderConfig!: SliderConfig[];
-  isAdmin!: true
+  roles!: string[];
+  isAdmin!: boolean;
   
   constructor(private sliderConfigService : SliderConfigService,
               config: NgbModalConfig,
               private modalService: NgbModal,
               private fb: FormBuilder,
-
+              private tokenService: TokenService,
               
               ) { 
                 
@@ -36,6 +38,12 @@ export class SliderComponent implements OnInit {
   ngOnInit(): void {
     this.getSliderConfig();
 
+    (this.roles = this.tokenService.getAuthorities());
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
   
   createFormEdit(){

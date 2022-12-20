@@ -1,0 +1,33 @@
+.card {
+    height: 500px;
+    width: 300px;
+    background-color: black;
+}
+
+.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 500px;
+    
+}
+
+.content{
+    margin-bottom: 50px;
+}
+
+.form-content{
+    padding: 15px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: rgb(48, 48, 48);
+}

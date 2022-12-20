@@ -7,7 +7,7 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
   <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
 </div>
 <div class="btn-edit">
-  <a *ngIf="!isAdmin"
+  <a *ngIf="isAdmin"
   (click)="openEdit(editConfig, config)"
   class="btn btn-danger btn-sm gap-1"
   >Editar Slider <i class="fa-solid fa-pen"></i
