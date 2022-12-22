@@ -8,6 +8,8 @@ const routes: Routes=[
 
   { path: 'admin', loadChildren: () => import('./views/admin/admin.module').then(m => m.AdminModule) },
 
+  { path: 'auth', loadChildren: () => import('./views/auth/auth.module').then(m => m.AuthModule) },
+
 ];
 
 export const routing = RouterModule.forRoot(routes);

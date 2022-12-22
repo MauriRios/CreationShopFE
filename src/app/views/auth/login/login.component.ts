@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit {
           showConfirmButton: false,
           timer: 2500
         }),
-        this.ngOnInit();
         this.router.navigate(['/home']);
       },
       err => {

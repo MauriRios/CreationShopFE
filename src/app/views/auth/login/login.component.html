@@ -12,10 +12,10 @@
             </ul>
         </div>
 
-        <form #f="ngForm" (ngSubmit)="onLogin()" class="form">
+        <form #f="ngForm" (ngSubmit)="onLogin()" class="form">      
             
             <h1 class="h3 my-3 fw-normal text-color-list">Por favor Inicia Sesión</h1>
-        
+
             <mat-form-field appearance="outline" class="form-group">
                 <mat-label>Usuario</mat-label>
                 <input class="form-control" type="text"  matInput id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required>

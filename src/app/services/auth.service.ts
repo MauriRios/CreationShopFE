@@ -12,8 +12,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-
-  authURL = 'https://backmiportfolio.herokuapp.com/auth/' 
   
   //'http://localhost:8080/auth/';
 
@@ -26,4 +24,5 @@ export class AuthService {
   public login(loginUsuario: LoginUsuario): Observable<JwtDTO> {
     return this.httpClient.post<JwtDTO>(environment.URL + 'auth/login', loginUsuario);
   }
+
 }

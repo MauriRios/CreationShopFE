@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AdminModule } from './admin/admin.module';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -17,14 +18,15 @@ import { UsersModule } from './users/users.module';
   ],
   exports: [
     AdminModule,
-    UsersModule
+    UsersModule,
+    AuthModule
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     AdminModule,
     UsersModule,
-
+    AuthModule
 
   ],
   providers: [

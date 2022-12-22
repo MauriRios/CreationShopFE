@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
     this.contactForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.minLength(5), Validators.pattern(this.emailPattern)]],
-      phone: ['', [Validators.required, Validators.min(10), Validators.pattern(this.phonePattern)]],
+      phone: ['', [Validators.required, Validators.minLength(10), Validators.pattern(this.phonePattern)]],
       message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(300)]],
     })
   }

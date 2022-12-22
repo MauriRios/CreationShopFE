@@ -104,3 +104,7 @@ a{
 .menu a:hover::before {
     transform: scaleX(1);
 }
+
+.loggin-button{
+    display: none;
+}

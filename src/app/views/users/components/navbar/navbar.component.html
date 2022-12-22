@@ -10,17 +10,21 @@
           </a>
         </span>
       <span>
-        <button type="button" class="btn" *ngIf="!isLogged">
-          <a [routerLink]="['/login']">
-            <i class="fa-solid fa-user"></i>
-          </a>
-        </button>
-        <button type="button" class="btn" *ngIf="isLogged" (click)="onLogOut()">
-          <a  >
-            <i class="fa-solid fa-user-slash"></i>
-          </a>
-        </button>
-        <button *ngIf="isLogged"
+
+          <button type="button" class="btn" *ngIf="!isLogged, else loggedOut">
+            <a [routerLink]="['auth/login']">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </button>
+
+        <ng-template #loggedOut>
+          <button type="button" class="btn" (click)="onLogOut()">
+            <a  >
+              <i class="fa-solid fa-user-slash"></i>
+            </a>
+          </button>
+        </ng-template>
+        <button *ngIf="isLogged"   
           aria-label="Carrito"
           type="button"
           style="
@@ -41,7 +45,7 @@
             <span>{{alertCartLength}}</span>
           </span>
         </button>
-        <a *ngIf="isLogged"
+        <a 
           class="btn"
           type="button"
           data-bs-toggle="offcanvas"
@@ -123,13 +127,13 @@
       <div class="canvasButtons">
         <ul class="text-underline">
           <li *ngIf="!isLogged">
-            <a [routerLink]="['/login']" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i>Ingresa/Registrate</a>
+            <a [routerLink]="['auth/login']" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
           </li>
           <li *ngIf="isLogged">
-            <a href="" data-bs-toggle="offcanvas" (click)="onLogOut()"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
+            <a [routerLink]="['/home']" data-bs-toggle="offcanvas" (click)="onLogOut()"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
           </li>
-          <li *ngIf="isLogged && isAdmin">
-            <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i>Administración</a>
+          <li *ngIf="isAdmin">
+            <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i> Administración</a>
           </li>
         </ul>
       </div>

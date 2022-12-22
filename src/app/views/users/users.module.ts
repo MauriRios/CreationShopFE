@@ -21,8 +21,7 @@ import { OffersComponent } from './components/offers/offers.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SponsorshipComponent } from './components/sponsorship/sponsorship.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from '../../auth/login/login.component';
-import { RegisterComponent } from '../../auth/register/register.component';
+import { RegisterComponent } from '../auth/register/register.component';
 
 //filters components
 import { AperitivosCatalogComponent } from './filters/aperitivos-catalog/aperitivos-catalog.component';
@@ -63,10 +62,7 @@ import { FiltersComponent } from './components/filters/filters.component';
     FiltersComponent,
     FilterPipe,
     HomeComponent,
-    LoginComponent,
-    RegisterComponent,
-    LoginComponent,
-    RegisterComponent,
+
   ],
   exports: [
     UsersComponent,

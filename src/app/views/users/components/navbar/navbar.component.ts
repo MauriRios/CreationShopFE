@@ -1,5 +1,4 @@
-import { NgClass } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
@@ -27,13 +26,20 @@ export class NavbarComponent implements OnInit {
     
     ) { 
 
-      //si esta logeado
-      if (this.tokenService.getToken()) {
-        this.isLogged = true;
-      } else {
-        this.isLogged = false;
-      };
+      this.IfIsAdmin();
+      
+    }
 
+
+    
+    ngOnInit(): void {
+      this.getToken();
+
+      this.navBarSticky();
+      this.getProductsList();
+    }
+
+    IfIsAdmin(){
       //si es adm
       (this.roles = this.tokenService.getAuthorities());
       this.roles.forEach((rol) => {
@@ -42,34 +48,37 @@ export class NavbarComponent implements OnInit {
         }
       });
     }
-
-  ngOnInit(): void {
-    this.navBarSticky();
-    this.getProductsList();
-
-  }
-
-  getProductsList(){
-    this.cartService.products
-    .subscribe(data => this.products = data);
-  }
-
-  onLogOut(){
-    this.tokenService.logOut(),
-    window.location.reload();
-  }
-
-  navBarSticky(){
-    const headerStick = document.querySelector(".sticky-top");
-    window.onscroll = function () {
-      if (window.scrollY > 80) {
-        headerStick?.classList.add("sticky_element");
-      } else {
-        headerStick?.classList.remove("sticky_element");
-      }
-    };
     
-  }
+    getToken(){
+            //si esta logeado
+            if (this.tokenService.getToken()) {
+              this.isLogged = true;
+            } else {
+              this.isLogged = false;
+            };
+    }
+
+    getProductsList(){
+      this.cartService.products
+      .subscribe(data => this.products = data);
+    }
+
+    onLogOut(){
+      this.tokenService.logOut();
+      window.location.reload();
+    }
+
+    navBarSticky(){
+      const headerStick = document.querySelector(".sticky-top");
+      window.onscroll = function () {
+        if (window.scrollY > 80) {
+          headerStick?.classList.add("sticky_element");
+        } else {
+          headerStick?.classList.remove("sticky_element");
+        }
+      };
+      
+    }
 
   //Icono de alerta del carrito, tomo la longitud del array
   get alertCartLength() { return this.products.length }
