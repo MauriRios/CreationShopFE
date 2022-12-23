@@ -1,21 +1,10 @@
 
-<div class="container form-content text-center"> 
-        <div class="">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                <a class="nav-link active" routerLink="/login">Iniciar Sesión</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/registro">Crear Cuenta</a>
-                </li>
-                
-            </ul>
-        </div>
 
-        <form #f="ngForm" (ngSubmit)="onLogin()" class="form">      
+
+        <form #f="ngForm" (ngSubmit)="onLogin()" class="form">
             
-            <h1 class="h3 my-3 fw-normal text-color-list">Por favor Inicia Sesión</h1>
-
+            <h1 class="h3 my-3 fw-normal">Por favor Inicia Sesión</h1>
+        
             <mat-form-field appearance="outline" class="form-group">
                 <mat-label>Usuario</mat-label>
                 <input class="form-control" type="text"  matInput id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required>
@@ -32,4 +21,4 @@
 
         <button class="w-100 btn btn-lg btn-dark" type="submit" [disabled]="!f.valid" >Inicia Sesión</button>
     </form>
-</div>
+

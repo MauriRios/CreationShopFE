@@ -17,12 +17,11 @@ const routesAuth: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'registro', component: RegisterComponent }
 
-  ]}
-
+  ]},
 
 ];
 
-export const routingAuth = RouterModule.forChild(routesAuth);
+export const routing = RouterModule.forChild(routesAuth);
 
 @NgModule({
   imports: [RouterModule.forChild(routesAuth)],

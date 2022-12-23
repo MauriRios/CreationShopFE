@@ -18,7 +18,6 @@ import { UsersComponent } from './users.component';
 const routesU: Routes = [
 
   { path: 'admin', loadChildren: () => import('src/app/views/admin/admin.module').then(m => m.AdminModule) },
-
   { path: 'auth', loadChildren: () => import('src/app/views/auth/auth.module').then(m => m.AuthModule) },
 
   {
@@ -45,7 +44,7 @@ const routesU: Routes = [
 
 ];
 
-export const routing = RouterModule.forRoot(routesU);
+export const routing = RouterModule.forChild(routesU);
 
 @NgModule({
   imports: [

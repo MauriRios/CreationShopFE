@@ -1,6 +1,3 @@
-.logo{
-    
-}
 
 .card {
     height: 500px;
@@ -8,33 +5,11 @@
     background-color: black;
 }
 
-.container{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 500px;
-    
-}
-
-.content{
-    margin-bottom: 50px;
-}
-
-.form-content{
-    padding: 15px;
-}
-
 .form{
     display: flex;
     flex-direction: column;
 }
 
-a{
-    color: black;
-}
-
-a:hover{
-    color: rgb(48, 48, 48);
-}
 
 ::ng-deep .mat-checkbox-ripple .mat-ripple-element {
     background-color: black !important;
@@ -47,3 +22,4 @@ a:hover{
 ::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
     background-color: black !important;
 }
+

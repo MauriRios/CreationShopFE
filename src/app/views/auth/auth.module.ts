@@ -1,22 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AuthRoutingModule, routingAuth } from './auth-routing.module';
+import { AuthRoutingModule, routing } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from '../users/components/navbar/navbar.component';
+import { UsersComponent } from '../users/users.component';
 
 
 @NgModule({
   declarations: [
     AuthComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+
+
   ],
   exports: [
     AuthComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
@@ -24,7 +29,7 @@ import { RegisterComponent } from './register/register.component';
     CommonModule,
     AuthRoutingModule,
     SharedModule,
-    routingAuth,
+    routing,
 
   ]
 })

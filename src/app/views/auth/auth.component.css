@@ -1,0 +1,22 @@
+.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 500px;
+    
+}
+
+.form-content{
+    padding: 15px;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: rgb(44, 44, 44);
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
