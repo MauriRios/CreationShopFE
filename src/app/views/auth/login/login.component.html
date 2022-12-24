@@ -1,24 +1,33 @@
-
-
-
-        <form #f="ngForm" (ngSubmit)="onLogin()" class="form">
-            
-            <h1 class="h3 my-3 fw-normal">Por favor Inicia Sesión</h1>
-        
-            <mat-form-field appearance="outline" class="form-group">
-                <mat-label>Usuario</mat-label>
-                <input class="form-control" type="text"  matInput id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="form-group">
-                <mat-label>Contraseña</mat-label>
-                <input class="form-control" type="password" matInput id="password" name="password" [(ngModel)]="password" required>
-            </mat-form-field>
+<div class="container-fluid">
+    <form #f="ngForm" (ngSubmit)="onLogin()" class="form">
+        <div class="content-logo">
+            <img
+            class="logo img-fluid"
+            src="../../../assets/img/logo-ebrios.png"
+            alt="Logo" />
     
-            <mat-checkbox  type="checkbox" name="remember" class="form-group mb-3">
-                <mat-label>Recuérdame</mat-label>
-            </mat-checkbox>
-
-        <button class="w-100 btn btn-lg btn-dark" type="submit" [disabled]="!f.valid" >Inicia Sesión</button>
+        </div>
+    
+        <h1 class="h3 mb-2 fw-normal">Inicia Sesión</h1>
+    
+        <mat-form-field appearance="outline" class="form-group">
+            <mat-label>Usuario</mat-label>
+            <input class="form-control" type="text"  matInput id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="form-group">
+            <mat-label>Contraseña</mat-label>
+            <input class="form-control" type="password" matInput id="password" name="password" [(ngModel)]="password" required>
+        </mat-form-field>
+    
+        <mat-checkbox  type="checkbox" name="remember" class="form-group mb-3">
+            <mat-label>Recuérdame</mat-label>
+        </mat-checkbox>
+    
+    <button class="w-100 btn btn-lg btn-dark mb-2" type="submit" [disabled]="!f.valid" >Inicia Sesión</button>
     </form>
+
+</div>
+
+
 

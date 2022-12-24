@@ -1,3 +1,8 @@
+.container-fluid{
+    padding: 0;
+    margin: 0;
+}
+
 .container{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -5,18 +10,35 @@
     
 }
 
-.form-content{
-    padding: 15px;
+.col-3{
+    padding: 0;
+}
+
+.sidebar{
+    width: 4.5rem;
+    height: 100vh;
+    background-color: black;
+}
+
+.nav-link{
+    padding: 8px 8px;
 }
 
 a{
     color: black;
+    font-size: calc(0.6em + 1vw)
 }
 
 a:hover{
-    color: rgb(44, 44, 44);
+    color: rgb(122, 122, 122);
 }
 
-a:link, a:visited, a:active {
-    text-decoration:none;
+i{
+    height: 24px;
+    width: 24px;
+    color: white;
 }
+i:hover{
+    color: rgb(122, 122, 122);
+}
+

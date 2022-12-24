@@ -1,13 +1,14 @@
-
-.card {
-    height: 500px;
-    width: 300px;
-    background-color: black;
+.content-logo{
+    display: flex;
+    justify-content: center;
 }
 
 .form{
     display: flex;
     flex-direction: column;
+}
+h1{
+    font-size: calc(1.5em + 1vw)
 }
 
 
