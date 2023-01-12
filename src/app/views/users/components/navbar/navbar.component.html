@@ -127,7 +127,7 @@
       <div class="canvasButtons">
         <ul class="text-underline">
           <li *ngIf="!isLogged">
-            <a [routerLink]="['auth']" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
+            <a [routerLink]="['auth/login']" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
           </li>
           <li *ngIf="isLogged">
             <a [routerLink]="['/home']" data-bs-toggle="offcanvas" (click)="onLogOut()"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
