@@ -1,0 +1,42 @@
+footer{
+    background-color: black;
+}
+
+h5{
+    color: white;
+}
+
+
+.static-icon , .fa-brands{
+    margin-right: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-brands:hover{
+    color: rgb(122, 122, 122);
+}
+
+.colum{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+a, span{
+    color: rgb(122, 122, 122); ;
+}
+
+a:hover {
+    color: white;
+    transform: translate(5px, 0px);
+    transition: all 0.3s ease-in-out;
+}
+
+a:not(:hover){
+    transform: translate(0px, 0px);
+    transition: all 0.3s ease-in-out;
+}
+p{
+    color: white;
+}

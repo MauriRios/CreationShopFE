@@ -28,22 +28,6 @@
                     <div class="text-end">
                         <p>Total: {{total() | currency:'ARS'}}</p>
                         <button class="btn btn-outline-dark" (click)="pay()" >Comprar</button>
-                    <!--  <div class="cho-container"></div>
-                        <script>
-                            const mp = new MercadoPago('TEST-650fc448-6a2b-4910-8d20-21342cc183c0', {
-                                locale: 'es-AR'
-                            });
-
-                            mp.checkout({
-                                preference: {
-                                id: 'YOUR_PREFERENCE_ID'
-                                },
-                                render: {
-                                container: '.cho-container',
-                                label: 'Pagar',
-                                }
-                            });
-                            </script> -->
                     </div>
         </div>
     </div>

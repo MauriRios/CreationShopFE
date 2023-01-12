@@ -2,11 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subject, tap } from 'rxjs';
 import { Products } from '../models/products.model';
+import { environment } from 'src/environments/environment';
 
-
-
-const URL = 'http://localhost:8080/'; 
-const apiMP = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js'
 @Injectable({
   providedIn: 'root'
 })
@@ -20,21 +17,21 @@ export class ProductsDataService {
 
   private _productsList : Products[] = [];
   private _productsSubjects : BehaviorSubject<Products[]> = new BehaviorSubject(this._productsList);
-  public products : Observable<Products[]> = this._productsSubjects.asObservable();
+  products : Observable<Products[]> = this._productsSubjects.asObservable();
   
   constructor(private http: HttpClient) { 
-    this.http.get<Products[]>(URL + 'productos/traer').subscribe(data => {
+    this.http.get<Products[]>(environment.URL + 'productos/traer').subscribe(data => {
       this._productsList.push(...data);
       console.log(data)
     });
   }
 
     public getProducts():Observable<Products[]>{
-      return this.http.get<Products[]>(URL + 'productos/traer');
+      return this.http.get<Products[]>(environment.URL + 'productos/traer');
     }
 
     public getProductById(id: number): Observable<Products> {
-      return this.http.get<Products>(URL + 'producto/traer/' + (1+id));
+      return this.http.get<Products>(environment.URL + 'producto/traer/'+id);
     }
 
     public postBuyProducts(products: Products[]): Observable<Products[]> {
@@ -42,7 +39,7 @@ export class ProductsDataService {
     }
 
     public deleteProduct(id: number): Observable<Products> {
-      return this.http.delete<Products>(URL + 'producto/borrar/' + id)
+      return this.http.delete<Products>(environment.URL + 'producto/borrar/' + id)
       .pipe(
         tap(()=> {
             this._refresh$.next();
@@ -51,7 +48,7 @@ export class ProductsDataService {
     }
 
     public createProduct(product: Products): Observable<Products> {
-      return this.http.post<Products>(URL + 'producto/crear', product)
+      return this.http.post<Products>(environment.URL + 'producto/crear', product)
       .pipe(
         tap(()=> {
             this._refresh$.next();
@@ -60,7 +57,7 @@ export class ProductsDataService {
     }
 
     public updateProduct(id: number, product: Products): Observable<Products> {
-      return this.http.put<Products>(URL + 'producto/editar/' + id, product)
+      return this.http.put<Products>(environment.URL + 'producto/editar/' + id, product)
       .pipe(
         tap(()=> {
             this._refresh$.next();

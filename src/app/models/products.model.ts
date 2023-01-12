@@ -1,6 +1,7 @@
 
 export interface Products {
-    id?: number;
+    
+    id: number;
     brand: string;
     style: string;
     volume: string;
@@ -10,5 +11,6 @@ export interface Products {
     stock: number;
     quantity: number;
     clearance?: boolean;
+
 }
 

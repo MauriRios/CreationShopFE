@@ -28,13 +28,12 @@ mat-toolbar {
 }
 
 .mat-icon {
-    font-size: 38px;
+    font-size: 24px;
     
 }
-.btn {
+a {
     color: white;
 }
 .btn:hover{
-    color: rgb(196, 195, 195);
+    color: rgb(122, 122, 122);
 }
-

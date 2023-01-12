@@ -1,0 +1,43 @@
+<div class="container-fluid">
+
+    <form #f="ngForm" (ngSubmit)="onRegister()" class="form">
+
+        <div class="content-logo">
+            <img
+            class="logo img-fluid"
+            src="../../../assets/img/logo-ebrios.png"
+            alt="Logo" />
+
+        </div>
+
+        <h1 class="h3 mb-2 fw-normal">Regístrate</h1>
+        
+        <mat-form-field appearance="outline" class="form-group">
+        <mat-label for="nombre">Nombre</mat-label>
+        <input matInput type="text" name="nombre" id="nombre" class="form-control"
+        [(ngModel)]="nombre" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group">
+            <mat-label for="nombreUsuario">Nombre de Usuario</mat-label>
+            <input matInput type="text" name="nombreUsuario" id="nombreUsuario" class="form-control"
+            [(ngModel)]="nombreUsuario" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group">
+            <mat-label for="password">Contraseña</mat-label>
+            <input matInput type="password" name="password" id="password" class="form-control"
+            [(ngModel)]="password" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group">
+        <mat-label for="email">Correo Electrónico</mat-label>
+        <input matInput type="text" name="email" id="email" class="form-control"
+        [(ngModel)]="email" required>
+        </mat-form-field>
+
+            <button class="w-100 btn btn-lg btn-dark mb-2" [disabled]="!f.valid">Crear Cuenta</button>
+    </form>
+</div>
+
+

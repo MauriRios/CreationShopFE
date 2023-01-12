@@ -1,0 +1,114 @@
+<div class="container ">
+    <div class="title ">
+        <h2>Agregar Producto</h2>
+    </div>
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit(newProduct)">
+
+            <mat-form-field appearance="outline" >
+                <mat-label>Marca</mat-label>
+                <input matInput class="form-group" formControlName="brand" name="brand" required>
+            </mat-form-field>
+            <div  *ngIf="brandField!.errors && (brandField!.dirty || brandField!.touched)">
+                <div class="error mb-4" *ngIf="brandField!.hasError('required')">
+                  * El campo Marca es requerido
+                </div>
+                <div class="error mb-4" *ngIf="brandField!.hasError('minlength')">
+                  * La macar debe tener mas de 3 caracteres
+                </div>
+                <div class="error mb-4" *ngIf="brandField!.hasError('maxlength')">
+                  * la marca debe tener menos de 20 caracteres
+                </div>
+            </div>
+
+            <mat-form-field appearance="outline" >
+                <mat-label>Estilo</mat-label>
+                <input matInput class="form-group" formControlName="style" name="style" required>
+            </mat-form-field>
+            <div  *ngIf="styleField!.errors && (styleField!.dirty || styleField!.touched)">
+                <div class="error mb-4" *ngIf="styleField!.hasError('required')">
+                  * El campo Estilo es requerido
+                </div>
+                <div class="error mb-4" *ngIf="styleField!.hasError('minlength')">
+                  * El estilo debe tener más de 3 caracteres
+                </div>
+                <div class="error mb-4" *ngIf="styleField!.hasError('maxlength')">
+                  * El estilo  debe tener menos de 20 caracteres
+                </div>
+            </div>
+
+            <mat-form-field appearance="outline" >
+                <mat-label>Volumen</mat-label>
+                <input matInput class="form-group" formControlName="volume" name="volume" required>
+            </mat-form-field>
+            <div  *ngIf="volumeField!.errors && (volumeField!.dirty || volumeField!.touched)">
+                <div class="error mb-4" *ngIf="volumeField!.hasError('required')">
+                  * El campo Volumen es requerido
+                </div>
+                <div class="error mb-4" *ngIf="volumeField!.hasError('minlength')">
+                  * El volumen debe tener mas de 2 caracteres
+                </div>
+                <div class="error mb-4" *ngIf="volumeField!.hasError('maxlength')">
+                  * El volumen debe tener menos de 10 caracteres
+                </div>
+            </div>
+
+            <mat-form-field appearance="outline" >
+                <mat-label>Precio</mat-label>
+                <input matInput type="number" class="form-group" formControlName="price" name="price" required>
+            </mat-form-field>
+            <div  *ngIf="priceField!.errors && (priceField!.dirty || priceField!.touched)">
+                <div class="error mb-4" *ngIf="priceField!.hasError('required')">
+                  * El precio es requerido
+                </div>
+                <div class="error mb-4" *ngIf="priceField!.hasError('min')">
+                  * El precio debe ser mayor a 0
+                </div>
+            </div>
+
+            <mat-form-field appearance="outline" >
+                <mat-label>Stock</mat-label>
+                <input type="number" class="form-group" matInput formControlName="stock" name="stock" required>
+            </mat-form-field>
+            <div  *ngIf="stockField!.errors && (stockField!.dirty || stockField!.touched)">
+                <div class="error mb-4" *ngIf="stockField!.hasError('required')">
+                  * El campo Stock es requerido
+                </div>
+                <div class="error mb-4" *ngIf="stockField!.hasError('min')">
+                  * El stock debe ser mayor a 1
+                </div>
+            </div>
+
+            <mat-form-field appearance="outline" >
+                <mat-label>Imagen</mat-label>
+                <input matInput class="form-group" formControlName="image" name="image">
+            </mat-form-field>
+            <div  *ngIf="imageField!.errors && (imageField!.dirty || imageField!.touched)">
+                <div class="error mb-4" *ngIf="imageField!.hasError('required')">
+                  * Imagen requerida en formato URL
+                </div>
+            </div>
+
+            <mat-form-field >
+                <mat-label>Categoria</mat-label>
+                <mat-select matInput formControlName="category" name="category" class="form-group">
+                <mat-option *ngFor="let category of categorys" 
+                value="{{category.name}}">{{category.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div  *ngIf="categoryField!.errors && (categoryField!.dirty || categoryField!.touched)">
+                <div class="error mb-4" *ngIf="categoryField!.hasError('required')">
+                  * Selecciona una Categoria de la lista
+                </div>
+            </div>
+
+            <mat-checkbox type="checkbox" formControlName="clearance" name="clearance" class="form-group">
+                    <mat-label>¿En Oferta?</mat-label>
+            </mat-checkbox>
+
+            <div class="button-add">
+                <button class="btn btn-danger" type="submit" [disabled]="!addProductForm.valid">Agregar</button>
+            </div>
+</form>
+
+</div>
+

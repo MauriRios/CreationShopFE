@@ -45,8 +45,6 @@ export class AperitivosCatalogComponent implements OnInit {
   verifyProductQuantity(product : Products): void {
     this.cartService.verifyProductQuantity(product);
   }
-  
- 
 
   ngAfterViewInit() {
     window.scrollTo(0, 0);

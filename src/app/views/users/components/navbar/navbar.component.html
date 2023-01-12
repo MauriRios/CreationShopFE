@@ -1,0 +1,175 @@
+
+  <nav class="navbar sticky-top nav-bg">
+    <div class="container-fluid">
+      <span>
+        <a [routerLink]="['/home']">
+          <img
+            class="logo"
+            src="../../../assets/img/ebrioslogo.png"
+            alt="Logo" />
+          </a>
+        </span>
+      <span>
+
+          <button type="button" class="btn" *ngIf="!isLogged, else loggedOut">
+            <a [routerLink]="['auth/login']">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </button>
+
+        <ng-template #loggedOut>
+          <button type="button" class="btn" (click)="onLogOut()">
+            <a  >
+              <i class="fa-solid fa-user-slash"></i>
+            </a>
+          </button>
+        </ng-template>
+        <button *ngIf="isLogged"   
+          aria-label="Carrito"
+          type="button"
+          style="
+            --bs-btn-padding-y: 0.15rem;
+            --bs-btn-padding-x: 0.3rem;
+            --bs-btn-font-size: 0.95rem;
+          "
+          class="btn position-relative">
+          <a [routerLink]="['/carrito']" aria-label="Ve al Carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <span *ngIf="alertCartLength > 0"
+            class="position-absolute top-0 start-100
+            translate-middle bg-danger
+            border border-light
+            rounded-circle alert-icon"
+            >
+            <span>{{alertCartLength}}</span>
+          </span>
+        </button>
+        <a 
+          class="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasScrolling"
+          aria-controls="offcanvasScrolling"
+        >
+          <i class="fa-solid fa-user-gear"></i
+        ></a>
+      </span>
+    </div>
+  </nav>
+
+  <!-- Boton de menu lateral-->
+
+  <div
+    class="offcanvas offcanvas-start nav-bg"
+    data-bs-scroll="true"
+    data-bs-backdrop="false"
+    tabindex="-1"
+    id="offcanvasScrolling"
+    aria-labelledby="offcanvasScrollingLabel"
+  >
+    <div class="offcanvas-header img-fluid d-flex">
+      <span 
+      ><a [routerLink]="['/home']" data-bs-toggle="offcanvas"
+        ><img
+          class="logo"
+          src="../../../assets/img/ebrioslogo.png"
+          alt="Logo" /></a
+    ></span>
+      <span>
+        <a
+          type="button"
+          class="btn"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          <i class="fa-solid fa-xmark text-secondary"></i
+        ></a>
+      </span>
+    </div>
+    <hr width="100%" class="text-secondary" size="5" />
+    <div class="offcanvas-body text-underline">
+      <div class="dropdown mt-3">
+        <ul class="text-color-list menu text-underline">
+          <li class="m-3">
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/cervezas']">CERVEZAS</a>
+          </li>
+          <li class="m-3 dropdown">
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/vinos']"
+              >VINOS Y ESPUMANTES</a
+            >
+          </li>
+          <li class="m-3">
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/destilados']">DESTILADOS</a>
+          </li>
+          <li class="m-3">
+            <a class="menu-btns" data-bs-toggle="offcanvas"  [routerLink]="['/whiskys']">WHISKY</a>
+          </li>
+          <li class="m-3">
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/regalos']">PARA REGALAR</a>
+          </li>
+          <li class="m-3">
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/combos']">COMBOS</a>
+          </li>
+          <li class="m-3">
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/aperitivos']">APERITIVOS</a>
+          </li>
+          <li class="m-3">
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/sinalcohol']"
+              >BEBIDAS SIN ALCOHOL</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="offcanvas-footer">
+      <hr width="100%" class="text-secondary" size="5" />
+      <div class="canvasButtons">
+        <ul class="text-underline">
+          <li *ngIf="!isLogged">
+            <a [routerLink]="['auth']" data-bs-toggle="offcanvas"><i class="fa-solid fa-user"></i> Ingresa/Registrate</a>
+          </li>
+          <li *ngIf="isLogged">
+            <a [routerLink]="['/home']" data-bs-toggle="offcanvas" (click)="onLogOut()"><i class="fa-solid fa-user-slash"></i> Desconectar</a>
+          </li>
+          <li *ngIf="isAdmin">
+            <a [routerLink]="['/admin']"><i class="fa-solid fa-hammer"></i> Administración</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu estatico-->
+  <div
+    class="container-fluid bg-dark justify-content-center aling-item-center d-lg-flex d-none d-lg-block"
+  >
+    <ul class="d-flex p-0 m-1 menu menu-btns">
+      <li class="mx-3">
+        <a class="menu-btns" [routerLink]="['/cervezas']">CERVEZAS</a>
+      </li>
+      <li class="mx-3">
+        <a class="menu-btns" [routerLink]="['/vinos']">VINOS Y ESPUMANTES</a>
+      </li>
+      <li class="mx-3">
+        <a class="menu-btns" [routerLink]="['/destilados']">DESTILADOS</a>
+      </li>
+      <li class="mx-3">
+        <a class="menu-btns" [routerLink]="['/whiskys']">WHISKY</a>
+      </li>
+      <li class="mx-3">
+        <a class="menu-btns" [routerLink]="['/regalos']">PARA REGALAR</a>
+      </li>
+      <li class="mx-3">
+        <a class="menu-btns" [routerLink]="['/combos']">COMBOS</a>
+      </li>
+      <li class="mx-3">
+        <a class="menu-btns" [routerLink]="['/aperitivos']">APERITIVOS</a>
+      </li>
+      <li class="mx-3">
+        <a class="menu-btns" [routerLink]="['/sinalcohol']"
+          >BEBIDAS SIN ALCOHOL</a
+        >
+      </li>
+    </ul>
+  </div>

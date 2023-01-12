@@ -7,6 +7,8 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 //views
 import { ViewsModule } from './views/views.module';
+import { interceptorProvider } from './services/interceptor.service';
+
 
 
 @NgModule({
@@ -22,8 +24,9 @@ import { ViewsModule } from './views/views.module';
     NgbModule,
     AlifeFileToBase64Module,
 
+
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,7 +9,9 @@ export class UsersComponent implements OnInit {
 
   windowScrolled = false;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
     window.addEventListener('scroll', () => {

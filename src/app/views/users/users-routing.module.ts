@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { routesA } from '../admin/admin-routing.module';
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { AperitivosCatalogComponent } from './filters/aperitivos-catalog/aperitivos-catalog.component';
 import { CervezasCatalogComponent } from './filters/cervezas-catalog/cervezas-catalog.component';
 import { CombosCatalogComponent } from './filters/combos-catalog/combos-catalog.component';
@@ -18,6 +18,7 @@ import { UsersComponent } from './users.component';
 const routesU: Routes = [
 
   { path: 'admin', loadChildren: () => import('src/app/views/admin/admin.module').then(m => m.AdminModule) },
+  { path: 'auth', loadChildren: () => import('src/app/views/auth/auth.module').then(m => m.AuthModule) },
 
   {
     path: '',
@@ -26,7 +27,7 @@ const routesU: Routes = [
   },
   
   { path: '', component: UsersComponent, children:[
-
+    
     {path: 'home',component: HomeComponent },
     {path: 'combos',component: CombosCatalogComponent },
     {path: 'vinos',component: VinosCatalogComponent},
@@ -37,14 +38,13 @@ const routesU: Routes = [
     {path: 'aperitivos',component: AperitivosCatalogComponent },
     {path: 'destilados',component: DestiladosCatalogComponent },
     {path: 'carrito',component: CartComponent },
+    {path: 'contacto', component: ContactComponent},
 
-      // {path: 'login', component: LoginComponent},
-      // {path: 'registro', component: RegistroComponent}
   ] },
 
 ];
 
-export const routing = RouterModule.forRoot(routesU);
+export const routing = RouterModule.forChild(routesU);
 
 @NgModule({
   imports: [

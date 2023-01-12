@@ -1,0 +1,26 @@
+.content-logo{
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    font-size: calc(1.5em + 1vw)
+}
+
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+    background-color: black !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: black !important;
+}
+
+::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: black !important;
+}
+
