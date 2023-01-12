@@ -45,6 +45,19 @@ export class SliderComponent implements OnInit {
       }
     });
   }
+
+  //TODO Refactorizar
+  onFileChangedSlider1(event: any){
+    this.editForm.value.slider1 = event[0].base64;
+  }
+    //TODO Refactorizar
+    onFileChangedSlider2(event: any){
+      this.editForm.value.slider2 = event[0].base64;
+    }
+      //TODO Refactorizar
+  onFileChangedSlider3(event: any){
+    this.editForm.value.slider3 = event[0].base64;
+  }
   
   createFormEdit(){
     this.editForm = this.fb.group({

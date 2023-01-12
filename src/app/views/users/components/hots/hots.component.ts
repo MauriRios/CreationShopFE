@@ -42,6 +42,23 @@ this.roles.forEach((rol) => {
 });
 }
 
+//TODO Refactorizar
+onFileChangedElegido(event: any){
+  this.editForm.value.elegidoDelMes = event[0].base64;
+}
+onFileChangedMasVendido1(event: any){
+  this.editForm.value.masVendido1 = event[0].base64;
+}
+onFileChangedMasVendido2(event: any){
+  this.editForm.value.masVendido2 = event[0].base64;
+}
+onFileChangedMasVendido3(event: any){
+  this.editForm.value.emasVendido3 = event[0].base64;
+}
+onFileChangedMasVendido4(event: any){
+  this.editForm.value.masVendido4 = event[0].base64;
+}
+
 createFormEdit(){
   this.editForm = this.fb.group({
     id: [''],

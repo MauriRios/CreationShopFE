@@ -70,15 +70,19 @@
     <form [formGroup]="editForm" #f="ngForm">
 
         <div class="form-group">
-            <mat-form-field  appearance="outline" >
+            <!-- <mat-form-field  appearance="outline" > -->
                 <mat-label for="elegidoDelMes">Elegido del Mes</mat-label>
                 <div class="input-group">
-                    <input matInput class="form-group"
-                    formControlName="elegidoDelMes"
+                    <input 
+                    class="form-group"
+                    accept=".jpg , jpeg , .webp" 
+                    type="file"
+                    alife-file-to-base64
+                    (onFileChanged)="onFileChangedElegido($event)"  
                     name="elegidoDelMes" class="form-control" required/>
                     <img src="{{this.editForm.value.elegidoDelMes}}" height="100px">        
                 </div>
-            </mat-form-field>
+            <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="elegidoDelMesField!.errors && (elegidoDelMesField!.dirty || elegidoDelMesField!.touched)">
             <div class="error mb-4" *ngIf="elegidoDelMesField!.hasError('required')">
@@ -87,16 +91,19 @@
         </div>
 
         <div class="form-group">
-            <mat-form-field appearance="outline" >
+            <!-- <mat-form-field appearance="outline" > -->
                 <mat-label for="masVendido1">Primer Más Vendido</mat-label>
                 <div class="input-group">
-                    <input matInput type="text" 
-                    formControlName="masVendido1" 
+                    <input 
+                    accept=".jpg , jpeg , .webp" 
+                    type="file"
+                    alife-file-to-base64
+                    (onFileChanged)="onFileChangedMasVendido1($event)"  
                     name="masVendido1" class="form-control" 
                     required/>
                     <img src="{{this.editForm.value.masVendido1}}" height="100px">
                 </div>
-            </mat-form-field>
+            <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="masVendido1Field!.errors && (masVendido1Field!.dirty || masVendido1Field!.touched)">
             <div class="error mb-4" *ngIf="masVendido1Field!.hasError('required')">
@@ -105,58 +112,67 @@
         </div>
 
         <div class="form-group">
-            <mat-form-field appearance="outline" >
+            <!-- <mat-form-field appearance="outline" > -->
                 <mat-label for="masVendido2">Segundo Más Vendido</mat-label>
                 <div class="input-group">
-                    <input matInput type="text" 
-                    formControlName="masVendido2" 
+                    <input
+                    accept=".jpg , jpeg , .webp" 
+                    type="file"
+                    alife-file-to-base64
+                    (onFileChanged)="onFileChangedMasVendido2($event)"  
                     name="masVendido2" class="form-control" 
                     required/>
                     <img src="{{this.editForm.value.masVendido2}}" height="100px">
                 </div>               
-            </mat-form-field>
+            <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="masVendido2Field!.errors && (masVendido2Field!.dirty || masVendido2Field!.touched)">
             <div class="error mb-4" *ngIf="masVendido2Field!.hasError('required')">
-              * Imagen Requerida en formato URL
+              * Imagen Requerida
             </div>
         </div>
 
         <div class="form-group">
-            <mat-form-field appearance="outline" >
+            <!-- <mat-form-field appearance="outline" > -->
                 <mat-label for="masVendido3">Tercer Más Vendido</mat-label>
                 <div class="input-group">
-                    <input matInput
-                    formControlName="masVendido3"
+                    <input 
+                    accept=".jpg , jpeg , .webp" 
+                    type="file"
+                    alife-file-to-base64
+                    (onFileChanged)="onFileChangedMasVendido3($event)"  
                     name="masVendido3" 
                     class="form-control" 
                     required/>
                     <img src="{{this.editForm.value.masVendido3}}" height="100px">
                 </div>
-            </mat-form-field>
+            <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="masVendido3Field!.errors && (masVendido3Field!.dirty || masVendido3Field!.touched)">
             <div class="error mb-4" *ngIf="masVendido3Field!.hasError('required')">
-              * Imagen Requerida en formato URL
+              * Imagen Requerida
             </div>
         </div>
 
         <div class="form-group">
-            <mat-form-field appearance="outline" >
+            <!-- <mat-form-field appearance="outline" > -->
                 <mat-label for="masVendido4">Cuarto Más Vendido</mat-label>
                 <div class="input-group">
-                    <input matInput type="text" 
-                    formControlName="masVendido4" 
+                    <input     
+                    accept=".jpg , jpeg , .webp"               
+                    type="file"
+                    alife-file-to-base64
+                    (onFileChanged)="onFileChangedMasVendido4($event)"  
                     name="masVendido4" 
                     class="form-control" 
                     required/>
                     <img src="{{this.editForm.value.masVendido4}}" height="100px">
                 </div>              
-            </mat-form-field>
+            <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="masVendido4Field!.errors && (masVendido4Field!.dirty || masVendido4Field!.touched)">
             <div class="error mb-4" *ngIf="masVendido4Field!.hasError('required')">
-              * Imagen Requerida en formato URL
+              * Imagen Requerida
             </div>
         </div>
 

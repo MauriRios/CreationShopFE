@@ -66,19 +66,23 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
       <form [formGroup]="editForm" #f="ngForm">
 
         <div class="form-group">
-          <mat-form-field  appearance="outline">
+          <!-- <mat-form-field  appearance="outline"> -->
             <mat-label for="slider1">Imagen 1</mat-label>
             <div class="input-group">
-              <input matInput class="input-group form-control"
-              formControlName="slider1"
+              <input 
+              class="input-group form-control"
+              accept=".jpg , jpeg , .webp"               
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedSlider1($event)" 
               name="slider1" required/>
               <img src="{{this.editForm.value.slider1}}" height="100px">
             </div>
-            </mat-form-field >
+            <!-- </mat-form-field > -->
         </div>
         <div  *ngIf="slider1Field!.errors && (slider1Field!.dirty || slider1Field!.touched)">
           <div class="error mb-4" *ngIf="slider1Field!.hasError('required')">
-            * Imagen Requerida en formato URL
+            * Imagen Requerida
           </div>
       </div>
 
@@ -130,19 +134,22 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
         </div>
 
         <div class="form-group">
-          <mat-form-field appearance="outline">
+          <!-- <mat-form-field appearance="outline"> -->
             <mat-label for="slider2">Imagen 2</mat-label>
             <div class="input-group">
-              <input matInput
-              formControlName="slider2"
+              <input               
+              accept=".jpg , jpeg , .webp"               
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedSlider2($event)" 
               name="slider2" class="form-control" required/>
               <img src="{{this.editForm.value.slider2}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="slider2Field!.errors && (slider2Field!.dirty || slider2Field!.touched)">
           <div class="error mb-4" *ngIf="slider2Field!.hasError('required')">
-            * Imagen Requerida en formato URL
+            * Imagen Requerida
           </div>
       </div>
 
@@ -195,19 +202,22 @@ data-bs-ride="carousel"  *ngFor="let config of sliderConfig">
         </div>
 
         <div class="form-group">
-          <mat-form-field  appearance="outline">
+          <!-- <mat-form-field  appearance="outline"> -->
             <mat-label for="slider3">Imagen 3</mat-label>
             <div class="input-group">
-              <input matInput
-              formControlName="slider3"
+              <input               
+              accept=".jpg , jpeg , .webp"               
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedSlider3($event)" 
               name="slider3" class="form-control" required/>
               <img src="{{this.editForm.value.slider3}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="slider3Field!.errors && (slider3Field!.dirty || slider3Field!.touched)">
           <div class="error mb-4" *ngIf="slider3Field!.hasError('required')">
-            * Imagen Requerida en formato URL
+            * Imagen Requerida
           </div>
       </div>
 

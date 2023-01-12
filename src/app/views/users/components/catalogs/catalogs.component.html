@@ -118,45 +118,60 @@
       <form [formGroup]="editForm" #f="ngForm">
 
         <div class="form-group">
-          <mat-form-field appearance="outline" >
+          <!-- <mat-form-field appearance="outline" > -->
             <mat-label for="cervezasCatalog">Imagen del Catalogo de Cervezas</mat-label>
             <div class="input-group">
-              <input matInput class="form-group"
-              formControlName="cervezasCatalog"
-              name="cervezasCatalog" class="form-control" required/>
+              <input 
+              class="form-control"
+              name="cervezasCatalog"
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedCervezas($event)"  
+              required/>
               <img src="{{this.editForm.value.cervezasCatalog}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="cervezasCatalogField!.errors && cervezasCatalogField!.touched">
           <div class="error mb-4" *ngIf="cervezasCatalogField!.hasError('required')">
-            * Imagen Requerida en formato URL
+            * Imagen Requerida
           </div>
         </div>
 
         <div class="form-group">
-          <mat-form-field appearance="outline" >
+          <!-- <mat-form-field appearance="outline" > -->
             <mat-label for="vinosCatalog">Imagen del Catalogo de Vinos Y Espumantes</mat-label>
             <div class="input-group">
-              <input matInput type="text" formControlName="vinosCatalog" name="vinosCatalog" class="form-control" required/>
+              <input type="text" 
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedVinos($event)"  
+              name="vinosCatalog" 
+              class="form-control" 
+              required/>
               <img src="{{this.editForm.value.vinosCatalog}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="vinosCatalogField!.errors && vinosCatalogField!.touched">
           <div class="error mb-4" *ngIf="vinosCatalogField!.hasError('required')">
-            * Imagen Requerida en formato URL
+            * Imagen Requerida
           </div>
         </div>
 
         <div class="form-group">
-          <mat-form-field appearance="outline" >
+          <!-- <mat-form-field appearance="outline" > -->
             <mat-label for="destiladosCatalog">Imagen del Catalogo de Destilados</mat-label>
             <div class="input-group">
-              <input matInput type="text" formControlName="destiladosCatalog" name="destiladosCatalog" class="form-control" required/>
+              <input
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedDestilados($event)"  
+              name="destiladosCatalog"
+              class="form-control" required/>
               <img src="{{this.editForm.value.destiladosCatalog}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
           </div>
           <div  *ngIf="destiladosCatalogField!.errors && destiladosCatalogField!.touched">
             <div class="error mb-4" *ngIf="destiladosCatalogField!.hasError('required')">
@@ -165,15 +180,17 @@
           </div>
 
         <div class="form-group">
-          <mat-form-field appearance="outline" >
+          <!-- <mat-form-field appearance="outline" > -->
             <mat-label for="whiskysCatalog">Imagen del Catalogo de Whiskys</mat-label>
             <div class="input-group">
-              <input matInput
-              formControlName="whiskysCatalog"
+              <input
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedWhiskys($event)"  
               name="whiskysCatalog" class="form-control" required/>
               <img src="{{this.editForm.value.whiskysCatalog}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="whiskysCatalogField!.errors && whiskysCatalogField!.touched">
           <div class="error mb-4" *ngIf="whiskysCatalogField!.hasError('required')">
@@ -182,16 +199,18 @@
         </div>
 
         <div class="form-group">
-          <mat-form-field appearance="outline" >
+          <!-- <mat-form-field appearance="outline" > -->
             <mat-label for="regalosCatalog">Imagen del Catalogo de Regalos</mat-label>
             <div class="input-group">
-              <input matInput type="text" 
-              formControlName="regalosCatalog" 
+              <input
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedRegalos($event)"  
               name="regalosCatalog" 
               class="form-control" required/>
               <img src="{{this.editForm.value.regalosCatalog}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="regalosCatalogField!.errors && regalosCatalogField!.touched">
           <div class="error mb-4" *ngIf="regalosCatalogField!.hasError('required')">
@@ -200,13 +219,18 @@
         </div>
 
         <div class="form-group">
-          <mat-form-field appearance="outline" >
+          <!-- <mat-form-field appearance="outline" > -->
             <mat-label for="combosCatalog">Imagen del Catalogo de Combos</mat-label>
             <div class="input-group">
-              <input matInput type="text" formControlName="combosCatalog" name="combosCatalog" class="form-control" required/>
+              <input
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedCombos($event)"  
+              name="combosCatalog" 
+              class="form-control" required/>
               <img src="{{this.editForm.value.combosCatalog}}" height="100px">
             </div>
-          </mat-form-field>  
+          <!-- </mat-form-field>   -->
         </div>
         <div  *ngIf="combosCatalogField!.errors && combosCatalogField!.touched">
           <div class="error mb-4" *ngIf="combosCatalogField!.hasError('required')">
@@ -215,15 +239,18 @@
         </div>
 
         <div class="form-group">
-          <mat-form-field appearance="outline" >
+          <!-- <mat-form-field appearance="outline" > -->
             <mat-label for="aperitivosCatalog">Imagen del Catalogo de Aperitivos</mat-label>
             <div class="input-group">
-              <input matInput
-              formControlName="aperitivosCatalog"
-              name="aperitivosCatalog" class="form-control" required/>
+              <input 
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedAperitivos($event)"  
+              name="aperitivosCatalog" 
+              class="form-control" required/>
               <img src="{{this.editForm.value.aperitivosCatalog}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="aperitivosCatalogField!.errors && aperitivosCatalogField!.touched">
           <div class="error mb-4" *ngIf="aperitivosCatalogField!.hasError('required')">
@@ -232,14 +259,19 @@
         </div>
 
         <div class="form-group">
-          <mat-form-field appearance="outline" >
+          <!-- <mat-form-field appearance="outline" > -->
             <mat-label for="sinAlcoholCatalog">Imagen del Catalogo de Sin Alcohol</mat-label>
             <div class="input-group">
-              <input matInput type="sinAlcoholCatalog"
-              formControlName="sinAlcoholCatalog" name="sinAlcoholCatalog" class="form-control" required/>
+              <input 
+              type="file"
+              alife-file-to-base64
+              (onFileChanged)="onFileChangedSinAlcohol($event)"  
+              name="sinAlcoholCatalog" 
+              class="form-control" 
+              required/>
               <img src="{{this.editForm.value.sinAlcoholCatalog}}" height="100px">
             </div>
-          </mat-form-field>
+          <!-- </mat-form-field> -->
         </div>
         <div  *ngIf="sinAlcoholCatalogField!.errors && sinAlcoholCatalogField!.touched">
           <div class="error mb-4" *ngIf="sinAlcoholCatalogField!.hasError('required')">

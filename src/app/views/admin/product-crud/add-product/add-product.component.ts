@@ -27,7 +27,7 @@ isAdmin!: boolean;
     {name: 'Whiskys'},
     {name: 'Combos'},
     {name: 'Regalos'},
-    {name: 'Vinos'},
+    {name: 'Vinos y Espumantes'},
   ];
 
   constructor(private formBuilder:FormBuilder,

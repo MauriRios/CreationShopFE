@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL: 'shop-production-b225.up.railway.app/',
+  URL: 'http://localhost:8080/',
 };
 
 /*

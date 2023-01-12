@@ -38,6 +38,9 @@ import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catal
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FiltersComponent } from './components/filters/filters.component';
 
+// base 64
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+
 
 @NgModule({
   declarations: [
@@ -85,7 +88,8 @@ import { FiltersComponent } from './components/filters/filters.component';
     BrowserAnimationsModule,
     CarouselModule,
     routing,
-    SharedModule
+    SharedModule,
+    AlifeFileToBase64Module
   ]
 })
 export class UsersModule { }

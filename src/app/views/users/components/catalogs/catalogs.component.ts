@@ -1,3 +1,4 @@
+import { Target } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -41,6 +42,33 @@ export class CatalogsComponent implements OnInit {
         this.isAdmin = true;
       }
     });
+  }
+
+
+  //TODO Refactorizar
+  onFileChangedCervezas(event: any){
+      this.editForm.value.cervezasCatalog = event[0].base64;
+  }
+  onFileChangedAperitivos(event: any){
+    this.editForm.value.aperitivosCatalog = event[0].base64;
+  }
+  onFileChangedSinAlcohol(event: any){
+    this.editForm.value.sinAlcoholCatalog = event[0].base64;
+  }
+  onFileChangedWhiskys(event: any){
+    this.editForm.value.whiskysCatalog = event[0].base64;
+  }
+  onFileChangedDestilados(event: any){
+    this.editForm.value.destiladosCatalog = event[0].base64;
+  }
+  onFileChangedVinos(event: any){
+    this.editForm.value.vinosCatalog = event[0].base64;
+  }
+  onFileChangedRegalos(event: any){
+    this.editForm.value.regalosCatalog = event[0].base64;
+  }
+  onFileChangedCombos(event: any){
+    this.editForm.value.combosCatalog = event[0].base64;
   }
 
   createEditForm(){

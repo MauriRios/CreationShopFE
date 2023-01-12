@@ -64,7 +64,6 @@ export class OffersComponent implements OnInit {
         }
       }
 
-
   upQuantity(product : Products): void{
     this.cartService.upQuantity(product);
   }

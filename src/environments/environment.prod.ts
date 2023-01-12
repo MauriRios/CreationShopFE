@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  URL: String,
+  URL: 'https://shop-production-b225.up.railway.app/',
 };
