@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProdGuardService } from 'src/app/guards/guard.service';
 import { HomeComponent } from '../users/home/home.component';
 import { AdminComponent } from './admin.component';
 import { ProductCrudComponent } from './product-crud/product-crud.component';
@@ -14,8 +15,8 @@ export const routesA: Routes = [
     pathMatch: 'full'
   },
 
-  {path: 'admin', component: AdminComponent, children:[
-
+  {path: 'admin', component: AdminComponent, canActivate: [ProdGuardService], data: {expectedRol:['admin']},
+  children:[
     {path: 'ventas', component: SalesComponent},
     {path: 'productos', component: ProductCrudComponent},
     {path: 'home',component: HomeComponent },
