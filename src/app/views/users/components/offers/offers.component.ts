@@ -51,18 +51,25 @@ export class OffersComponent implements OnInit {
               ) { }
 
   ngOnInit(): void {
-    this.productsDataService.getProducts().subscribe(data => {
-      this.products = data})
+    this.filterProducts(),
+    // this.productsDataService.getProducts().subscribe(data => {
+    //   this.products = data})
     
-
+    
     console.log(this.offersProducts);
   }
 
-  filterProducts(product: Products):void{
-        if (product.clearance = true){
-          this.offersProducts.push(product)
-        }
-      }
+  private filterProducts() {
+    this.productsDataService.getProducts().subscribe(data => {
+      this.products = data.filter((products => products.clearance == true));
+    });
+  }
+
+  // filterProducts(product: Products):void{
+  //       if (product.clearance = true){
+  //         this.offersProducts.push(product)
+  //       }
+  //     }
 
   upQuantity(product : Products): void{
     this.cartService.upQuantity(product);
