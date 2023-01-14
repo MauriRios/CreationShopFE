@@ -13,6 +13,10 @@ import { ProductCrudComponent } from './product-crud/product-crud.component';
 //angular material modules
 import { SharedModule } from 'src/app/shared/shared.module';
 
+//charts 
+import { LineChartComponent } from './sales/charts/line-chart/line-chart.component';
+import { BarChartComponent } from './sales/charts/bar-chart/bar-chart.component';
+
 @NgModule({
   declarations: [
     AdminComponent,
@@ -20,7 +24,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     AddProductComponent,
     DeleteProductComponent,
     EditProductComponent,
-    ProductCrudComponent
+    ProductCrudComponent,
+    LineChartComponent,
+    BarChartComponent
   ],
   exports: [
     AdminComponent,

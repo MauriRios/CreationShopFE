@@ -63,7 +63,7 @@ export class CartComponent implements OnInit {
     if ( this.paySuccess = true ) {
       for(let product of this.products){
         if( product.id === product.id && product.stock > product.quantity -1){
-        product.stock -= product.quantity, console.log(product.stock)
+        product.stock -= product.quantity
         }
         else {
           Swal.fire({

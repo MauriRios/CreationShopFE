@@ -27,6 +27,7 @@
     "alife-file-to-base64": "^0.0.4",
     "boostrap": "^2.0.0",
     "bootstrap": "^5.2.3",
+    "chart.js": "^4.1.2",
     "firebase": "^9.15.0",
     "ngx-owl-carousel-o": "^14.0.1",
     "rxjs": "~7.5.0",
