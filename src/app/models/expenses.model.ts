@@ -1,4 +1,5 @@
 export interface Expenses {
+    id?: number;
     month: string;
-    monthsExpensesValance: number;
+    expenseMonthlyValance: number;
 }

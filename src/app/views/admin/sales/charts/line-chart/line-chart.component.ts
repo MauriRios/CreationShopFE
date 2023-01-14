@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { forkJoin } from 'rxjs';
 import { Expenses } from 'src/app/models/expenses.model';
 import { Sales } from 'src/app/models/sales.model';
 import { ValanceService } from 'src/app/services/valance.service';
@@ -18,41 +19,35 @@ export class LineChartComponent implements OnInit {
   monthlySales: number[] = [];
 
   //gastos
-  expenses: Expenses [] = [];
+  expensesArr: Expenses [] = [];
   monthlyExpenses: number [] = [];
 
   constructor(private valanceService : ValanceService,
     
-  ) { this.salesMonthlyValance();
-      this.expenseMnthlyValance(); }
+  ) { this.salesAndExpenseMonthlyValance(); }
 
   ngOnInit(): void {
     
   }
-  
 
-  salesMonthlyValance(){
-    this.valanceService.getSales().subscribe
-    (data => {
-      this.salesArr = data;  
+  //combina ambos valances y puedo iterar ambas data y luego  renderizo el grafico chart y lo lleno
+  salesAndExpenseMonthlyValance(){
+    forkJoin([
+        this.valanceService.getSales(),
+        this.valanceService.getExpenses()
+    ]).subscribe(([sales, expenses]) => {
+      this.salesArr = sales;  
       this.months = this.salesArr.map(data => data.month);
       this.monthlySales = this.salesArr.map(data => data.saleMonthlyValance);
-
-            // Crear y actualizar gráfico
-            this.renderChart();
+      this.expensesArr = expenses; 
+      console.log(this.expensesArr);
+      this.monthlyExpenses = expenses.map(data => data.expenseMonthlyValance);
+      console.log(this.monthlyExpenses)
+      this.renderChart();
+      
     });
-  }
-
-  expenseMnthlyValance(){
-    this.valanceService.getExpenses().subscribe
-    (data => {
-      this.expenses = data;  
-      this.monthlyExpenses = this.expenses.map(data => data.monthsExpensesValance);
-    
-            // Crear y actualizar gráfico
-            this.renderChart();
-          })
 }
+
 
   renderChart(){
     let myChart = new Chart("linechart", {
@@ -111,6 +106,8 @@ export class LineChartComponent implements OnInit {
         }
       }
     });
+
+    // hago un update de la data que le llega al campo de dataset, necesario para que renderize bien el grafico
     myChart.data.labels = this.months;
     myChart.data.datasets[0].data = this.monthlySales;
     myChart.data.datasets[1].data = this.monthlyExpenses;
