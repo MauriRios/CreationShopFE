@@ -3,7 +3,7 @@ import { Chart, registerables } from 'chart.js';
 import { forkJoin } from 'rxjs';
 import { Expenses } from 'src/app/models/expenses.model';
 import { Sales } from 'src/app/models/sales.model';
-import { ValanceService } from 'src/app/services/valance.service';
+import { BalanceService } from 'src/app/services/balance.service';
 Chart.register(...registerables)
 
 @Component({
@@ -22,27 +22,27 @@ export class LineChartComponent implements OnInit {
   expensesArr: Expenses [] = [];
   monthlyExpenses: number [] = [];
 
-  constructor(private valanceService : ValanceService,
+  constructor(private balanceService : BalanceService,
     
-  ) { this.salesAndExpenseMonthlyValance(); }
+  ) { this.salesAndExpenseMonthlyBalance(); }
 
   ngOnInit(): void {
     
   }
 
   //combina ambos valances y puedo iterar ambas data y luego  renderizo el grafico chart y lo lleno
-  salesAndExpenseMonthlyValance(){
+  salesAndExpenseMonthlyBalance(){
     forkJoin([
-        this.valanceService.getSales(),
-        this.valanceService.getExpenses()
+        this.balanceService.getSales(),
+        this.balanceService.getExpenses()
     ]).subscribe(([sales, expenses]) => {
       //ventas
       this.salesArr = sales;  
       this.months = this.salesArr.map(data => data.month);
-      this.monthlySales = this.salesArr.map(data => data.saleMonthlyValance);
+      this.monthlySales = this.salesArr.map(data => data.saleMonthlyBalance);
       //gastos
       this.expensesArr = expenses; 
-      this.monthlyExpenses = expenses.map(data => data.expenseMonthlyValance);
+      this.monthlyExpenses = expenses.map(data => data.expenseMonthlyBalance);
       //renderiza y actualiza el grafico
       this.renderChart();
       

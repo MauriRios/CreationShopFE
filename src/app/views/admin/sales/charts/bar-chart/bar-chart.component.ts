@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { ValanceService } from 'src/app/services/valance.service';
+import { BalanceService } from 'src/app/services/balance.service';
 Chart.register(...registerables)
 
 @Component({
@@ -15,20 +15,20 @@ export class BarChartComponent implements OnInit {
   months: string [] = [];
 
 
-  constructor( private valanceService : ValanceService, ) {
-    this.expenseMonthlyValance();
+  constructor( private balanceService : BalanceService, ) {
+    this.expenseMonthlyBalance();
   }
 
   ngOnInit(): void {
 
   }
 
-  expenseMonthlyValance(){
-    this.valanceService.getExpenses().subscribe((expenses) => {
+  expenseMonthlyBalance(){
+    this.balanceService.getExpenses().subscribe((expenses) => {
     //ventas
     this.expensesArr = expenses; 
     this.months = this.expensesArr.map(data => data.month); 
-    this.monthlyExpenses = expenses.map(data => data.expenseMonthlyValance);
+    this.monthlyExpenses = expenses.map(data => data.expenseMonthlyBalance);
     //renderiza y actualiza el grafico
     this.renderChart();
   });

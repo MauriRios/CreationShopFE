@@ -3,6 +3,10 @@
     width: 100%;
 }
 
+mat-form-field{
+    margin-top: 0 !important;
+}
+
 table {
     width: 100%;
 }

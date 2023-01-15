@@ -9,17 +9,17 @@ import { Sales } from '../models/sales.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ValanceService {
+export class BalanceService {
 
 
   constructor(private http: HttpClient) { }
 
   getSales(): Observable<Sales[]>  {
-      return this.http.get<Sales[]>(environment.URL + 'valance/ventas/traer');
+      return this.http.get<Sales[]>(environment.URL + 'balance/ventas/traer');
   }
 
   getExpenses(): Observable<Expenses[]>  {
-      return this.http.get<Expenses[]>(environment.URL + 'valance/gastos/traer');
+      return this.http.get<Expenses[]>(environment.URL + 'balance/gastos/traer');
   }
 
 

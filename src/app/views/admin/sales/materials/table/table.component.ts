@@ -4,11 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { forkJoin } from 'rxjs';
-import { Expenses } from 'src/app/models/expenses.model';
-import { Products } from 'src/app/models/products.model';
-import { Sales } from 'src/app/models/sales.model';
-import { ValanceService } from 'src/app/services/valance.service';
+import { BalanceService } from 'src/app/services/balance.service';
 
 @Component({
   selector: 'app-table',
@@ -25,7 +21,7 @@ export class TableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private valanceService: ValanceService,
+  constructor(private balanceService: BalanceService,
               public dialog: MatDialog,
               config: NgbModalConfig,
     ) {
@@ -34,7 +30,7 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.salesAndExpenseMonthlyValance();
+    this.salesAndExpenseMonthlyBalance();
   }
   
   ngAfterViewInit() {
@@ -42,8 +38,8 @@ export class TableComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  salesAndExpenseMonthlyValance(){
-      this.valanceService.getExpenses().subscribe((expenses) => {
+  salesAndExpenseMonthlyBalance(){
+      this.balanceService.getExpenses().subscribe((expenses) => {
       //ventas
       this.expensesArr = expenses;  
       this.dataSource.data = expenses;
