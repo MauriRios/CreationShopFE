@@ -92,7 +92,7 @@
       <div class="dropdown mt-3">
         <ul class="text-color-list menu text-underline">
           <li class="m-3">
-            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/cervezas']">CERVEZAS</a>
+            <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/cervezas']" (click)="onClick('Cervezas')">CERVEZAS</a>
           </li>
           <li class="m-3 dropdown">
             <a class="menu-btns" data-bs-toggle="offcanvas" [routerLink]="['/vinos']"
@@ -146,7 +146,7 @@
   >
     <ul class="d-flex p-0 m-1 menu menu-btns">
       <li class="mx-3">
-        <a class="menu-btns" [routerLink]="['/cervezas']">CERVEZAS</a>
+        <a class="menu-btns" [routerLink]="['/cervezas']" >CERVEZAS</a>
       </li>
       <li class="mx-3">
         <a class="menu-btns" [routerLink]="['/vinos']">VINOS Y ESPUMANTES</a>

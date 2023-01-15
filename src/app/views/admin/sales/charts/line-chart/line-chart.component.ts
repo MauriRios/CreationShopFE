@@ -36,18 +36,18 @@ export class LineChartComponent implements OnInit {
         this.valanceService.getSales(),
         this.valanceService.getExpenses()
     ]).subscribe(([sales, expenses]) => {
+      //ventas
       this.salesArr = sales;  
       this.months = this.salesArr.map(data => data.month);
       this.monthlySales = this.salesArr.map(data => data.saleMonthlyValance);
+      //gastos
       this.expensesArr = expenses; 
-      console.log(this.expensesArr);
       this.monthlyExpenses = expenses.map(data => data.expenseMonthlyValance);
-      console.log(this.monthlyExpenses)
+      //renderiza y actualiza el grafico
       this.renderChart();
       
     });
 }
-
 
   renderChart(){
     let myChart = new Chart("linechart", {

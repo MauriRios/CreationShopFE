@@ -21,7 +21,8 @@ import { OffersComponent } from './components/offers/offers.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SponsorshipComponent } from './components/sponsorship/sponsorship.component';
 import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from '../auth/register/register.component';
+import { FiltersComponent } from './components/filters/filters.component';
+
 
 //filters components
 import { AperitivosCatalogComponent } from './filters/aperitivos-catalog/aperitivos-catalog.component';
@@ -36,10 +37,10 @@ import { WhiskysCatalogComponent } from './filters/whiskys-catalog/whiskys-catal
 
 //angular material modules
 import { SharedModule } from 'src/app/shared/shared.module';
-import { FiltersComponent } from './components/filters/filters.component';
 
 // base 64
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { ProductListComponent } from './components/filters/product-list/product-list.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     FiltersComponent,
     FilterPipe,
     HomeComponent,
+    ProductListComponent,
 
   ],
   exports: [

@@ -16,6 +16,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 //charts 
 import { LineChartComponent } from './sales/charts/line-chart/line-chart.component';
 import { BarChartComponent } from './sales/charts/bar-chart/bar-chart.component';
+//material
+import { TableComponent } from './sales/materials/table/table.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BarChartComponent } from './sales/charts/bar-chart/bar-chart.component'
     EditProductComponent,
     ProductCrudComponent,
     LineChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    TableComponent
+    
   ],
   exports: [
     AdminComponent,

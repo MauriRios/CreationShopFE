@@ -1,7 +1,7 @@
 <div class="container my-3">
     
     <div class="row my-5 title-container">
-        <h1>APERITIVOS</h1>
+        <h1>{{selectedCategory}}</h1>
         
     </div>
     <div class="btn-filter">
@@ -37,7 +37,7 @@
         <div class="col-lg-10" >
             <div class="row" >
 
-                <div class="col-6 col-md-4 col-lg-3 my-1" *ngFor="let product of products | filter:filter">
+                <div class="col-6 col-md-4 col-lg-3 my-1" *ngFor="let product of products">
                             <div class="card-img text-center" >
                                 <figure>
                                         <img class="img-fluid" src="{{product.image}}" alt="image">

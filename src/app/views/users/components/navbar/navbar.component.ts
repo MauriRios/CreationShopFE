@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
+import { CaterogyFilterService } from 'src/app/services/caterogy-filter.service';
 import { TokenService } from 'src/app/services/token.service';
 
 @Component({
@@ -23,20 +24,21 @@ export class NavbarComponent implements OnInit {
     private cartService: CartService,
     private router: Router,
     private tokenService: TokenService,
+    private categoryFilterService: CaterogyFilterService,
     
     ) { 
-
-      this.IfIsAdmin();
-      
+      this.IfIsAdmin();     
     }
-
-
     
     ngOnInit(): void {
       this.getToken();
 
       this.navBarSticky();
       this.getProductsList();
+    }
+
+    onClick(category:string) {
+      this.categoryFilterService.selectCategory(category);
     }
 
     IfIsAdmin(){

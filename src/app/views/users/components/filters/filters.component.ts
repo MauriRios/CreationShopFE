@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
+import { CaterogyFilterService } from 'src/app/services/caterogy-filter.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
 
 @Component({
@@ -10,23 +11,26 @@ import { ProductsDataService } from 'src/app/services/products-data.service';
 })
 export class FiltersComponent implements OnInit {
 
-
+  selectedCategory!: string;
   filter = '';
   products: Products[] = [];
   buyQuantity: Products[] = [];
   
   constructor(private cartService: CartService,
               private productsDataService: ProductsDataService,
-              ) { }
+              public categoryFilterService: CaterogyFilterService,
+              ) {                
+                this.categoryFilterService.categorySelected.subscribe(category => {
+                this.categoryFilter(category);
+                }); }
 
-  ngOnInit(): void {
-    this.categoryFilter('Aperitivos');
+              ngOnInit() {
 
-  }
+                }
 
   private categoryFilter(parameter: string) {
     this.productsDataService.getProducts().subscribe(data => {
-      this.products = data.filter((products => products.category == parameter));
+    this.products = data.filter((products => products.category === parameter));
     });
   }
 
