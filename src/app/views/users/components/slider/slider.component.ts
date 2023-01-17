@@ -77,24 +77,8 @@ export class SliderComponent implements OnInit {
 
   getSliderConfig() {
     this.sliderConfigService.getSliderConfig()
-    .subscribe( data =>(this.sliderConfig = data,
-      console.log(this.sliderConfig)))
+    .subscribe( data =>(this.sliderConfig = data))
   }
-
-  // onFileChanged1(e:any):void {
-  //   this.base64 = e[0].base64;
-  //   this.editForm.value.slider1 = this.base64;
-  // }
-  // onFileChanged2(e:any):void {
-  //   this.base64 = e[0].base64;
-  //   this.editForm.value.slider2 = this.base64;
-  // }
-
-  // onFileChanged3(e:any):void {
-  //   this.base64 = e[0].base64;
-  //   this.editForm.value.slider3 = this.base64;
-  // }
-
 
   //Abre modal de editar
   openEdit(targetModal: any, sliderConfig:SliderConfig) {

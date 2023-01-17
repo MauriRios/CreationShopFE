@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
@@ -8,9 +9,9 @@ import { ProductsDataService } from 'src/app/services/products-data.service';
   templateUrl: './aperitivos-catalog.component.html',
   styleUrls: ['./aperitivos-catalog.component.css']
 })
-export class AperitivosCatalogComponent implements OnInit {
+export class AperitivosCatalogComponent implements OnInit, OnDestroy {
 
-
+  private unsubscribe$ = new Subject<void>();
   filter = '';
   products: Products[] = [];
   buyQuantity: Products[] = [];
@@ -24,8 +25,16 @@ export class AperitivosCatalogComponent implements OnInit {
 
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
   private categoryFilter(parameter: string) {
-    this.productsDataService.getProducts().subscribe(data => {
+    this.productsDataService.getProducts()
+    .pipe(
+      takeUntil(this.unsubscribe$))
+    .subscribe(data => {
       this.products = data.filter((products => products.category == parameter));
     });
   }

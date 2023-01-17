@@ -8,7 +8,33 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./sponsorship.component.css']
 })
 export class SponsorshipComponent implements OnInit {
-  
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 3
+      },
+      400: {
+        items: 5
+      },
+      840: {
+        items: 6
+      },
+
+      1040: {
+        items: 9
+      }
+    },
+    nav: false
+  }
+
   dynamicSlides = [
     {
       id: 1,
@@ -167,34 +193,7 @@ export class SponsorshipComponent implements OnInit {
       title:'Side 26'
     },
   ]
-
   constructor() { }
-
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 3
-      },
-      400: {
-        items: 5
-      },
-      840: {
-        items: 6
-      },
-
-      1040: {
-        items: 9
-      }
-    },
-    nav: false
-  }
 
   ngOnInit(): void {
 

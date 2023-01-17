@@ -7,18 +7,18 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsDataService {
+export class ProductsDataService{
 
   private _refresh$ = new Subject<void>();
-
-  get refresh$() {
-    return this._refresh$;
-  }
-
+  
   private _productsList : Products[] = [];
   private _productsSubjects : BehaviorSubject<Products[]> = new BehaviorSubject(this._productsList);
   products : Observable<Products[]> = this._productsSubjects.asObservable();
   
+  
+  get refresh$() {
+    return this._refresh$;
+  }
   constructor(private http: HttpClient) { 
     
     this.http.get<Products[]>(environment.URL + 'productos/traer').subscribe(data => {
@@ -68,16 +68,3 @@ export class ProductsDataService {
 
 
   }
-
-  // create(product: Products): void{
-  //   this.http.post<Products>(URL, product).subscribe({
-  //     error: error => {
-  //       console.error('There was an error!', error);
-  //   },
-  //     next: data => {
-  //       this._productsList.push(data)
-  //     }
-  //   });
-  // }
-
-

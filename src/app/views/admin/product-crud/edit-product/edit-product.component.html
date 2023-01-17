@@ -1,16 +1,12 @@
+<h2>Editar/Eliminar Productos</h2>
+
 <mat-form-field class="mt-5">
     <mat-label>Filtro</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
 </mat-form-field>
 
-<div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
-
-    <!-- ID Column -->
-    <!-- <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-    </ng-container> -->
+<div class="mat-elevation-z8 small-table">
+    <table mat-table [dataSource]="dataSource" matSort class="full-width-table" aria-label="Elements">
 
     <!-- Progress Column -->
     <ng-container matColumnDef="brand">

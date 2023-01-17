@@ -1,33 +1,28 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { forkJoin, last, Subject, takeUntil } from 'rxjs';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { forkJoin, Subject, takeUntil } from 'rxjs';
 import { Expenses } from 'src/app/models/expenses.model';
 import { Sales } from 'src/app/models/sales.model';
 import { BalanceService } from 'src/app/services/balance.service';
 
 @Component({
-  selector: 'app-sales',
-  templateUrl: './sales.component.html',
-  styleUrls: ['./sales.component.css']
+  selector: 'app-mini-card',
+  templateUrl: './mini-card.component.html',
+  styleUrls: ['./mini-card.component.css']
 })
-export class SalesComponent implements OnInit, OnDestroy {
+export class MiniCardComponent implements OnInit, OnDestroy {
 
 
   private unsubscribe$ = new Subject<void>();
   
-    // balance 
     isIncrease!: boolean;
-    isWrost!: boolean;
+   // balance 
     salesOExpenses!: number;
     annualEarnings!: number;
-    bestSaleMonth!: string;
-    bestSaleAmount!: number;
-    worstSaleMonth!: string;
-    worstSaleAmount!: number;
-    bestProfit: {month: string; profit: number;} = {month: '', profit: 0};
     //ventas
-    salesArr: Sales[] = [];
+    salesArr: Sales [] = [];
     monthsSales: string[] = [];
     monthlySales: number[] = [];
+  
     //gastos
     expensesArr: Expenses [] = [];
     monthsExpenses: string[] = [];
@@ -39,6 +34,7 @@ export class SalesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    
   }
 
 
@@ -65,37 +61,25 @@ export class SalesComponent implements OnInit, OnDestroy {
 
       this.annualEarning();
       this.salesOverExpenses();
-      this.sortMonth();
-      this.bestProfit = this.balanceService.findBestProfitMonth(this.expensesArr, this.salesArr);
-      //verificar si el % de ventas sobre gastos es positivo
+
       if(this.salesOExpenses > 0 ){
         this.isIncrease = true
-        console.log(this.salesArr)
-        console.log(this.expensesArr)
+        console.log(this.isIncrease)
       }
-
     });
 }
 
-
-  sortMonth(){
-    this.salesArr.sort((a, b) => b.saleMonthlyBalance - a.saleMonthlyBalance);
-
-    this.bestSaleMonth = this.salesArr[0].month;
-    this.bestSaleAmount = this.salesArr[0].saleMonthlyBalance;
-    this.worstSaleMonth = this.salesArr[11].month;
-    this.worstSaleAmount = this.salesArr[11].saleMonthlyBalance;
-
-    if(this.bestSaleAmount > this.worstSaleAmount ){
-      this.isWrost = false
-    }
-  }
-
   annualEarning(){   
     this.annualEarnings = this.balanceService.annualEarnings(this.monthlySales, this.monthlyExpenses);
+      console.log(this.annualEarnings);
+      console.log(this.monthlyExpenses)
+      console.log(this.salesArr)
   }
 
   salesOverExpenses(){
     this.salesOExpenses = this.balanceService.salesOverExpenses(this.monthlySales, this.monthlyExpenses) 
   }
+
+
+
 }

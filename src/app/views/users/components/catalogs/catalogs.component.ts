@@ -88,8 +88,7 @@ export class CatalogsComponent implements OnInit {
   //traer imagenes del back
   getCatalogConfig() {
     this.catalogConfigService.getCatalogConfig()
-    .subscribe( data =>(this.catalogConfig = data,
-      console.log(this.catalogConfig)))
+    .subscribe( data =>(this.catalogConfig = data))
   }
 
   //Abre modal de editar

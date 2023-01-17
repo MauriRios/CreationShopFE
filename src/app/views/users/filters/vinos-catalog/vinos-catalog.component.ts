@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
 import { CategorysService } from 'src/app/services/categorys.service';
@@ -11,6 +12,7 @@ import { ProductsDataService } from 'src/app/services/products-data.service';
 })
 export class VinosCatalogComponent implements OnInit {
 
+  private unsubscribe$ = new Subject<void>();
   filter = '';
   products: Products[] = [] ;
   buyQuantity: Products[] = [];
@@ -23,9 +25,17 @@ export class VinosCatalogComponent implements OnInit {
       this.categoryFilter('Vinos y Espumantes');
     }
 
+    ngOnDestroy(): void {
+      this.unsubscribe$.next();
+      this.unsubscribe$.complete();
+    }
+
     private categoryFilter(parameter: string) {
-      this.productsDataService.getProducts().subscribe(data => {
-        this.products = data.filter((products => products.category == parameter ));
+      this.productsDataService.getProducts()
+      .pipe(
+        takeUntil(this.unsubscribe$))
+      .subscribe(data => {
+        this.products = data.filter((products => products.category == parameter));
       });
     }
 

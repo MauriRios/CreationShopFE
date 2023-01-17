@@ -47,7 +47,9 @@ span{
     font-weight: 500;
 } */
 
-
+form{
+    margin-bottom: 20px;
+}
 li > a {
     color: black;
     list-style: none;

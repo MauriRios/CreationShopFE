@@ -29,7 +29,7 @@ import { TableComponent } from './sales/materials/table/table.component';
     ProductCrudComponent,
     LineChartComponent,
     BarChartComponent,
-    TableComponent
+    TableComponent,
     
   ],
   exports: [

@@ -28,6 +28,9 @@ export class FiltersComponent implements OnInit {
 
                 }
 
+                //TODO REFACTORIZAR PARA QUE SEA UN COMPONENTE REUTILIZABLE 
+
+
   private categoryFilter(parameter: string) {
     this.productsDataService.getProducts().subscribe(data => {
     this.products = data.filter((products => products.category === parameter));

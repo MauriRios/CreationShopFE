@@ -72,8 +72,7 @@ createFormEdit(){
 
 getHotConfig() {
 this.hotConfigService.getHotConfig()
-.subscribe( data =>(this.hotConfig = data,
-console.log(this.hotConfig)))
+.subscribe( data =>(this.hotConfig = data))
 }
 
 //Abre modal de editar

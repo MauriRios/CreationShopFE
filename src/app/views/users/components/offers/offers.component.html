@@ -6,8 +6,8 @@
 
     <section class="offers">
         <div class="containers">
-            <div class="bg-position">
-                <owl-carousel-o [options]="customOptions">
+            <div class="bg-position" >
+                <owl-carousel-o [options]="customOptions" >
                     <ng-template carouselSlide *ngFor="let product of products">
                         <div class=" card-img text-center">
                             <figure class="img-center">
@@ -20,7 +20,7 @@
                                 <div class="btn-buy d-flex justify-content-center" >
                                     <form (ngSubmit)="addCart(product)">
                                     <div class='input-group input-group-sm my-2' 
-                                        style='width:100px'>
+                                        style='width:100px' [hidden]="!isLogged">
                                             <button class='btn btn-outline-dark' 
                                             type='button' (click)="downQuantity(product)" 
                                             [disabled]="product.quantity <= 0">-</button>
@@ -32,7 +32,7 @@
                                             <button class='btn btn-outline-dark' 
                                             type='button' (click)="upQuantity(product)">+</button>
                                         </div>
-                                            <button  name='send' type='submit' class='btn btn-outline-dark btn-send' >AGREGAR</button>
+                                            <button  name='send' type='submit' class='btn btn-outline-dark btn-send' [hidden]="!isLogged"  >AGREGAR</button>
                                     </form>
                                 </div>
                         </div>

@@ -2,6 +2,9 @@
     margin-bottom: 15px;
     width: 100%;
 }
+.small-table{
+    overflow-x: scroll !important;
+}
 
 mat-form-field{
     margin-top: 0 !important;

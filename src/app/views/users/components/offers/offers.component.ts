@@ -1,8 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Subject, takeUntil } from 'rxjs';
 import { Products } from 'src/app/models/products.model';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductsDataService } from 'src/app/services/products-data.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-offers',
@@ -11,11 +13,12 @@ import { ProductsDataService } from 'src/app/services/products-data.service';
 })
 
 
-export class OffersComponent implements OnInit {
+export class OffersComponent implements OnInit, OnDestroy {
   
-
+  private unsubscribe$ = new Subject<void>();
+  
   products!:Products[];
-  offersProducts!:Products[];
+  isLogged!: boolean;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -48,28 +51,41 @@ export class OffersComponent implements OnInit {
 
   constructor( private cartService: CartService,
               private productsDataService: ProductsDataService,
-              ) { }
+              private tokenService: TokenService,
+              ) { 
+                this.getToken();
+              }
 
   ngOnInit(): void {
-    this.filterProducts(),
-    // this.productsDataService.getProducts().subscribe(data => {
-    //   this.products = data})
-    
-    
-    console.log(this.offersProducts);
+    this.filterProducts();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+    console.log('destroy')
+  }
+
+  private  getToken(){
+    //si esta logeado
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    };
+}
+
   private filterProducts() {
-    this.productsDataService.getProducts().subscribe(data => {
+    this.productsDataService.getProducts()
+    .pipe(
+      takeUntil(this.unsubscribe$)
+    )
+    .subscribe(data => {
       this.products = data.filter((products => products.clearance == true));
     });
   }
 
-  // filterProducts(product: Products):void{
-  //       if (product.clearance = true){
-  //         this.offersProducts.push(product)
-  //       }
-  //     }
+
 
   upQuantity(product : Products): void{
     this.cartService.upQuantity(product);

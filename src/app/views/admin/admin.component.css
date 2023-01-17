@@ -1,6 +1,3 @@
-.container{
-    height: 100vh;
-}
 
 .sidenav-container {
     height: 100%;
@@ -22,9 +19,11 @@
 }
 
 mat-toolbar {
-    
     display: flex;
     justify-content: space-between
+}
+.contenedor{
+    padding: 15px;
 }
 
 .mat-icon {

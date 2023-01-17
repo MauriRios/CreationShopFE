@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Subject, takeUntil } from 'rxjs';
 import { BalanceService } from 'src/app/services/balance.service';
 
 @Component({
@@ -11,7 +12,9 @@ import { BalanceService } from 'src/app/services/balance.service';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, AfterViewInit {
+
+  private unsubscribe$ = new Subject<void>();
 
   displayedColumns: string[] = [ 'N°', 'icon', 'ID', 'Month','Expenses' ];
   dataSource = new MatTableDataSource<any>();
@@ -23,10 +26,10 @@ export class TableComponent implements OnInit {
 
   constructor(private balanceService: BalanceService,
               public dialog: MatDialog,
-              config: NgbModalConfig,
-    ) {
-              config.backdrop = 'static',
-              config.keyboard = false
+              public config: NgbModalConfig,
+              ) {
+                config.backdrop = 'static',
+                config.keyboard = false
   }
 
   ngOnInit(): void {
@@ -38,12 +41,20 @@ export class TableComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+    console.log('destroy')
+  }
+
   salesAndExpenseMonthlyBalance(){
-      this.balanceService.getExpenses().subscribe((expenses) => {
+      this.balanceService.getExpenses()
+      .pipe(
+        takeUntil(this.unsubscribe$))
+      .subscribe((expenses) => {
       //ventas
       this.expensesArr = expenses;  
       this.dataSource.data = expenses;
-
       this.dataSource.paginator! = this.paginator;
       this.dataSource.sort! = this.sort;
     });

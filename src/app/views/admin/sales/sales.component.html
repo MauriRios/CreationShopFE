@@ -1,32 +1,97 @@
 
-<div class="row">
+<div class="row cards-row" >
     <div class="col-12 col-lg-3">
-        <div class="container card">
-            
-
-        </div>
+        <mat-card >
+            <mat-card-header class="card-header justify-content-center">
+                <mat-card-title>
+                    <h3 class="value-text" >${{annualEarnings}}</h3>
+                </mat-card-title>
+                <div mat-card-avatar class="card-icon">
+                    <mat-icon [ngClass]="{ 'green-text': isIncrease, 'red-text': !isIncrease }"
+                    class="material-symbols-outlined">currency_exchange</mat-icon>
+                </div>
+            </mat-card-header>
+            <h4 class="title-text">Ingresos anueles</h4>
+            <p class="difference-text">
+                <span
+                    [ngClass]="{ 'green-text': isIncrease, 'red-text': !isIncrease }">
+                    %{{ isIncrease ? '+' : '-' }}{{ salesOExpenses | percent:'2.1-2' }}
+                    <mat-icon *ngIf="isIncrease">arrow_upward</mat-icon>
+                    <mat-icon *ngIf="!isIncrease">arrow_downward</mat-icon>
+                </span>
+            </p>
+        </mat-card>
     </div>
     <div class="col-12 col-lg-3">
-        <div class="container card">
-        
-
-        </div>
+        <mat-card >
+            <mat-card-header class="card-header justify-content-center">
+                <mat-card-title>
+                    <h3 class="value-text" >{{bestSaleMonth}}</h3>
+                </mat-card-title>
+                <div mat-card-avatar class="card-icon">
+                    <mat-icon [ngClass]="{ 'green-text': isIncrease, 'red-text': !isIncrease }"
+                    class="material-symbols-outlined">query_stats</mat-icon>
+                </div>
+            </mat-card-header>
+            <h4 class="title-text">Mejor mes</h4>
+            <p class="difference-text">
+                <span
+                    [ngClass]="{ 'green-text': isIncrease, 'red-text': !isIncrease }">
+                    ${{ isIncrease ? '+' : '-' }}{{ bestSaleAmount }}
+                    <mat-icon *ngIf="isIncrease">arrow_upward</mat-icon>
+                    <mat-icon *ngIf="!isIncrease">arrow_downward</mat-icon>
+                </span>
+            </p>
+        </mat-card>
     </div>
     <div class="col-12 col-lg-3">
-        <div class="container card">
-            
-
-        </div>
+        <mat-card >
+            <mat-card-header class="card-header justify-content-center">
+                <mat-card-title>
+                    <h3 class="value-text" >{{worstSaleMonth}}</h3>
+                </mat-card-title>
+                <div mat-card-avatar class="card-icon">
+                    <mat-icon 
+                    [ngClass]="{ 'green-text': isWrost, 'red-text': !isWrost }"
+                    class="material-symbols-outlined">trending_down</mat-icon>
+                </div>
+            </mat-card-header>
+            <h4 class="title-text">Mes con mas gastos</h4>
+            <p class="difference-text">
+                <span
+                    [ngClass]="{ 'green-text': isWrost, 'red-text': !isWrost }">
+                    ${{ isWrost ? '+' : '-' }}{{ worstSaleAmount }}
+                    <mat-icon *ngIf="isWrost">arrow_upward</mat-icon>
+                    <mat-icon *ngIf="!isWrost">arrow_downward</mat-icon>
+                </span>
+            </p>
+        </mat-card>
     </div>
     <div class="col-12 col-lg-3">
-        <div class="container card">
-            
-
-        </div>
+        <mat-card >
+            <mat-card-header class="card-header justify-content-center">
+                <mat-card-title>
+                    <h3 class="value-text" >{{bestProfit.month}}</h3>
+                </mat-card-title>
+                <div mat-card-avatar class="card-icon">
+                    <mat-icon [ngClass]="{ 'green-text': isIncrease, 'red-text': !isIncrease }"
+                    class="material-symbols-outlined">auto_graph</mat-icon>
+                </div>
+            </mat-card-header>
+            <h4 class="title-text">Mayor ganancia/Mes</h4>
+            <p class="difference-text">
+                <span
+                    [ngClass]="{ 'green-text': isIncrease, 'red-text': !isIncrease }">
+                    ${{ isIncrease ? '+' : '-' }}{{bestProfit.profit}}
+                    <mat-icon *ngIf="isIncrease">arrow_upward</mat-icon>
+                    <mat-icon *ngIf="!isIncrease">arrow_downward</mat-icon>
+                </span>
+            </p>
+        </mat-card>
     </div>
 </div>
 
-<div class="row">
+<div class="row cards-row">
     <div class="col-12 col-xl-6 ">
         <div class="container card">
             <app-line-chart></app-line-chart>
@@ -44,7 +109,7 @@
 
 </div>
 
-<div class="row">
+<div class="row cards-row">
     <div class="col-12">
         <div class="container card">
             <app-table></app-table>

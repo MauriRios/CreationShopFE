@@ -5,8 +5,8 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
 </mat-form-field>
 
-<div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
+<div class="mat-elevation-z8 small-table">
+    <table mat-table [dataSource]="dataSource" matSort class="full-width-table" aria-label="Elements">
 
         <!-- Progress Column -->
         <ng-container matColumnDef="N°">
@@ -29,13 +29,13 @@
 
         <!-- Volume Column -->
         <ng-container matColumnDef="Month">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Month </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Mes </th>
             <td mat-cell *matCellDef="let row"> {{row.month}} </td>
         </ng-container>
 
         <!-- Price Column -->
         <ng-container matColumnDef="Expenses">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Expenses </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Gasto </th>
             <td mat-cell *matCellDef="let row"> $ {{row.expenseMonthlyBalance}} </td>
         </ng-container>
         

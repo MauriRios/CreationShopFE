@@ -6,9 +6,18 @@ table {
     font-size: 14px;
     width: 100%;
 }
+.small-table{
+    overflow-x: scroll !important;
+}
 
 td, th {
     width: 25%;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .mat-icon {
